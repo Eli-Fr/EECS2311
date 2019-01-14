@@ -1,0 +1,9 @@
+hello
+goodbye
+happy
+sad
+tired
+angry
+hungry
+wash room
+sleep

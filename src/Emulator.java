@@ -7,6 +7,7 @@ public class Emulator {
 
 	public static void initInterface() {
 		UI = new UserInterface(9);
+		UI.setVisible(true);
 	}
 
 	public static void initDevice() {
@@ -14,24 +15,15 @@ public class Emulator {
 	}
 
 	public static void main(String[] args) {
-		Thread intThread = new Thread(
+		initInterface();
 
-		) {
-			public void run() {
-				initInterface();
-			}
-		};
+//		Thread devThread = new Thread() {
+//
+//		};
+//
+//		devThread.start();
 
-		Thread devThread = new Thread() {
-
-		};
-
-		intThread.start();
-		devThread.start();
-		
-		
-		
-		System.exit(0);
+		// System.exit(0);
 
 	}
 
