@@ -15,8 +15,8 @@ public class PanelBody extends JPanel{
 	public PanelBody(JFrame owner, SpeakerClass sc) {
 		super();
 		
-		this.setMinimumSize(new Dimension(owner.getWidth(), 250));
-		this.setMaximumSize(new Dimension(owner.getWidth(), 250));
+		this.setMinimumSize(new Dimension(owner.getWidth(), 225));
+		this.setMaximumSize(new Dimension(owner.getWidth(), 225));
 		this.setBackground(new Color(0, 12, 25));
 		this.setLayout(new FlowLayout());
 		

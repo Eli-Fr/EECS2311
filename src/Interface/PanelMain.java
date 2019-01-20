@@ -22,13 +22,13 @@ public class PanelMain extends JPanel{
 		bodyPaneScroll = new JScrollPane(bodyPane);
 		bodyPaneScroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		bodyPaneScroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_NEVER);
-		bodyPaneScroll.setMaximumSize(new Dimension(owner.getWidth()+15, 250));
-		bodyPaneScroll.setMinimumSize(new Dimension(owner.getWidth()+15, 250));
+		bodyPaneScroll.setMaximumSize(new Dimension(owner.getWidth()+15, 225));
+		bodyPaneScroll.setMinimumSize(new Dimension(owner.getWidth()+15, 225));
 		
 		this.add(headingPane);
 		this.add(Box.createRigidArea(new Dimension(0,15)));
 		this.add(preTextPane);
-		this.add(Box.createRigidArea(new Dimension(0,15)));
+		this.add(Box.createVerticalGlue());
 		this.add(bodyPaneScroll);
 		
 	}
