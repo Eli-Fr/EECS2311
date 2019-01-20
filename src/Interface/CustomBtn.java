@@ -1,15 +1,17 @@
 package Interface;
+import DeviceSpeaker.*;
 
 import javax.imageio.*;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 import java.io.*;
 
 public class CustomBtn extends JButton{
 
 	public ImageIcon img;
 	
-	public CustomBtn(String name) {
+	public CustomBtn(String name, SpeakerClass sc) {
 		super(name);
 		
 		try {
@@ -22,5 +24,14 @@ public class CustomBtn extends JButton{
 		this.setHorizontalTextPosition(AbstractButton.CENTER);
 		this.setVerticalTextPosition(AbstractButton.BOTTOM);
 		
+		this.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				sc.say(name);				
+			}
+		});
+		
 	}
+
 }

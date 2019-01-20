@@ -1,4 +1,5 @@
 package Interface;
+import DeviceSpeaker.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -8,7 +9,7 @@ public class PanelMain extends JPanel{
 	public JPanel headingPane, preTextPane, bodyPane;
 	public JScrollPane bodyPaneScroll;
 	
-	public PanelMain(JFrame owner) {
+	public PanelMain(JFrame owner, SpeakerClass sc) {
 		super();
 		
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
@@ -16,7 +17,7 @@ public class PanelMain extends JPanel{
 		
 		headingPane = new PanelHeading(owner);
 		preTextPane = new PanelPreText(owner);
-		bodyPane = new PanelBody(owner);
+		bodyPane = new PanelBody(owner, sc);
 		
 		bodyPaneScroll = new JScrollPane(bodyPane);
 		bodyPaneScroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);

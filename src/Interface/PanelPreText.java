@@ -1,4 +1,5 @@
 package Interface;
+import DeviceSpeaker.*;
 
 import javax.swing.*;
 import java.awt.*;

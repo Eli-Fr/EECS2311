@@ -1,5 +1,6 @@
 package Interface;
 
+import DeviceSpeaker.*;
 import javax.swing.*;
 import java.awt.*;
 import java.io.*;
@@ -11,7 +12,7 @@ public class PanelBody extends JPanel{
 	public BufferedReader br;
 	public String line;
 
-	public PanelBody(JFrame owner) {
+	public PanelBody(JFrame owner, SpeakerClass sc) {
 		super();
 		
 		this.setMinimumSize(new Dimension(owner.getWidth(), 250));
@@ -20,7 +21,7 @@ public class PanelBody extends JPanel{
 		this.setLayout(new FlowLayout());
 		
 		
-		initBtn();
+		initBtn(sc);
 		for(int i = 0; i < this.talkBtn.size(); i++) {
 			
 			this.add(this.talkBtn.get(i));
@@ -29,7 +30,7 @@ public class PanelBody extends JPanel{
 		
 	}
 	
-	public void initBtn() {
+	public void initBtn(SpeakerClass sc) {
 		
 		talkBtn = new ArrayList<JButton>();
 		
@@ -38,7 +39,7 @@ public class PanelBody extends JPanel{
 			
 			while((line = br.readLine()) != null) {
 				
-				talkBtn.add(new CustomBtn(line));
+				talkBtn.add(new CustomBtn(line, sc));
 				
 			}
 			
