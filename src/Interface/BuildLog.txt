@@ -5,7 +5,9 @@ Welcome to the TalkBotSimulator!
 		• Find the Expression/Emotion.
 		• Tap the Expression/Emotion Button.
 		• Done!
-	
+
+◦ Update Info
+
 	‣ Version1.2
 		• Working Prototype
 		• Programmable Buttons
