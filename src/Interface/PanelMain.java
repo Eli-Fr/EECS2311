@@ -20,7 +20,7 @@ public class PanelMain extends JPanel{
 		bodyPane = new PanelBody(owner, sc);
 		
 		bodyPaneScroll = new JScrollPane(bodyPane);
-		bodyPaneScroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		bodyPaneScroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		bodyPaneScroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_NEVER);
 		bodyPaneScroll.setMaximumSize(new Dimension(owner.getWidth()+15, 250));
 		bodyPaneScroll.setMinimumSize(new Dimension(owner.getWidth()+15, 250));
