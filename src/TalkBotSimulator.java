@@ -9,5 +9,11 @@ public class TalkBotSimulator {
 		VisualFrame simulator = new VisualFrame("TalkBotSimulator", sc);
 
 	}
-
+	
+	
+	public static void branch1() {
+		
+		System.out.println("branch2");
+	}
+	
 }
