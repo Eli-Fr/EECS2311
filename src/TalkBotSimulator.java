@@ -7,7 +7,12 @@ public class TalkBotSimulator {
 		
 		SpeakerClass sc = new SpeakerClass("kevin16");
 		VisualFrame simulator = new VisualFrame("TalkBotSimulator", sc);
+		
 
+	}
+	
+	public static void branch1() {
+		System.out.println("branch1");
 	}
 
 }
