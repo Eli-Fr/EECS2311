@@ -12,7 +12,8 @@ public class TalkBotSimulator {
 	}
 	
 	public static void branch1() {
-		System.out.println("branch1");
+		System.out.println("branch2");
+		System.out.println("this is branch2, we are creating a new branch");
 	}
 
 }
