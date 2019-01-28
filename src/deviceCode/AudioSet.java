@@ -5,13 +5,14 @@ import java.util.LinkedList;
 
 public class AudioSet {
 	private String setName;
-	private LinkedList<String> set = new LinkedList<String>();
+	private LinkedList<Audio> set;
 	
 	public AudioSet(String sn) {
 		setName = sn;
+		set = new LinkedList<Audio>();
 	}
 	
-	public void add(String audio) {
+	public void add(Audio audio) {
 		set.addLast(audio);
 	}
 	
@@ -19,7 +20,7 @@ public class AudioSet {
 		return setName;
 	}
 	
-	public LinkedList<String> getSet() {
+	public LinkedList<Audio> getSet() {
 		return set;
 	}
 	

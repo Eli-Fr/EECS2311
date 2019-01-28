@@ -1,50 +1,50 @@
 package deviceCode;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.nio.file.Path;
+import java.util.LinkedList;
 
-public class ConfigurationImplement implements TalkBoxConfiguration {
+
+public class ConfigurationImplement implements TalkBoxConfiguration {	
+	private LinkedList<AudioSet> audioCollection;
+	public ConfigurationImplement() {
+		audioCollection = new LinkedList<AudioSet>();
+		try {
+			ObjectInputStream in = new ObjectInputStream(new FileInputStream("config.tbc"));
+			audioCollection = (LinkedList<AudioSet>)in.readObject(); 
+		} catch(Exception e) {
+			
+		}
+	}
 
 	@Override
 	public int getNumberOfAudioButtons() {
-		// TODO Auto-generated method stub
-		return 0;
+		return audioCollection.getFirst().getSet().size();
 	}
 
 	@Override
 	public int getNumberOfAudioSets() {
-		// TODO Auto-generated method stub
-		return 0;
+		return audioCollection.size();
 	}
 
 	@Override
 	public int getTotalNumberOfButtons() {
-		// TODO Auto-generated method stub
-		return 0;
+		return getNumberOfAudioButtons() + getNumberOfAudioButtons();
 	}
 
 	@Override
 	public Path getRelativePathToAudioFiles() {
-		
 		return null;
 	}
 
 	@Override
 	public String[][] getAudioFileNames() {
 		String[][] audioSet = new String[getNumberOfAudioSets()][];
-		try {
-			ObjectInputStream in = new ObjectInputStream(new FileInputStream("config.tbc"));
-			Audio[][] audioFile = (Audio[][])in.readObject(); 
-			for (int i = 0; i < getNumberOfAudioSets(); i++) {
-				for (int j = 0; j < getNumberOfAudioButtons(); j++) {
-					audioSet[i][j] =  audioFile[i][j].getAudioName();
-				}
+		for (int i = 0; i < getNumberOfAudioSets(); i++) {
+			for (int j = 0; j < getNumberOfAudioButtons(); j++) {
+				audioSet[i][j] =  audioCollection.get(i).getSet().get(j).getAudioName();
 			}
-		} catch(Exception e) {
-			
 		}
 		return audioSet;
 	}
