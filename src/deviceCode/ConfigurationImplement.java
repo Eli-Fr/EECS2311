@@ -3,16 +3,18 @@ package deviceCode;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.LinkedList;
 
 
 public class ConfigurationImplement implements TalkBoxConfiguration {	
-	private LinkedList<AudioSet> audioCollection;
+	
+	AudioCollection nac;
 	public ConfigurationImplement() {
-		audioCollection = new LinkedList<AudioSet>();
+		nac = new AudioCollection();
 		try {
-			ObjectInputStream in = new ObjectInputStream(new FileInputStream("config.tbc"));
-			audioCollection = (LinkedList<AudioSet>)in.readObject(); 
+			ObjectInputStream in = new ObjectInputStream(new FileInputStream("tmp/config.tbc"));
+			nac = (AudioCollection) in.readObject();
 		} catch(Exception e) {
 			
 		}
@@ -20,12 +22,17 @@ public class ConfigurationImplement implements TalkBoxConfiguration {
 
 	@Override
 	public int getNumberOfAudioButtons() {
-		return audioCollection.getFirst().getSet().size();
+		for (int i = 0; i < nac.getAudioCollection().size(); i++) {
+			if (nac.getAudioCollection().get(i).getSetName() == nac.getLoadSet()) {
+				return nac.getAudioCollection().get(i).getSet().size();
+			}
+		}
+		return 0;
 	}
 
 	@Override
 	public int getNumberOfAudioSets() {
-		return audioCollection.size();
+		return nac.getAudioCollection().size();
 	}
 
 	@Override
@@ -35,15 +42,16 @@ public class ConfigurationImplement implements TalkBoxConfiguration {
 
 	@Override
 	public Path getRelativePathToAudioFiles() {
-		return null;
+		Path p = Paths.get("c:\\data\\myfile.txt");
+		return p;
 	}
 
 	@Override
 	public String[][] getAudioFileNames() {
-		String[][] audioSet = new String[getNumberOfAudioSets()][];
-		for (int i = 0; i < getNumberOfAudioSets(); i++) {
-			for (int j = 0; j < getNumberOfAudioButtons(); j++) {
-				audioSet[i][j] =  audioCollection.get(i).getSet().get(j).getAudioName();
+		String[][] audioSet = new String[nac.getAudioCollection().size()][];
+		for (int i = 0; i < nac.getAudioCollection().size(); i++) {
+			for (int j = 0; j < nac.getAudioCollection().get(i).getSet().size(); j++) {
+				audioSet[i][j] =  nac.getAudioCollection().get(i).getSet().get(j).getAudioName();
 			}
 		}
 		return audioSet;

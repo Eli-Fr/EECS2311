@@ -1,9 +1,10 @@
 package deviceCode;
 
 import java.awt.List;
+import java.io.Serializable;
 import java.util.LinkedList;
 
-public class AudioSet {
+public class AudioSet implements Serializable {
 	private String setName;
 	private LinkedList<Audio> set;
 	
