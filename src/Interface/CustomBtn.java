@@ -1,37 +1,53 @@
 package Interface;
-import DeviceSpeaker.*;
 
 import javax.imageio.*;
+import javax.sound.sampled.*;
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
 import java.io.*;
 
-public class CustomBtn extends JButton{
+public class CustomBtn extends JButton implements Serializable{
 
-	public ImageIcon img;
-	
-	public CustomBtn(String name, SpeakerClass sc) {
+	private ImageIcon img;
+	private String imgFileName;
+	private byte[] wavFile;
+
+	public CustomBtn(String name, String imgFileName, byte[] wavFile) throws Exception {
 		super(name);
 		
+		System.out.println(imgFileName);
+		
+		this.setImg(imgFileName);
+		
+		this.setWavFile(wavFile);
+		
+		this.setHorizontalTextPosition(AbstractButton.CENTER);
+		this.setVerticalTextPosition(AbstractButton.BOTTOM);
+		
+	}
+	
+	public void setImg(String imgFileName) {
+		this.imgFileName = imgFileName;
 		try {
-			img = new ImageIcon(ImageIO.read(new File("src/Interface/" +name +".jpg")));
+			this.img = new ImageIcon(ImageIO.read(new File(imgFileName)));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		
 		this.setIcon(img);
-		this.setHorizontalTextPosition(AbstractButton.CENTER);
-		this.setVerticalTextPosition(AbstractButton.BOTTOM);
-		
-		this.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				sc.say(name);				
-			}
-		});
-		
 	}
+	
+	public String getimgFileName() {
+		return imgFileName;
+	}
+	
+
+	public byte[] getWavFile() {
+		return wavFile;
+	}
+
+	public void setWavFile(byte[] wavFile) {
+		this.wavFile = wavFile;
+	}
+
 
 }
