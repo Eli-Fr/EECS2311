@@ -1,4 +1,4 @@
-package Interface;
+package Interface_Config;
 
 
 import javax.swing.*;
@@ -14,8 +14,8 @@ public class PanelHeading extends JPanel{
 		this.setLayout(new BorderLayout());
 		this.setMaximumSize(new Dimension(owner.getWidth() - 50, 50 * owner.getConfig().getRatio()));
 		
-		title = new JLabel("TalkBot", SwingConstants.CENTER);
-		subTitle = new JLabel("Your friendly Bot that helps you talk ;)", SwingConstants.CENTER);
+		title = new JLabel("TalkBotConfigurator", SwingConstants.CENTER);
+		subTitle = new JLabel("Configure your Talk Bot here, and see the changes there.", SwingConstants.CENTER);
 		
 		this.setBackground(new Color(0, 12, 25));
 		

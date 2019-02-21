@@ -1,4 +1,4 @@
-package Interface;
+package Interface_Config;
 
 import javax.swing.*;
 import java.awt.*;

@@ -1,8 +1,9 @@
-package Interface;
+package Interface_Config;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import Interface.Configurator;
 
 import javax.swing.*;
 

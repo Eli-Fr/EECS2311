@@ -2,6 +2,8 @@ Welcome to the TalkBotSimulator!
 	
 	‣ How to Use:
 		• Scroll Through the List.
+		• Click from the List of AudioSets.
+		• Can switch back any time.
 		• Find the Expression/Emotion.
 		• Tap the Expression/Emotion Button.
 		• Done!

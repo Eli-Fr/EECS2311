@@ -1,5 +1,6 @@
-package Interface;
+package Interface_Config;
 
+import Interface.Configurator;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;

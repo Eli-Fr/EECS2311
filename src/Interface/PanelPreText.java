@@ -10,10 +10,10 @@ public class PanelPreText extends JPanel {
 	JScrollPane buildScroll;
 	BufferedReader br;
 	
-	public PanelPreText(JFrame owner) {
+	public PanelPreText(VisualFrame owner) {
 		super();
-		this.setMinimumSize(new Dimension(owner.getWidth(), 150));
-		this.setMaximumSize(new Dimension(owner.getWidth(), 150));
+		this.setMinimumSize(new Dimension(owner.getWidth() - 25, 150 * owner.getConfig().getRatio()));
+		this.setMaximumSize(new Dimension(owner.getWidth() - 25, 150 * owner.getConfig().getRatio()));
 		this.setBackground(new Color(5, 19, 54));
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		
@@ -25,10 +25,11 @@ public class PanelPreText extends JPanel {
 		
 	}
 	
-	public void updateLog(JFrame owner) {
+	public void updateLog(VisualFrame owner) {
 		
 		buildLog = new JTextArea();
 		
+		buildLog.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 14 * owner.getConfig().getRatio()));
 		buildLog.setForeground(new Color(54, 146, 251));
 		buildLog.setBackground(new Color(0, 12, 25));
 		buildLog.setLineWrap(true);
@@ -36,7 +37,7 @@ public class PanelPreText extends JPanel {
 		String line, content = "";
 		
 		try {
-			br= new BufferedReader(new FileReader("src/Interface/BuildLog.txt"));
+			br= new BufferedReader(new FileReader("TalkBoxData/BuildLog.txt"));
 			
 			while((line = br.readLine()) != null) {
 				

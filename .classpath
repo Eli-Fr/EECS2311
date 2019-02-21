@@ -8,5 +8,6 @@
 	<classpathentry kind="lib" path="lib/freetts.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Config_src"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
