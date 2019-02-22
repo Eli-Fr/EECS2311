@@ -107,8 +107,7 @@ public class PanelBody extends JPanel implements ActionListener{
 				this.remove(i);
 			}
 			
-			config.setNumberOfAudioButtons(this.config.getBtnName()[config.getSetNum()].length);
-			
+			this.config.setNumberOfAudioButtons(config.getBtnName()[config.getSetNum()].length); 
 			this.initBtn();
 		}
 		

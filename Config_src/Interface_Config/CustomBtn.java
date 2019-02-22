@@ -3,18 +3,24 @@ package Interface_Config;
 import javax.imageio.*;
 import javax.sound.sampled.*;
 import javax.swing.*;
+
+import Interface.Configurator;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.*;
 
 public class CustomBtn extends JButton{
 
 	private ImageIcon img;
-	private String imgFileName;
+	private String imgFileName, wavFileName;
 	private int id;
 
-	public CustomBtn(String name, String imgFileName, int id) throws Exception {
+	public CustomBtn(String name, String imgFileName, int id, String wavFileName){
 		super(name);
 		
 		this.setImg(imgFileName);
+		this.wavFileName = wavFileName;
 		
 		this.setId(id);
 		
@@ -28,7 +34,7 @@ public class CustomBtn extends JButton{
 		try {
 			this.img = new ImageIcon(ImageIO.read(new File(imgFileName)));
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println("No Image for " +this.getText());
 		}
 		
 		this.setIcon(img);
@@ -40,6 +46,14 @@ public class CustomBtn extends JButton{
 	
 	public int getId() {
 		return this.id;
+	}
+	
+	public String getImgFileName() {
+		return this.imgFileName;
+	}
+	
+	public String getWavFileName() {
+		return this.wavFileName;
 	}
 
 }
