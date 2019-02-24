@@ -6,11 +6,14 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.lang.reflect.Method;
 
 import org.junit.jupiter.api.Test;
 
 import Interface.Configurator;
+import Interface.PanelBody;
 import Interface.VisualFrame;
+import junit.framework.Assert;
 
 class TalkBoxVisualFrameTest {
 	
@@ -36,6 +39,36 @@ class TalkBoxVisualFrameTest {
 			assertEquals(config.getSetBtn()[i], v.getConfig().getSetBtn()[i]);
 		}
 
+	}
+
+	@Test
+	void testFileNotFoundException() {
+		assertThrows(
+ 			 FileNotFoundException.class,
+				() -> {v = new VisualFrame("test");
+					FileInputStream fis = new FileInputStream("TalkBoxData/Config");}
+				);
+	}
+	
+	@Test
+	void testIOException() {
+		assertThrows(
+ 			 FileNotFoundException.class,
+				() -> {v = new VisualFrame("test");
+				FileInputStream fis = new FileInputStream("TalkBoxData/Config");
+				ObjectInputStream ois = new ObjectInputStream(fis);}
+				);
+	}
+	
+	@Test
+	void testClassNotFoundException() {
+		assertThrows(
+ 			 FileNotFoundException.class,
+				() -> {v = new VisualFrame("test");
+				FileInputStream fis = new FileInputStream("TalkBoxData/Config");
+				ObjectInputStream ois = new ObjectInputStream(fis);
+				PanelBody config = (PanelBody) ois.readObject();}
+				);
 	}
 
 

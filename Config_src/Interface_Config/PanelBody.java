@@ -248,6 +248,7 @@ public class PanelBody extends JPanel implements ActionListener{
 		
 	}
 	
+
 	public Configurator getConfig() {
 		return this.config;
 	}

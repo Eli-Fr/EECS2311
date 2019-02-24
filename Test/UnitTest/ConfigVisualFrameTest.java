@@ -10,6 +10,7 @@ import java.io.ObjectInputStream;
 import org.junit.jupiter.api.Test;
 
 import Interface.Configurator;
+import Interface.PanelBody;
 import Interface_Config.VisualFrame;
 
 
@@ -37,6 +38,36 @@ class ConfigVisualFrameTest {
 		for(int i = 0; i < config.getNumberOfAudioSets(); i++) {
 			assertEquals(config.getSetBtn()[i], v.getConfig().getSetBtn()[i]);
 		}
-
+	}
+	
+	
+	@Test
+	void testFileNotFoundException() {
+		assertThrows(
+ 			 FileNotFoundException.class,
+				() -> {v = new VisualFrame("test");
+					FileInputStream fis = new FileInputStream("TalkBoxData/Config");}
+				);
+	}
+	
+	@Test
+	void testIOException() {
+		assertThrows(
+ 			 FileNotFoundException.class,
+				() -> {v = new VisualFrame("test");
+				FileInputStream fis = new FileInputStream("TalkBoxData/Config");
+				ObjectInputStream ois = new ObjectInputStream(fis);}
+				);
+	}
+	
+	@Test
+	void testClassNotFoundException() {
+		assertThrows(
+ 			 FileNotFoundException.class,
+				() -> {v = new VisualFrame("test");
+				FileInputStream fis = new FileInputStream("TalkBoxData/Config");
+				ObjectInputStream ois = new ObjectInputStream(fis);
+				PanelBody config = (PanelBody) ois.readObject();}
+				);
 	}
 }
