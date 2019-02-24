@@ -53,6 +53,8 @@ public class PanelBody extends JPanel implements ActionListener{
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
+				JOptionPane.showMessageDialog(null, "Cannot read Config.tbc", "Confirm Exit", JOptionPane.ERROR_MESSAGE);
+		        System.exit(0);
 			}
 			
 		}	
@@ -95,8 +97,8 @@ public class PanelBody extends JPanel implements ActionListener{
 				AudioPlayer.player.start(new AudioStream(new FileInputStream(filePath)));
 			
 			} catch (IOException e1) {
-
-				System.out.println("No Audio File Found for Button: " +btn.getText());
+				JOptionPane.showMessageDialog(null, "No Audio File Found for Button: " +btn.getText(), "Confirm Exit", JOptionPane.ERROR_MESSAGE);
+		        System.exit(0);
 			}
 		}
 		else {

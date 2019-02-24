@@ -1,28 +1,29 @@
-Welcome to the TalkBotSimulator!  
+ Welcome to the TalkBotSimulator!  
+    
+     How to Use:
+          1. Scroll Through the List.
+          2. Click from the List of AudioSets.
+          3. Can switch back any time.
+          4. Find the Expression/Emotion.
+          5. Tap the Expression/Emotion Button.
+          6. Done!
+
+
+ Update Info
+
+      Version1.2
+          - Working Prototype
+          - Programmable Buttons
+          - Working text to speech
 	
-	‣ How to Use:
-		• Scroll Through the List.
-		• Click from the List of AudioSets.
-		• Can switch back any time.
-		• Find the Expression/Emotion.
-		• Tap the Expression/Emotion Button.
-		• Done!
+      Version 1.1
+          - Added Visuals.
+          - Added Log on the Main Screen.
+          - Instructions Added.
 
-◦ Update Info
-
-	‣ Version1.2
-		• Working Prototype
-		• Programmable Buttons
-		• Working text to speech
-	
-	‣ Version 1.1
-		• Added Visuals.
-		• Added Log on the Main Screen.
-		• Instructions Added.
-
-	‣ Version 1.0
-		• Enabled support for configurable buttons through text file.
-		• Added voice to speech support.
-		• Original 9 buttons initialized.
-		• Scroll Bar added for future long list support. 
-		• Initializes in the main Screen.
+      Version 1.0
+          - Enabled support for configurable buttons through text file.
+          - Added voice to speech support.
+          - Original 9 buttons initialized.
+          - Scroll Bar added for future long list support. 
+          - Initializes in the main Screen.

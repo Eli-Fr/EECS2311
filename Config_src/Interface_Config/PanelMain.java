@@ -37,9 +37,13 @@ public class PanelMain extends JPanel{
 				} catch (FileNotFoundException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
+					JOptionPane.showMessageDialog(null, "Cannot find Config.tbc", "Confirm Exit", JOptionPane.ERROR_MESSAGE);
+			        System.exit(0);
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
+					JOptionPane.showMessageDialog(null, "Cannot read Config.tbc", "Confirm Exit", JOptionPane.ERROR_MESSAGE);
+			        System.exit(0);
 				}
 				
 			}

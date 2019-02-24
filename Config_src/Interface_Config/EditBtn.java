@@ -137,11 +137,13 @@ public class EditBtn extends JFrame implements ActionListener{
 				Files.copy(Paths.get(this.audPath.getText()), Paths.get(this.audFile, "/" ,this.tempAud), StandardCopyOption.REPLACE_EXISTING);
 			
 			} catch (FileNotFoundException e1) {
-				
 				e1.printStackTrace();
+				JOptionPane.showMessageDialog(null, "Cannot find img or aud file", "Confirm Exit", JOptionPane.ERROR_MESSAGE);
+		        System.exit(0);
 			} catch (IOException e1) {
-			
 				e1.printStackTrace();
+				JOptionPane.showMessageDialog(null, "Cannot read img or aud file", "Confirm Exit", JOptionPane.ERROR_MESSAGE);
+		        System.exit(0);
 			}
 			
 			this.imgFile = tempImg;
