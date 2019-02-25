@@ -11,7 +11,7 @@ public class CustomBtn extends JButton{
 	private String imgFileName;
 	private int id;
 
-	public CustomBtn(String name, String imgFileName, int id) throws Exception {
+	public CustomBtn(String name, String imgFileName, int id){
 		super(name);
 		
 		this.setImg(imgFileName);
@@ -28,7 +28,7 @@ public class CustomBtn extends JButton{
 		try {
 			this.img = new ImageIcon(ImageIO.read(new File(imgFileName)));
 		} catch (IOException e) {
-			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, "No Image File Found for Button: " +this.getText(), "Okay", JOptionPane.ERROR_MESSAGE);
 		}
 		
 		this.setIcon(img);

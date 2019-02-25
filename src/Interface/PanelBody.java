@@ -41,21 +41,13 @@ public class PanelBody extends JPanel implements ActionListener{
 	public void initBtn() {
 		
 		for(int i = 0; i < config.getNumberOfAudioButtons(); i++) {
-			
-			try {
-				
+
 				CustomBtn btn = new CustomBtn(config.getBtnName()[config.getSetNum()][i], (config.getRelativePathToImageFiles() +config.getImageFileNames()[config.getSetNum()][i]), i);
 				btn.addActionListener(this);
 				this.add(btn);
 				this.revalidate();
 				this.repaint();
 				
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-				JOptionPane.showMessageDialog(null, "Cannot read Config.tbc", "Confirm Exit", JOptionPane.ERROR_MESSAGE);
-		        System.exit(0);
-			}
 			
 		}	
 	}
@@ -97,8 +89,7 @@ public class PanelBody extends JPanel implements ActionListener{
 				AudioPlayer.player.start(new AudioStream(new FileInputStream(filePath)));
 			
 			} catch (IOException e1) {
-				JOptionPane.showMessageDialog(null, "No Audio File Found for Button: " +btn.getText(), "Confirm Exit", JOptionPane.ERROR_MESSAGE);
-		        System.exit(0);
+				JOptionPane.showMessageDialog(null, "No Audio File Found for Button: " +btn.getText(), "Okay", JOptionPane.ERROR_MESSAGE);
 			}
 		}
 		else {
