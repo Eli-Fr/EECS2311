@@ -24,6 +24,7 @@ public class EditBtn extends JFrame implements ActionListener{
 	JLabel imgPath, audPath;
 	String imgFile, audFile, nameBtn, tempImg, tempAud;;
 	JTextField nameText;
+	boolean imgChanged, audChanged;
 	
 	public EditBtn(String name, String imgPath, String audPath) {
 		
@@ -40,6 +41,9 @@ public class EditBtn extends JFrame implements ActionListener{
 		this.nameBtn = name;
 		this.imgFile = imgPath;
 		this.audFile = audPath;
+		
+		this.imgChanged = false;
+		this.audChanged = false;
 		
 		this.setSize(600, 275);
 		this.setContentPane(main);
@@ -133,21 +137,21 @@ public class EditBtn extends JFrame implements ActionListener{
 			
 			try {
 			
-				Files.copy(Paths.get(this.imgPath.getText()), Paths.get(this.imgFile, "/" ,this.tempImg), StandardCopyOption.REPLACE_EXISTING);
-				Files.copy(Paths.get(this.audPath.getText()), Paths.get(this.audFile, "/" ,this.tempAud), StandardCopyOption.REPLACE_EXISTING);
-			
+				if(this.imgChanged) {
+					Files.copy(Paths.get(this.imgPath.getText()), Paths.get(this.imgFile, "/" ,this.tempImg), StandardCopyOption.REPLACE_EXISTING);
+					this.imgFile = tempImg;
+				}
+				
+				if(this.audChanged) {
+					Files.copy(Paths.get(this.audPath.getText()), Paths.get(this.audFile, "/" ,this.tempAud), StandardCopyOption.REPLACE_EXISTING);
+					this.audFile = tempAud;
+				}
+				
 			} catch (FileNotFoundException e1) {
 				e1.printStackTrace();
-				JOptionPane.showMessageDialog(null, "Cannot find img or aud file", "Confirm Exit", JOptionPane.ERROR_MESSAGE);
-		        System.exit(0);
 			} catch (IOException e1) {
 				e1.printStackTrace();
-				JOptionPane.showMessageDialog(null, "Cannot read img or aud file", "Confirm Exit", JOptionPane.ERROR_MESSAGE);
-		        System.exit(0);
 			}
-			
-			this.imgFile = tempImg;
-			this.audFile = tempAud;
 			
 			this.dispose();
 			
@@ -162,7 +166,12 @@ public class EditBtn extends JFrame implements ActionListener{
 			FileDialog fd = new FileDialog(new JFrame());
 			fd.setVisible(true);
 			tempImg = fd.getFile();
-			System.out.println(tempImg);
+			if(tempImg.endsWith(".jpg")||tempImg.endsWith(".png")) {
+				this.imgChanged = true;
+			}
+			else {
+				JOptionPane.showMessageDialog(null, "Wrong image file format. Correct is .jpg or .png extension.", "Confirm Exit", JOptionPane.ERROR_MESSAGE);
+			}
 			this.imgPath.setText(fd.getFiles()[0].getAbsolutePath());
 			fd.dispose();
 			
@@ -172,6 +181,12 @@ public class EditBtn extends JFrame implements ActionListener{
 			FileDialog fd = new FileDialog(new JFrame());
 			fd.setVisible(true);
 			tempAud = fd.getFile();
+			if(tempAud.endsWith(".wav")) {
+				this.audChanged = true;
+			}
+			else {
+				JOptionPane.showMessageDialog(null, "Wrong audio file format. Correct is .wav extension.", "Confirm Exit", JOptionPane.ERROR_MESSAGE);
+			}
 			System.out.println(tempAud);
 			this.audPath.setText(fd.getFiles()[0].getAbsolutePath());
 			fd.dispose();
@@ -190,6 +205,14 @@ public class EditBtn extends JFrame implements ActionListener{
 	
 	public String getAudFile() {
 		return "/" +this.audFile;
+	}
+	
+	public boolean getImgChange() {
+		return this.imgChanged;
+	}
+	
+	public boolean getAudChange() {
+		return this.audChanged;
 	}
 
 }

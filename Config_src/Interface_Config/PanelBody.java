@@ -6,6 +6,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.awt.event.WindowStateListener;
@@ -57,6 +59,20 @@ public class PanelBody extends JPanel implements ActionListener{
 		
 			CustomBtn btn = new CustomBtn(config.getBtnName()[config.getSetNum()][i], (config.getRelativePathToImageFiles() +"/Edit.jpg"), i, this.config.getRelativePathToAudioFiles() + this.config.getAudioFileNames()[config.getSetNum()][i]);
 				btn.addActionListener(this);
+				btn.addMouseListener(new MouseAdapter() {
+		            @Override
+		            public void mouseClicked(MouseEvent e) {
+		                if (SwingUtilities.isRightMouseButton(e)) {
+		                    btnName.remove(btn.getId());
+		                    imgPath.remove(btn.getId());
+		                    audPath.remove(btn.getId());
+		                    
+		                    config.setNumberOfAudioButtons(config.getNumberOfAudioButtons()-1);
+		                    
+		                    ChangeBtn(2);
+		                }
+		            }
+		        });
 				this.add(btn);
 				this.revalidate();
 				this.repaint();
@@ -64,7 +80,7 @@ public class PanelBody extends JPanel implements ActionListener{
 		}
 		
 		CustomBtn btn = new CustomBtn("Add", (config.getRelativePathToImageFiles() +"/Add.jpg"), config.getNumberOfAudioButtons(), "Nothing");
-		btn.addActionListener(this);
+		btn.addActionListener(this);		
 		this.add(btn);
 		this.revalidate();
 		this.repaint();
@@ -95,10 +111,6 @@ public class PanelBody extends JPanel implements ActionListener{
 			btn.addActionListener(this);
 			setPanel.add(btn);
 		}
-		
-		JButton btn = new JButton("Add");
-		btn.addActionListener(this);
-		setPanel.add(btn);
 		
 	}
 	
@@ -156,8 +168,8 @@ public class PanelBody extends JPanel implements ActionListener{
 					@Override
 					public void windowClosed(WindowEvent e) {
 						btnName.set(btn.getId(), edit.getName());
-						imgPath.set(btn.getId(), edit.getImgFile());
-						audPath.set(btn.getId(), edit.getAudFile());
+						if(edit.getImgChange())		imgPath.set(btn.getId(), edit.getImgFile());
+						if(edit.getAudChange())		audPath.set(btn.getId(), edit.getAudFile());
 						
 						ChangeBtn(1);
 						
@@ -174,39 +186,6 @@ public class PanelBody extends JPanel implements ActionListener{
 			
 		}
 		else {
-			
-			if(((JButton)e.getSource()).getText().equals("Add")) {
-				
-				config.setNumberOfAudioSets(config.getNumberOfAudioSets() + 1);
-				ArrayList<String> tempSetBtn = new ArrayList<String>(Arrays.asList(config.getSetBtn()));
-				
-				tempSetBtn.add(JOptionPane.showInputDialog("Enter the name of Set."));
-				
-				String[] setArr = new String[tempSetBtn.size()];
-				tempSetBtn.toArray(setArr);
-				this.config.setSetBtn(setArr);
-				
-				String[][] tempBtn = new String[config.getNumberOfAudioSets()][1];
-				String[][] tempImg = new String[config.getNumberOfAudioSets()][1];
-				String[][] tempAud = new String[config.getNumberOfAudioSets()][1];
-				
-				for(int i = 0; i < config.getNumberOfAudioSets()-1; i++) {
-					tempBtn[i] = config.getBtnName()[i];
-					tempImg[i] = config.getImageFileNames()[i];
-					tempAud[i] = config.getAudioFileNames()[i];
-				}
-				
-				tempBtn[config.getNumberOfAudioSets()-1] = new String[1];
-				tempImg[config.getNumberOfAudioSets()-1] = new String[1];
-				tempAud[config.getNumberOfAudioSets()-1] = new String[1];
-				
-				this.config.setBtnName(tempBtn);
-				this.config.setImageFileNames(tempImg);
-				this.config.setAudioFileNames(audArr);
-				
-				this.initSet();
-				
-			}
 			
 			config.setSetNum(Arrays.asList(config.getSetBtn()).indexOf(((JButton)e.getSource()).getText()));
 			
@@ -239,7 +218,7 @@ public class PanelBody extends JPanel implements ActionListener{
 		nameArr[config.getSetNum()] = temp;
 		imgArr[config.getSetNum()] = temp2;
 		audArr[config.getSetNum()] = temp3;
-		 
+		
 		config.setBtnName(nameArr);
 		config.setImageFileNames(imgArr);
 		config.setAudioFileNames(audArr);

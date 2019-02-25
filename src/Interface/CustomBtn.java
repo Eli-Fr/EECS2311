@@ -29,8 +29,6 @@ public class CustomBtn extends JButton{
 			this.img = new ImageIcon(ImageIO.read(new File(imgFileName)));
 		} catch (IOException e) {
 			e.printStackTrace();
-			JOptionPane.showMessageDialog(null, "No Image for " + this.getText() , "Confirm Exit", JOptionPane.ERROR_MESSAGE);
-	        System.exit(0);
 		}
 		
 		this.setIcon(img);
