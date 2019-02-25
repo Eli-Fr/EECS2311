@@ -83,7 +83,7 @@ public class EditBtn extends JFrame implements ActionListener{
 		image = new JPanel();
 		image.setLayout(new FlowLayout());
 		
-		JLabel title = new JLabel("Path: ");
+		JLabel title = new JLabel("Image Path: ");
 		imgPath = new JLabel("N/A");
 		imgBtn = new JButton("Browse");
 		
@@ -100,7 +100,7 @@ public class EditBtn extends JFrame implements ActionListener{
 		audio = new JPanel();
 		audio.setLayout(new FlowLayout());
 		
-		JLabel title = new JLabel("Path: ");
+		JLabel title = new JLabel("Audio Path: ");
 		audPath = new JLabel("N/A");
 		audBtn = new JButton("Browse");
 		audBtn.addActionListener(this);
