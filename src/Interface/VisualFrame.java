@@ -47,7 +47,7 @@ public class VisualFrame extends JFrame {
 		}
 
 		this.setResizable(false);
-		this.setSize(720 * config.getRatio(), 480 * config.getRatio());
+		this.setSize(1280 * config.getRatio(), 720 * config.getRatio());
 
 		mainPanel = new PanelMain(this);
 

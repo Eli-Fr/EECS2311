@@ -56,7 +56,7 @@ public class PanelPreText extends JPanel {
 	        System.exit(0);
 		}
 		
-		
+		buildLog.setEditable(false);
 		
 
 	}

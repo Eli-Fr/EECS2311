@@ -9,12 +9,14 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import Interface.Configurator;
 
 public class PanelMain extends JPanel{
 	
 	public JPanel headingPane, preTextPane, bodyPane;
 	public JScrollPane bodyPaneScroll;
 	public JButton save;
+	private Configurator config;
 	
 	public PanelMain(VisualFrame owner) {
 		super();
@@ -31,9 +33,13 @@ public class PanelMain extends JPanel{
 		
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				
+				config = ((PanelBody) bodyPane).getConfig();
+				//config.setRatio(((PanelPreText) preTextPane).getRatio());
+				config.setRatio(1);
 				try {
 					ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(new File("TalkBoxData/Config.tbc")));
-					oos.writeObject(((PanelBody) bodyPane).getConfig());
+					oos.writeObject(config);
 				} catch (FileNotFoundException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -48,6 +54,8 @@ public class PanelMain extends JPanel{
 				
 			}
 		});
+		
+		
 		
 		bodyPaneScroll = new JScrollPane(bodyPane);
 		bodyPaneScroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
