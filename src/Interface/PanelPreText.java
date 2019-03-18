@@ -14,7 +14,7 @@ public class PanelPreText extends JPanel {
 		super();
 		this.setMinimumSize(new Dimension(owner.getWidth() - 25, 150 * owner.getConfig().getRatio()));
 		this.setMaximumSize(new Dimension(owner.getWidth() - 25, 150 * owner.getConfig().getRatio()));
-		this.setBackground(new Color(5, 19, 54));
+		this.setBackground(new Color(0, 0, 0));
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		
 		updateLog(owner);
@@ -30,8 +30,8 @@ public class PanelPreText extends JPanel {
 		buildLog = new JTextArea();
 		
 		buildLog.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 14 * owner.getConfig().getRatio()));
-		buildLog.setForeground(new Color(54, 146, 251));
-		buildLog.setBackground(new Color(0, 12, 25));
+		buildLog.setForeground(new Color(0, 0, 0));
+		buildLog.setBackground(new Color(211,211,211));
 		buildLog.setLineWrap(true);
 		
 		String line, content = "";

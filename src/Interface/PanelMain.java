@@ -12,7 +12,7 @@ public class PanelMain extends JPanel{
 		super();
 		
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		this.setBackground(new Color(5, 19, 54));
+		this.setBackground(new Color(211,211,211));
 		
 		headingPane = new PanelHeading(owner);
 		preTextPane = new PanelPreText(owner);

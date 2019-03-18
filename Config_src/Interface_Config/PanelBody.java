@@ -33,7 +33,7 @@ public class PanelBody extends JPanel implements ActionListener{
 		
 		this.setMinimumSize(new Dimension(owner.getWidth()+15, 175 * owner.getConfig().getRatio()));
 		this.setMaximumSize(new Dimension(owner.getWidth()+15, 175 * owner.getConfig().getRatio()));
-		this.setBackground(new Color(0, 12, 25));
+		this.setBackground(new Color(211,211,211));
 		this.setLayout(new FlowLayout());
 		
 		this.initSet();
@@ -91,13 +91,13 @@ public class PanelBody extends JPanel implements ActionListener{
 		setPanel = new JPanel();
 		setPanel.setMinimumSize(new Dimension(150 * config.getRatio(), this.getHeight()));
 		setPanel.setMaximumSize(new Dimension(150 * config.getRatio(), this.getHeight()));
-		setPanel.setBackground(new Color(0, 12, 25));
+		setPanel.setBackground(new Color(211,211,211));
 		
 		setPanel.setLayout(new BoxLayout(setPanel, BoxLayout.Y_AXIS));
 		
 		JLabel setTitle = new JLabel("Audio Set", SwingConstants.CENTER);
 		setTitle.setFont(new Font(Font.SANS_SERIF,Font.BOLD,24));
-		setTitle.setForeground(Color.WHITE);
+		setTitle.setForeground(Color.BLACK);
 		
 		setPanel.add(setTitle);
 		
