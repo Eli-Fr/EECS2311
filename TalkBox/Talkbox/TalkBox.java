@@ -4,27 +4,27 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
 import javax.swing.Timer;
 
 public class TalkBox extends MainPanel implements ActionListener {
-	private ArrayList<ButtonSet> buttonList = new ArrayList<ButtonSet>();
 
 	// all 0's until a button is pressed, will then turn on(emulates a physical
 	// connection)
 	private ArrayList<Integer> buttonInterface = new ArrayList<Integer>();
-
-	private ArrayList<AudioObject> audioList = new ArrayList<>();
 
 	private Timer buttonListener;
 
 	public void initComponents() {
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
-				// TODO ADD events that will happen when we close the window, this can include
-				// saving the current config
-				// we can call the method saveConfig();
+				/**
+				 * TODO ADD events that will happen when we close the window, this can include
+				 * saving the current config. we can call the method saveConfig();
+				 */
 				System.exit(0);
 			}
 		});
@@ -33,14 +33,14 @@ public class TalkBox extends MainPanel implements ActionListener {
 				for (int i = 0; i < buttonInterface.size(); i++) {
 					Integer I = buttonInterface.get(i);
 					if (I.equals(new Integer(1))) {
-						audioList.get(i).playSound();
+						playAudio(i);
 					}
 					turnButtonOff(i);
 				}
 
 			}
 		});
-
+		buttonListener.start();
 	}
 
 	public void turnButtonON(int n) throws IndexOutOfBoundsException {
@@ -58,8 +58,8 @@ public class TalkBox extends MainPanel implements ActionListener {
 	}
 
 	public TalkBox() {
+		super();
 		initComponents();
-		buttonListener.start();
 	}
 
 	@Override
@@ -75,5 +75,5 @@ public class TalkBox extends MainPanel implements ActionListener {
 		TalkBox tb = new TalkBox();
 		tb.setVisible(true);
 	}
-
+ 
 }
