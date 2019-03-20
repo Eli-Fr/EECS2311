@@ -51,13 +51,9 @@ public class InterfaceButton extends JButton {
 		}
 		this.setIcon(image);
 	}
-
-	/**
-	 * this method is only needed for the main talkbox application and will not be
-	 * invoked by config class
-	 */
-	public void act() {
-		TalkBox tmp = (TalkBox) owner;
-		tmp.turnButtonON(this.listPos);
+	
+	public int getID() {
+		return this.listPos;
 	}
+
 }
