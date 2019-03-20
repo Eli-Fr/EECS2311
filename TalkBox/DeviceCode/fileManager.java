@@ -1,4 +1,4 @@
-package Talkbox;
+package DeviceCode;
 
 public interface fileManager {
 	static final String WINDOWS_FILE_PATH = "C:\\TalkBox";

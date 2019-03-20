@@ -1,4 +1,4 @@
-package Talkbox;
+package Interface;
 
 import java.awt.Color;
 import java.awt.Image;
@@ -8,6 +8,8 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+
+import DeviceCode.fileManager;
 
 public class InterfaceButton extends JButton {
 

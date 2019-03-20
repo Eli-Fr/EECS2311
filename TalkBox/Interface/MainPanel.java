@@ -1,4 +1,4 @@
-package Talkbox;
+package Interface;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -14,6 +14,9 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 
 import javax.swing.JFrame;
+
+import DeviceCode.AudioSet;
+import DeviceCode.fileManager;
 
 public abstract class MainPanel extends JFrame implements fileManager, TalkBoxConfiguration {
 	/**
