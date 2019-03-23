@@ -1,10 +1,7 @@
 package DeviceCode;
 
-import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -20,7 +17,11 @@ import javax.swing.Timer;
 import Interface.*;
 import Talkbox.ButtonInterface;
 
-public class Device implements TalkBoxConfiguration {
+public class Device implements TalkBoxConfiguration, fileManager {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	/**
 	 * List of Aliases for the program to reference during calls
 	 */
@@ -32,6 +33,8 @@ public class Device implements TalkBoxConfiguration {
 	protected ArrayList<AudioSet> audioList = new ArrayList<AudioSet>();
 
 	public Device(ButtonInterface b, TalkBox tb) {
+		setup();
+		setupDefaultAudio();
 		buttonInterface = b;
 		this.tb = tb;
 		initComponents();
@@ -44,13 +47,23 @@ public class Device implements TalkBoxConfiguration {
 					Integer I = buttonInterface.get(i);
 					if (I.equals(new Integer(1))) {
 						playAudio(i);
+						turnButtonOff(i);
 					}
-					turnButtonOff(i);
 				}
-
 			}
 		});
 		buttonListener.start();
+	}
+
+	private void setupDefaultAudio() {
+		audioList.add(new AudioSet());
+		for (int i = 0; i < 6; i++) {
+			setAudio(0, i, "Angry.wav");
+		}
+	}
+
+	private void setAudio(int page, int index, String audioName) {
+		audioList.get(page).setAudio(index,new AudioObject(audioName));
 	}
 
 	public void turnButtonON(int n) throws IndexOutOfBoundsException {
@@ -83,7 +96,7 @@ public class Device implements TalkBoxConfiguration {
 	}
 
 	protected void playAudio(int index) {
-		audioList.get(tb.currentPage).getAudio(index).playSound();
+		audioList.get(tb.getCurrentPage()).getAudio(index).playSound();
 	}
 
 	/**

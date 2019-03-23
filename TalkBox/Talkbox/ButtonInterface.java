@@ -11,6 +11,13 @@ public class ButtonInterface {
 
 	public ButtonInterface() {
 		buttonList = new ArrayList<Integer>();
+		for (int i = 0; i < 6; i++) {
+			try {
+				addButton();
+			} catch (SizeLimitExceededException e) {
+				System.out.println("sizeLimitExceeded");
+			}
+		}
 	}
 
 	/**

@@ -1,5 +1,6 @@
 package DeviceCode;
 
+import java.awt.Button;
 import java.util.ArrayList;
 
 public class AudioSet {
@@ -7,6 +8,9 @@ public class AudioSet {
 	private ArrayList<AudioObject> AudioList = new ArrayList<AudioObject>();
 
 	public AudioSet() {
+		for (int i = 0; i < 6; i++) {
+			AudioList.add(null);
+		}
 	}
 
 	public void removeAudio(AudioObject Aobj) {
@@ -37,7 +41,7 @@ public class AudioSet {
 		String[] ret = new String[this.size()];
 		int i = 0;
 		for (AudioObject AO : AudioList) {
-			ret[i] = AudioList.get(i).getName();
+			ret[i] = AO.getName();
 			i++;
 		}
 		return ret;
