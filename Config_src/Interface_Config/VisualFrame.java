@@ -17,7 +17,7 @@ public class VisualFrame extends JFrame{
 	private ObjectInputStream ois;
 	private FileInputStream fis;
 	private	Configurator config;
-	public static Log log  = LogFactory.getLog(VisualFrame.class);
+	public static Log log  = LogFactory.getLog("logfile1");
 	
 	public VisualFrame(String title) {
 		

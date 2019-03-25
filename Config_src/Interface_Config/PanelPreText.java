@@ -14,7 +14,7 @@ public class PanelPreText extends JPanel {
 	JScrollPane buildScroll;
 	BufferedReader br;
 	int ratio;
-	public static Log log  = LogFactory.getLog(PanelPreText.class);
+	public static Log log  = LogFactory.getLog("logfile1");
 	public PanelPreText(VisualFrame owner) {
 		super();
 		this.setMinimumSize(new Dimension(owner.getWidth() - 25, 150 * owner.getConfig().getRatio()));

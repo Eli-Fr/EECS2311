@@ -19,7 +19,7 @@ public class PanelMain extends JPanel{
 	public JScrollPane bodyPaneScroll;
 	public JButton save;
 	private Configurator config;
-	public static Log log  = LogFactory.getLog(PanelMain.class);
+	public static Log log  = LogFactory.getLog("logfile1");
 	
 	public PanelMain(VisualFrame owner) {
 		super();

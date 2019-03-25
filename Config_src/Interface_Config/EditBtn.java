@@ -27,7 +27,7 @@ public class EditBtn extends JFrame implements ActionListener{
 	String imgFile, audFile, nameBtn, tempImg, tempAud;;
 	JTextField nameText;
 	boolean imgChanged, audChanged;
-	public static Log log  = LogFactory.getLog(EditBtn.class);
+	public static Log log  = LogFactory.getLog("logfile1");
 	public EditBtn(String name, String imgPath, String audPath) {
 		
 		super("Add/Edit your Button");

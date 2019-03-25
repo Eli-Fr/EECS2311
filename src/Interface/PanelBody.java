@@ -11,12 +11,13 @@ import sun.audio.AudioStream;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+
 public class PanelBody extends JPanel implements ActionListener{
 	
 	private Configurator config;
 	private JPanel setPanel;
 	private JScrollPane setScroll;
-	public static Log log  = LogFactory.getLog(PanelBody.class);
+	public static Log log  = LogFactory.getLog("logfile2");
 	public PanelBody(VisualFrame owner){
 		super();
 		

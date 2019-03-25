@@ -12,6 +12,8 @@ import java.nio.file.Paths;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+
+
 import javax.swing.*;
 
 public class VisualFrame extends JFrame {
@@ -20,7 +22,7 @@ public class VisualFrame extends JFrame {
 	private ObjectInputStream ois;
 	private FileInputStream fis;
 	private Configurator config;
-	public static Log log  = LogFactory.getLog(VisualFrame.class);
+	public static Log log  = LogFactory.getLog("logfile2");
 
 	public VisualFrame(String title) {
 

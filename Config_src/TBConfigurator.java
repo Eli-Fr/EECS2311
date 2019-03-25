@@ -1,7 +1,9 @@
-import Interface.*;
 import java.io.*;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+
+import Interface.Configurator;
+import Interface.*;
 
 public class TBConfigurator {
 

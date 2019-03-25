@@ -27,7 +27,7 @@ public class PanelBody extends JPanel implements ActionListener{
 	private String[][] nameArr;
 	private String[][] imgArr;
 	private String[][] audArr;
-	public static Log log  = LogFactory.getLog(PanelBody.class);
+	public static Log log  = LogFactory.getLog("logfile1");
 
 	public PanelBody(VisualFrame owner){
 		super();

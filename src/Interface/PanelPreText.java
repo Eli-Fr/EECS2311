@@ -6,12 +6,14 @@ import java.io.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+
+
 public class PanelPreText extends JPanel {
 
 	JTextArea buildLog;
 	JScrollPane buildScroll;
 	BufferedReader br;
-	public static Log log  = LogFactory.getLog(PanelPreText.class); 
+	public static Log log  = LogFactory.getLog("logfile2");
 	
 	public PanelPreText(VisualFrame owner) {
 		super();
@@ -40,8 +42,9 @@ public class PanelPreText extends JPanel {
 		String line, content = "";
 		
 		try {
-			br= new BufferedReader(new FileReader("TalkBoxData/BuildLog.txt"));
+			//br= new BufferedReader(new FileReader("TalkBoxData/BuildLog.txt"));
 			
+			br= new BufferedReader(new FileReader("TalkBoxData/Simulator.log"));
 			while((line = br.readLine()) != null) {
 				
 				buildLog.append(line);

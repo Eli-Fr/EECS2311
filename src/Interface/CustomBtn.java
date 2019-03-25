@@ -12,7 +12,7 @@ public class CustomBtn extends JButton{
 	private ImageIcon img;
 	private String imgFileName;
 	private int id;
-	public static Log log  = LogFactory.getLog(CustomBtn.class);
+	public static Log log  = LogFactory.getLog("logfile2");
 	public CustomBtn(String name, String imgFileName, int id){
 		super(name);
 		
