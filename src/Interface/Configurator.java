@@ -2,7 +2,6 @@ package Interface;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
-
 public class Configurator implements TalkBoxConfiguration{
 	
 	private int ratio;

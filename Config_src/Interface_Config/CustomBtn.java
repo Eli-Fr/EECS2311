@@ -1,5 +1,6 @@
 package Interface_Config;
-
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import javax.imageio.*;
 import javax.sound.sampled.*;
 import javax.swing.*;
@@ -10,12 +11,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
 
+
 public class CustomBtn extends JButton{
 
 	private ImageIcon img;
 	private String imgFileName, wavFileName;
 	private int id;
-
+	public static Log log  = LogFactory.getLog(CustomBtn.class);
 	public CustomBtn(String name, String imgFileName, int id, String wavFileName){
 		super(name);
 		
@@ -34,6 +36,7 @@ public class CustomBtn extends JButton{
 		try {
 			this.img = new ImageIcon(ImageIO.read(new File(imgFileName)));
 		} catch (IOException e) {
+			log.error(e.getMessage());
 		}
 		
 		this.setIcon(img);
