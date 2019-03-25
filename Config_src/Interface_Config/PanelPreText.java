@@ -5,6 +5,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class PanelPreText extends JPanel {
 
@@ -12,7 +14,7 @@ public class PanelPreText extends JPanel {
 	JScrollPane buildScroll;
 	BufferedReader br;
 	int ratio;
-	
+	public static Log log  = LogFactory.getLog(PanelPreText.class);
 	public PanelPreText(VisualFrame owner) {
 		super();
 		this.setMinimumSize(new Dimension(owner.getWidth() - 25, 150 * owner.getConfig().getRatio()));
@@ -30,7 +32,7 @@ public class PanelPreText extends JPanel {
 				
 				ratio = cmbRes.getSelectedIndex() + 1;
 				System.out.println(ratio);
-				
+				log.info("Change ratio clicked");
 			}
 		});
 		

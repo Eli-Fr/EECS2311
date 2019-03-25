@@ -13,6 +13,8 @@ import java.awt.event.WindowListener;
 import java.awt.event.WindowStateListener;
 import java.io.*;
 import java.util.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class PanelBody extends JPanel implements ActionListener{
 	
@@ -25,6 +27,7 @@ public class PanelBody extends JPanel implements ActionListener{
 	private String[][] nameArr;
 	private String[][] imgArr;
 	private String[][] audArr;
+	public static Log log  = LogFactory.getLog(PanelBody.class);
 
 	public PanelBody(VisualFrame owner){
 		super();
@@ -128,11 +131,11 @@ public class PanelBody extends JPanel implements ActionListener{
 				audPath.add("Nothing");
 				
 				ChangeBtn(0);
-				
+				log.info("Add Audio button.");
 			}
 			else {
 				EditBtn edit = new EditBtn(btn.getText(), config.getRelativePathToImageFiles().toString(), this.config.getRelativePathToAudioFiles().toString());
-				
+				log.info("Edit Audio button.");
 				edit.addWindowListener(new WindowListener() {
 					
 					@Override
@@ -172,6 +175,7 @@ public class PanelBody extends JPanel implements ActionListener{
 						if(edit.getAudChange())		audPath.set(btn.getId(), edit.getAudFile());
 						
 						ChangeBtn(1);
+						log.info("Add/Edit your button windows closed");
 						
 					}
 					
@@ -196,6 +200,7 @@ public class PanelBody extends JPanel implements ActionListener{
 			config.setNumberOfAudioButtons(config.getBtnName()[config.getSetNum()].length);
 			
 			this.initBtn();
+			log.info("Change audio set");
 		}
 		
 	}
@@ -224,7 +229,7 @@ public class PanelBody extends JPanel implements ActionListener{
 		config.setAudioFileNames(audArr);
 		
 		this.initBtn();
-		
+
 	}
 	
 

@@ -16,6 +16,8 @@ import java.nio.file.StandardCopyOption;
 import javax.swing.*;
 
 import Interface.Configurator;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class EditBtn extends JFrame implements ActionListener{
 	
@@ -25,7 +27,7 @@ public class EditBtn extends JFrame implements ActionListener{
 	String imgFile, audFile, nameBtn, tempImg, tempAud;;
 	JTextField nameText;
 	boolean imgChanged, audChanged;
-	
+	public static Log log  = LogFactory.getLog(EditBtn.class);
 	public EditBtn(String name, String imgPath, String audPath) {
 		
 		super("Add/Edit your Button");
@@ -143,32 +145,33 @@ public class EditBtn extends JFrame implements ActionListener{
 				if(this.imgChanged) {
 					Files.copy(Paths.get(this.imgPath.getText()), Paths.get(this.imgFile, "/" ,this.tempImg), StandardCopyOption.REPLACE_EXISTING);
 					this.imgFile = tempImg;
+					log.info("Changed image");
 				}
 				
 				if(this.audChanged) {
 					Files.copy(Paths.get(this.audPath.getText()), Paths.get(this.audFile, "/" ,this.tempAud), StandardCopyOption.REPLACE_EXISTING);
 					this.audFile = tempAud;
+					log.info("Changed audio");
 				}
 				
 			} catch (FileNotFoundException e1) {
 				e1.printStackTrace();
+				log.error(e1.getMessage());
 			} catch (IOException e1) {
 				e1.printStackTrace();
+				log.error(e1.getMessage());
 			}
 			
 			this.dispose();
 			
 		}
-		else if(e.getSource() == this.delete) {
-			
-		}
 		else if(e.getSource() == this.cancel) {
 			
 			this.dispose();
-			
+			log.info("Cancel change");
 		}
 		else if(e.getSource() == this.imgBtn) {
-			
+			log.info("Image browse clicked");
 			FileDialog fd = new FileDialog(new JFrame());
 			fd.setVisible(true);
 			tempImg = fd.getFile();
@@ -177,13 +180,14 @@ public class EditBtn extends JFrame implements ActionListener{
 			}
 			else {
 				JOptionPane.showMessageDialog(null, "Wrong image file format. Correct is .jpg or .png extension.", "Confirm Exit", JOptionPane.ERROR_MESSAGE);
+				log.error("Wrong image file format.");
 			}
 			this.imgPath.setText(fd.getFiles()[0].getAbsolutePath());
 			fd.dispose();
 			
 		}
 		else if(e.getSource() == this.audBtn) {
-			
+			log.info("Audio browse clicked");
 			FileDialog fd = new FileDialog(new JFrame());
 			fd.setVisible(true);
 			tempAud = fd.getFile();
@@ -192,6 +196,7 @@ public class EditBtn extends JFrame implements ActionListener{
 			}
 			else {
 				JOptionPane.showMessageDialog(null, "Wrong audio file format. Correct is .wav extension.", "Confirm Exit", JOptionPane.ERROR_MESSAGE);
+				log.error("Wrong audio file format.");
 			}
 			System.out.println(tempAud);
 			this.audPath.setText(fd.getFiles()[0].getAbsolutePath());

@@ -10,6 +10,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import Interface.Configurator;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class PanelMain extends JPanel{
 	
@@ -17,6 +19,7 @@ public class PanelMain extends JPanel{
 	public JScrollPane bodyPaneScroll;
 	public JButton save;
 	private Configurator config;
+	public static Log log  = LogFactory.getLog(PanelMain.class);
 	
 	public PanelMain(VisualFrame owner) {
 		super();
@@ -37,15 +40,19 @@ public class PanelMain extends JPanel{
 				config = ((PanelBody) bodyPane).getConfig();
 				config.setRatio(((PanelPreText) preTextPane).getRatio());
 				try {
+					
 					ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(new File("TalkBoxData/Config.tbc")));
 					oos.writeObject(config);
+					log.info("Change saved");
 				} catch (FileNotFoundException e1) {
 					// TODO Auto-generated catch block
+					log.error(e1.getMessage());
 					e1.printStackTrace();
 					JOptionPane.showMessageDialog(null, "Cannot find Config.tbc", "Confirm Exit", JOptionPane.ERROR_MESSAGE);
 			        System.exit(0);
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
+					log.error(e1.getMessage());
 					e1.printStackTrace();
 					JOptionPane.showMessageDialog(null, "Cannot read Config.tbc", "Confirm Exit", JOptionPane.ERROR_MESSAGE);
 			        System.exit(0);

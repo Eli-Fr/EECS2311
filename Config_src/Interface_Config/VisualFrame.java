@@ -6,6 +6,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import Interface.Configurator;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import javax.swing.*;
 
@@ -15,6 +17,7 @@ public class VisualFrame extends JFrame{
 	private ObjectInputStream ois;
 	private FileInputStream fis;
 	private	Configurator config;
+	public static Log log  = LogFactory.getLog(VisualFrame.class);
 	
 	public VisualFrame(String title) {
 		
@@ -22,7 +25,8 @@ public class VisualFrame extends JFrame{
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
-				JOptionPane.showMessageDialog(null, "Press Ok to close window", "Okay", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Press Ok to close window", "Okay", JOptionPane.OK_CANCEL_OPTION);
+				log.info("Closed Configurator App");
 				System.exit(0);
 			}
 		});	
@@ -34,15 +38,17 @@ public class VisualFrame extends JFrame{
 			config = (Configurator) ois.readObject();
 			
 		} catch (FileNotFoundException e) {
+			log.error(e.getMessage());
 			e.printStackTrace();
 			JOptionPane.showMessageDialog(null, "Cannot find TalkBoxData folder", "Confirm Exit", JOptionPane.ERROR_MESSAGE);
 	        System.exit(0);
 		} catch (IOException e) {
+			log.error(e.getMessage());
 			e.printStackTrace();
 			JOptionPane.showMessageDialog(null, "Cannot read Config.tbc", "Confirm Exit", JOptionPane.ERROR_MESSAGE);
 	        System.exit(0);
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
+			log.error(e.getMessage());
 			e.printStackTrace();
 			JOptionPane.showMessageDialog(null, "File type is *.tbc", "Confirm Exit", JOptionPane.ERROR_MESSAGE);
 	        System.exit(0);
