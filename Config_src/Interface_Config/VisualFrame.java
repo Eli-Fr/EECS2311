@@ -1,4 +1,6 @@
 package Interface_Config;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -18,7 +20,12 @@ public class VisualFrame extends JFrame{
 		
 		super(title);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		
+		addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent e) {
+				JOptionPane.showMessageDialog(null, "Press Ok to close window", "Okay", JOptionPane.ERROR_MESSAGE);
+				System.exit(0);
+			}
+		});	
 		try {
 			
 			fis = new FileInputStream("TalkBoxData/Config.tbc");
