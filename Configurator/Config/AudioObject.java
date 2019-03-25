@@ -1,4 +1,4 @@
-package DeviceCode;
+package Config;
 
 import java.io.FileInputStream;
 import java.io.IOException;

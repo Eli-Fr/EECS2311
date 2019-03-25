@@ -1,4 +1,4 @@
-package Interface;
+package Config;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -9,9 +9,7 @@ import java.awt.event.WindowEvent;
 
 import javax.swing.JFrame;
 
-import Talkbox.ButtonInterface;
-
-public class TalkBox extends JFrame implements ComponentListener {
+public class Configurator extends JFrame implements ComponentListener {
 
 	/**
 	 * 
@@ -20,18 +18,17 @@ public class TalkBox extends JFrame implements ComponentListener {
 	public static final Dimension DEFAULT_SCREEN_SIZE = new Dimension(1280, 720);
 	public static final Dimension BUTTON_SIZE = new Dimension(150, 150);
 
-	private Dimension currentScreenSize;
+	public int maxNumberOfButtons = 8;
 
-	private ButtonInterface BI;
+	private Dimension currentScreenSize;
 	private MainPanel mainP;
 
-	public TalkBox(ButtonInterface BI) {
+	public Configurator() {
 		super();
 		currentScreenSize = new Dimension((int) DEFAULT_SCREEN_SIZE.getWidth(), (int) DEFAULT_SCREEN_SIZE.getHeight());
 		this.setMinimumSize(DEFAULT_SCREEN_SIZE);
 		pack();
-		this.BI = BI;
-		this.mainP = new MainPanel(this);
+		this.mainP = new MainPanel(this, true);
 		initComponents();
 		this.add(mainP);
 		setSize(DEFAULT_SCREEN_SIZE);
@@ -51,6 +48,8 @@ public class TalkBox extends JFrame implements ComponentListener {
 			}
 		});
 	}
+	
+
 
 	public int getCurrentHeight() {
 		return (int) currentScreenSize.getHeight();
@@ -80,10 +79,6 @@ public class TalkBox extends JFrame implements ComponentListener {
 		return this.mainP;
 	}
 
-	public void turnButtonON(int n) throws IndexOutOfBoundsException {
-		BI.turnOnButton(n);
-	}
-
 	@Override
 	public void componentHidden(ComponentEvent arg0) {
 		// TODO Auto-generated method stub
@@ -100,6 +95,7 @@ public class TalkBox extends JFrame implements ComponentListener {
 	public void componentResized(ComponentEvent arg0) {
 		this.setCurrentDimension(this.getSize());
 		mainP.resize();
+		
 
 	}
 

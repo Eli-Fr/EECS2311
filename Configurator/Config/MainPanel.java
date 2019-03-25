@@ -1,10 +1,7 @@
-package Interface;
+package Config;
 
 import java.util.ArrayList;
-
 import javax.swing.JPanel;
-
-import Talkbox.Emulator;
 
 public class MainPanel extends JPanel {
 	/**
@@ -14,18 +11,22 @@ public class MainPanel extends JPanel {
 
 	private int currentPage = 0;
 	protected int totalNumberOfButtons = 0;
-	private TalkBox TB;
+	private Configurator cfg;
 
 	private InterfaceButton leftButton, rightButton;
+	private ConfigPanel cPan;
 
 	protected ArrayList<ButtonSet> buttonList = new ArrayList<ButtonSet>();
+	protected ArrayList<AudioSet> AudioList = new ArrayList<AudioSet>();
 
-	public MainPanel(TalkBox TB) {
-		this.TB = TB;
-		setup();
+	public MainPanel(Configurator cfg, boolean runSetup) {
+		this.cfg = cfg;
+		if (runSetup) {
+			setup();
+		}
 		this.setLayout(null);
 		this.setVisible(true);
-		this.setSize(TalkBox.DEFAULT_SCREEN_SIZE);
+		this.setSize(Configurator.DEFAULT_SCREEN_SIZE);
 	}
 
 	private void setup() {
@@ -66,6 +67,17 @@ public class MainPanel extends JPanel {
 
 	}
 
+	public void openConfig(InterfaceButton b) {
+		this.setVisible(false);
+		cPan = new ConfigPanel(b, this, cfg);
+		cPan.setVisible(true);
+	}
+
+	public void closeConfig() {
+		cPan.setVisible(false);
+		this.setVisible(true);
+	}
+
 	public void LoadSet(int n) {
 		for (int i = 0; i < buttonList.get(currentPage).size(); i++) {
 			buttonList.get(currentPage).getButton(i).setVisible(false);
@@ -79,22 +91,23 @@ public class MainPanel extends JPanel {
 	}
 
 	public void resize() {
-		this.setSize(TB.getCurrentDimension());
+		this.setSize(cfg.getCurrentDimension());
 		int numOfButtons = buttonList.get(currentPage).size();
-		int spacing = (TB.getWidth() - numOfButtons * TB.getWidth() / (Emulator.MAX_NUMBER_OF_BUTTONS_PER_PAGE + 2))
-				/ 2;
+		int spacing = (cfg.getWidth() - numOfButtons * cfg.getWidth() / (cfg.maxNumberOfButtons + 2)) / 2;
 		for (int i = 0; i < numOfButtons; i++) {
 			InterfaceButton alias = buttonList.get(currentPage).getButton(i);
-			alias.resizeButton(TB.getWidth() / (Emulator.MAX_NUMBER_OF_BUTTONS_PER_PAGE + 2),
-					TB.getWidth() / (Emulator.MAX_NUMBER_OF_BUTTONS_PER_PAGE + 4));
+			alias.resizeButton(standardButtonSize(), standardButtonSize());
 			alias.setPosition(spacing + alias.getWidth() * i, alias.middleY());
 		}
-		leftButton.setSize(TB.getWidth() / (Emulator.MAX_NUMBER_OF_BUTTONS_PER_PAGE + 2),
-				TB.getWidth() / (Emulator.MAX_NUMBER_OF_BUTTONS_PER_PAGE + 4));
-		rightButton.setSize(TB.getWidth() / (Emulator.MAX_NUMBER_OF_BUTTONS_PER_PAGE + 2),
-				TB.getWidth() / (Emulator.MAX_NUMBER_OF_BUTTONS_PER_PAGE + 4));
+		leftButton.setSize(standardButtonSize(), standardButtonSize());
+		rightButton.setSize(standardButtonSize(), standardButtonSize());
 		leftButton.setLocation(0, leftButton.middleY());
-		rightButton.setLocation(TB.getWidth() - rightButton.getWidth(), rightButton.middleY());
+		rightButton.setLocation(cfg.getWidth() - rightButton.getWidth(), rightButton.middleY());
+		try {
+			cPan.resize();
+		} catch (Exception e) {
+
+		}
 	}
 
 	private void setupDefaultButtons() {
@@ -113,6 +126,10 @@ public class MainPanel extends JPanel {
 		setButton(1, ++listPos, "Sleep", "Sleep.jpg");
 		setButton(1, ++listPos, "WashRoom", "Wash Room.jpg");
 
+	}
+
+	public int standardButtonSize() {
+		return cfg.getWidth() / (cfg.maxNumberOfButtons + 2);
 	}
 
 	private void setButton(int pageNumber, int index, String name, String imageFile) {
@@ -134,16 +151,12 @@ public class MainPanel extends JPanel {
 		return this.currentPage;
 	}
 
-	public void turnButtonON(int n) throws IndexOutOfBoundsException {
-		TB.turnButtonON(n);
-	}
-
 	public int getHeight() {
-		return TB.getCurrentHeight();
+		return cfg.getCurrentHeight();
 	}
 
 	public int getWidth() {
-		return TB.getCurrentWidth();
+		return cfg.getCurrentWidth();
 	}
 
 }

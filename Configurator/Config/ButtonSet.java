@@ -1,4 +1,4 @@
-package Interface;
+package Config;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package Interface;
+package Config;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -40,13 +40,25 @@ public class InterfaceButton extends JButton implements ActionListener {
 		this.setBounds(0, middleY(), 100, 100 + 30);
 		this.setHorizontalTextPosition(JButton.CENTER);
 		this.setVerticalTextPosition(JButton.BOTTOM);
-		this.setBackground(Color.cyan);
 		this.setVisible(true);
 		this.setOpaque(true);
 		this.setFocusPainted(false);
 		this.setFocusable(false);
 		this.setBackground(Color.white);
+	}
 
+	public InterfaceButton(InterfaceButton other, MainPanel p) {
+		super(other.name);
+		this.name = other.name;
+		this.owner = p;
+		p.add(this);
+		this.setImage(other.imageName);
+		this.setVisible(true);
+		this.setOpaque(true);
+		this.setFocusPainted(false);
+		this.setFocusable(false);
+		this.setHorizontalTextPosition(JButton.CENTER);
+		this.setVerticalTextPosition(JButton.BOTTOM);
 	}
 
 	public void resizeButton(int width, int height) {
@@ -101,10 +113,9 @@ public class InterfaceButton extends JButton implements ActionListener {
 				} else if (name.equals("RIGHT")) {
 					owner.LoadSet(owner.getCurrentPage() + 1);
 				}
-
 			} else {
-				owner.turnButtonON(ib.getID() % 6);
-				System.out.println("button pressed");
+				owner.openConfig(this);
+
 			}
 		}
 	}

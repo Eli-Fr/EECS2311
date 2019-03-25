@@ -57,13 +57,31 @@ public class Device implements TalkBoxConfiguration, fileManager {
 
 	private void setupDefaultAudio() {
 		audioList.add(new AudioSet());
-		for (int i = 0; i < 6; i++) {
-			setAudio(0, i, "Angry.wav");
-		}
+		int listPos = 0;
+		// page 0
+		setAudio(0, listPos, "Angry.wav");
+		setAudio(0, ++listPos, "Happy.wav");
+		setAudio(0, ++listPos, "Sad.wav");
+		setAudio(0, ++listPos, "Tired.wav");
+		setAudio(0, ++listPos, "Hungry.wav");
+
+		// page 1
+		listPos = 0;
+		setAudio(1, listPos, "Hello.wav");
+		setAudio(1, ++listPos, "Goodbye.wav");
+		setAudio(1, ++listPos, "Sleep.wav");
+		setAudio(1, ++listPos, "Wash Room.wav");
+
 	}
 
 	private void setAudio(int page, int index, String audioName) {
-		audioList.get(page).setAudio(index,new AudioObject(audioName));
+		AudioSet alias = null;
+		try {
+			alias = audioList.get(page);
+		} catch (Exception e) {
+			audioList.add(new AudioSet());
+		}
+		audioList.get(page).setAudio(index, new AudioObject(audioName));
 	}
 
 	public void turnButtonON(int n) throws IndexOutOfBoundsException {
