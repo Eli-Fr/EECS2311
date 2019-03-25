@@ -3,12 +3,15 @@ package Interface;
 import javax.swing.*;
 import java.awt.*;
 import java.io.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class PanelPreText extends JPanel {
 
 	JTextArea buildLog;
 	JScrollPane buildScroll;
 	BufferedReader br;
+	public static Log log  = LogFactory.getLog(PanelPreText.class); 
 	
 	public PanelPreText(VisualFrame owner) {
 		super();
@@ -49,10 +52,12 @@ public class PanelPreText extends JPanel {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 			JOptionPane.showMessageDialog(null, "Cannot find BuildLog.txt", "Confirm Exit", JOptionPane.ERROR_MESSAGE);
+			log.error(e.getMessage());
 	        System.exit(0);
 		} catch (IOException e) {
 			e.printStackTrace();
 			JOptionPane.showMessageDialog(null, "Cannot read BuildLog.txt", "Confirm Exit", JOptionPane.ERROR_MESSAGE);
+			log.error(e.getMessage());
 	        System.exit(0);
 		}
 		

@@ -8,13 +8,15 @@ import java.io.*;
 import java.util.*;
 import sun.audio.AudioPlayer;
 import sun.audio.AudioStream;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class PanelBody extends JPanel implements ActionListener{
 	
 	private Configurator config;
 	private JPanel setPanel;
 	private JScrollPane setScroll;
-
+	public static Log log  = LogFactory.getLog(PanelBody.class);
 	public PanelBody(VisualFrame owner){
 		super();
 		
@@ -85,11 +87,12 @@ public class PanelBody extends JPanel implements ActionListener{
 			String filePath = this.config.getRelativePathToAudioFiles() + this.config.getAudioFileNames()[config.getSetNum()][btn.getId()];
 			
 			try {
-				
 				AudioPlayer.player.start(new AudioStream(new FileInputStream(filePath)));
+			    log.info("Click Audio button.");
 			
 			} catch (IOException e1) {
 				JOptionPane.showMessageDialog(null, "No Audio File Found for Button: " +btn.getText(), "Okay", JOptionPane.ERROR_MESSAGE);
+				log.error(e1.getMessage());
 			}
 		}
 		else {
@@ -98,10 +101,12 @@ public class PanelBody extends JPanel implements ActionListener{
 			
 			for(int i = config.getNumberOfAudioButtons(); i > 0; i--) {
 				this.remove(i);
+				
 			}
 			
 			this.config.setNumberOfAudioButtons(config.getBtnName()[config.getSetNum()].length); 
 			this.initBtn();
+			log.info("Change audio set");
 		}
 		
 	}

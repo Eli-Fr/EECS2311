@@ -20,7 +20,7 @@ import Interface.Configurator;
 public class EditBtn extends JFrame implements ActionListener{
 	
 	JPanel main, name, image, audio, confirm;
-	JButton imgBtn, audBtn, cancel, submit;
+	JButton imgBtn, audBtn, cancel, submit, delete;
 	JLabel imgPath, audPath;
 	String imgFile, audFile, nameBtn, tempImg, tempAud;;
 	JTextField nameText;
@@ -117,12 +117,15 @@ public class EditBtn extends JFrame implements ActionListener{
 		confirm.setLayout(new FlowLayout());
 		
 		submit = new JButton("Submit");
+		delete = new JButton("Delete");
 		cancel = new JButton("Cancel");
 		
 		submit.addActionListener(this);
+		delete.addActionListener(this);
 		cancel.addActionListener(this);
 		
 		confirm.add(submit);
+		confirm.add(delete);
 		confirm.add(cancel);
 		
 	}
@@ -154,6 +157,9 @@ public class EditBtn extends JFrame implements ActionListener{
 			}
 			
 			this.dispose();
+			
+		}
+		else if(e.getSource() == this.delete) {
 			
 		}
 		else if(e.getSource() == this.cancel) {

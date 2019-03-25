@@ -4,13 +4,15 @@ import javax.imageio.*;
 import javax.sound.sampled.*;
 import javax.swing.*;
 import java.io.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class CustomBtn extends JButton{
 
 	private ImageIcon img;
 	private String imgFileName;
 	private int id;
-
+	public static Log log  = LogFactory.getLog(CustomBtn.class);
 	public CustomBtn(String name, String imgFileName, int id){
 		super(name);
 		
@@ -29,6 +31,7 @@ public class CustomBtn extends JButton{
 			this.img = new ImageIcon(ImageIO.read(new File(imgFileName)));
 		} catch (IOException e) {
 			JOptionPane.showMessageDialog(null, "No Image File Found for Button: " +this.getText(), "Okay", JOptionPane.ERROR_MESSAGE);
+			log.error(e.getMessage());
 		}
 		
 		this.setIcon(img);

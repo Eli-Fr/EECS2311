@@ -9,6 +9,8 @@ import java.io.ObjectInputStream;
 import java.nio.channels.FileChannel;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import javax.swing.*;
 
@@ -18,6 +20,7 @@ public class VisualFrame extends JFrame {
 	private ObjectInputStream ois;
 	private FileInputStream fis;
 	private Configurator config;
+	public static Log log  = LogFactory.getLog(VisualFrame.class);
 
 	public VisualFrame(String title) {
 
@@ -34,15 +37,18 @@ public class VisualFrame extends JFrame {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 			JOptionPane.showMessageDialog(null, "Cannot find TalkBoxData folder", "Confirm Exit", JOptionPane.ERROR_MESSAGE);
+			log.error(e.getMessage());
 	        System.exit(0);
 		} catch (IOException e) {
 			e.printStackTrace();
 			JOptionPane.showMessageDialog(null, "Cannot read Config.tbc", "Confirm Exit", JOptionPane.ERROR_MESSAGE);
+			log.error(e.getMessage());
 	        System.exit(0);
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			JOptionPane.showMessageDialog(null, "File type is *.tbc", "Confirm Exit", JOptionPane.ERROR_MESSAGE);
+			log.error(e.getMessage());
 	        System.exit(0);
 		}
 
