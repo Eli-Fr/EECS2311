@@ -17,6 +17,13 @@ import javax.swing.Timer;
 import Interface.*;
 import Talkbox.ButtonInterface;
 
+/**
+ * This class acts as the code that would be running on a physical raspberry PI
+ * This includes: file Management, Serialization and Playing Audio
+ * 
+ * @author Eli Frungorts, Yash Desai, Kai Xu
+ *
+ */
 public class Device implements TalkBoxConfiguration, fileManager {
 	/**
 	 * 
@@ -28,10 +35,20 @@ public class Device implements TalkBoxConfiguration, fileManager {
 	private ButtonInterface buttonInterface;
 	private TalkBox tb;
 
+	/**
+	 * timer object that will check if the interface has changed every 100 seconds
+	 */
 	private Timer buttonListener;
 
 	protected ArrayList<AudioSet> audioList = new ArrayList<AudioSet>();
 
+	/**
+	 * Takes in a buttonInterface and a Talkbox to use as aliases throughout the
+	 * program
+	 * 
+	 * @param b
+	 * @param tb
+	 */
 	public Device(ButtonInterface b, TalkBox tb) {
 		setup();
 		setupDefaultAudio();
@@ -40,7 +57,10 @@ public class Device implements TalkBoxConfiguration, fileManager {
 		initComponents();
 	}
 
-	public void initComponents() {
+	/**
+	 * initialized the components of this class
+	 */
+	private void initComponents() {
 		buttonListener = new Timer(100, new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				for (int i = 0; i < buttonInterface.size(); i++) {
@@ -55,6 +75,10 @@ public class Device implements TalkBoxConfiguration, fileManager {
 		buttonListener.start();
 	}
 
+	/**
+	 * Sets up the default audio when the program is first executed, should not be
+	 * run unless the .tbc file is missing
+	 */
 	private void setupDefaultAudio() {
 		audioList.add(new AudioSet());
 		int listPos = 0;
@@ -74,7 +98,15 @@ public class Device implements TalkBoxConfiguration, fileManager {
 
 	}
 
+	/**
+	 * This sets the audio of a page randomly assigned
+	 * 
+	 * @param page
+	 * @param index
+	 * @param audioName
+	 */
 	private void setAudio(int page, int index, String audioName) {
+		@SuppressWarnings("unused")
 		AudioSet alias = null;
 		try {
 			alias = audioList.get(page);
@@ -84,6 +116,12 @@ public class Device implements TalkBoxConfiguration, fileManager {
 		audioList.get(page).setAudio(index, new AudioObject(audioName));
 	}
 
+	/**
+	 * Turns a button on at index n
+	 * 
+	 * @param n
+	 * @throws IndexOutOfBoundsException
+	 */
 	public void turnButtonON(int n) throws IndexOutOfBoundsException {
 		if (n < 0 || n >= buttonInterface.size()) {
 			throw new IndexOutOfBoundsException();
@@ -91,6 +129,12 @@ public class Device implements TalkBoxConfiguration, fileManager {
 		buttonInterface.turnOnButton(n);
 	}
 
+	/**
+	 * turns a button off at index n
+	 * 
+	 * @param n
+	 * @throws IndexOutOfBoundsException
+	 */
 	private void turnButtonOff(int n) throws IndexOutOfBoundsException {
 		if (n < 0 || n >= buttonInterface.size()) {
 			throw new IndexOutOfBoundsException();
@@ -113,6 +157,11 @@ public class Device implements TalkBoxConfiguration, fileManager {
 		}
 	}
 
+	/**
+	 * Plays the audio of the currentpage at index
+	 * 
+	 * @param index
+	 */
 	protected void playAudio(int index) {
 		audioList.get(tb.getCurrentPage()).getAudio(index).playSound();
 	}
@@ -153,12 +202,14 @@ public class Device implements TalkBoxConfiguration, fileManager {
 	 * @param destination directory
 	 * @throws IOException
 	 */
+	@SuppressWarnings("resource")
 	private static void copyDir(File source, File destination) throws IOException {
 		FileChannel src = null;
 		FileChannel dest = null;
 		for (File file : source.listFiles()) {
 			File fileD = Paths.get(destination.getAbsolutePath() + "\\" + file.getName()).toFile();
 			Files.createFile(fileD.toPath());
+
 			src = new FileInputStream(file).getChannel();
 			dest = new FileOutputStream(fileD).getChannel();
 			dest.transferFrom(src, 0, src.size());

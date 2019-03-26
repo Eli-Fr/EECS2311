@@ -1,5 +1,10 @@
 package DeviceCode;
 
+/**
+ * 
+ * @author Elie
+ *
+ */
 public interface fileManager {
 	static final String WINDOWS_FILE_PATH = "C:\\TalkBox";
 	static final String MACOS_FILE_PATH = "C:\\TalkBox";

@@ -48,6 +48,12 @@ public class Configurator extends JFrame implements ComponentListener {
 			}
 		});
 	}
+	/**
+	 * 
+	 */	
+	public void SaveConfig() {
+		
+	}
 	
 
 

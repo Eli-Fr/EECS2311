@@ -1,0 +1,13 @@
+This is a TO-DO List which indicated what is still left to do
+When the task is completed, do not delete the line, rather just write your name at the end
+
+Ex: TODO: TASK - FINISHED: YOUR_NAME
+
+TODO: Comment Code
+TODO: Add file selection in Configurator
+TODO: Add Serialization
+TODO: Change From Absolute Paths to Relative Paths
+TODO: Add Record Function
+TODO: Add Drag-n-Drop
+TODO: Add Tester
+TODO: 
