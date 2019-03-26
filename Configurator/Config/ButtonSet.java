@@ -6,7 +6,7 @@ import Talkbox.Emulator;
 
 public class ButtonSet {
 
-	private ArrayList<InterfaceButton> buttonList = new ArrayList<InterfaceButton>();
+	private ArrayList<MainPanelButton> buttonList = new ArrayList<MainPanelButton>();
 
 	public ButtonSet() {
 		for (int i = 0; i < Emulator.MAX_NUMBER_OF_BUTTONS_PER_PAGE; i++) {
@@ -14,15 +14,15 @@ public class ButtonSet {
 		}
 	}
 
-	public InterfaceButton getButton(int index) {
+	public MainPanelButton getButton(int index) {
 		return buttonList.get(index);
 	}
 
-	public void addButton(InterfaceButton b) {
+	public void addButton(MainPanelButton b) {
 		buttonList.add(b);
 	}
 
-	public void setButton(int index, InterfaceButton b) {
+	public void setButton(int index, MainPanelButton b) {
 		buttonList.set(index, b);
 	}
 

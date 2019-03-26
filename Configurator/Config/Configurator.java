@@ -28,7 +28,7 @@ public class Configurator extends JFrame implements ComponentListener {
 		currentScreenSize = new Dimension((int) DEFAULT_SCREEN_SIZE.getWidth(), (int) DEFAULT_SCREEN_SIZE.getHeight());
 		this.setMinimumSize(DEFAULT_SCREEN_SIZE);
 		pack();
-		this.mainP = new MainPanel(this, true);
+		this.mainP = new MainPanel(this);
 		initComponents();
 		this.add(mainP);
 		setSize(DEFAULT_SCREEN_SIZE);
@@ -48,14 +48,17 @@ public class Configurator extends JFrame implements ComponentListener {
 			}
 		});
 	}
+
 	/**
 	 * 
-	 */	
+	 */
 	public void SaveConfig() {
-		
-	}
-	
 
+	}
+
+	public boolean configFound() {
+		return false;// TODO make this detect if a serialized file is found
+	}
 
 	public int getCurrentHeight() {
 		return (int) currentScreenSize.getHeight();
@@ -101,7 +104,6 @@ public class Configurator extends JFrame implements ComponentListener {
 	public void componentResized(ComponentEvent arg0) {
 		this.setCurrentDimension(this.getSize());
 		mainP.resize();
-		
 
 	}
 

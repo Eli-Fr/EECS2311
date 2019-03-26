@@ -5,60 +5,44 @@ import java.awt.Dimension;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 
 import DeviceCode.fileManager;
 
-public class InterfaceButton extends JButton implements ActionListener {
+public class MainPanelButton extends AbstractButton {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+
 	private ImageIcon image;
 	private int listPos;
-	private String name, imageName;
+	private String imageName;
 
-	private MainPanel owner;
+	private MainPanel Owner;
 
-	public InterfaceButton(int listPos, MainPanel owner, String name, String imageName) {
-		super(name);
+	public MainPanelButton(MainPanel owner, int listPos, String name, String imageName) {
+		super(owner, name);
+		this.Owner = (MainPanel) owner;
+
 		this.listPos = listPos;
-		this.addActionListener(this);
-		this.owner = owner;
-		this.name = name;
+
 		this.setImageName(imageName);
-		owner.add(this);
 		this.setImage(imageName);
-		this.setBounds(0, middleY(), 100, 100 + 30);
-		this.setHorizontalTextPosition(JButton.CENTER);
-		this.setVerticalTextPosition(JButton.BOTTOM);
-		this.setVisible(true);
-		this.setOpaque(true);
-		this.setFocusPainted(false);
-		this.setFocusable(false);
 		this.setBackground(Color.white);
 	}
 
-	public InterfaceButton(InterfaceButton other, MainPanel p) {
-		super(other.name);
-		this.name = other.name;
-		this.owner = p;
+	public MainPanelButton(MainPanelButton other, AbstractPanel p) {
+		super(p, other.getName());
+		this.setName(other.getName());
 		p.add(this);
-		this.setImage(other.imageName);
-		this.setVisible(true);
-		this.setOpaque(true);
-		this.setFocusPainted(false);
-		this.setFocusable(false);
-		this.setHorizontalTextPosition(JButton.CENTER);
-		this.setVerticalTextPosition(JButton.BOTTOM);
+		this.setImage(other.getImageName());
 	}
 
 	public void resizeButton(int width, int height) {
@@ -103,19 +87,20 @@ public class InterfaceButton extends JButton implements ActionListener {
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		System.out.println("Action Event");
-		// if the actionEvent is a button press
-		if (e.getSource().getClass() == InterfaceButton.class) {
-			InterfaceButton ib = (InterfaceButton) e.getSource();
+		MainPanelButton ib = (MainPanelButton) e.getSource();
+
+		if (ib.getOwner().getClass() == ConfigPanel.class) {
+			ConfigPanel cp = (ConfigPanel) getOwner();
+			cp.playAudio(listPos);
+		} else {
 			if (ib.listPos < 0) {
-				if (name.equals("LEFT")) {
-					owner.LoadSet(owner.getCurrentPage() - 1);
-				} else if (name.equals("RIGHT")) {
-					owner.LoadSet(owner.getCurrentPage() + 1);
+				if (this.getName().equals("LEFT")) {
+					Owner.LoadSet(Owner.getCurrentPage() - 1);
+				} else if (this.getName().equals("RIGHT")) {
+					Owner.LoadSet(Owner.getCurrentPage() + 1);
 				}
 			} else {
-				owner.openConfig(this);
-
+				Owner.openConfig(this);
 			}
 		}
 	}
@@ -124,16 +109,8 @@ public class InterfaceButton extends JButton implements ActionListener {
 		this.setBounds(x, y, this.getWidth(), this.getHeight());
 	}
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String Name) {
-		this.name = Name;
-	}
-
 	public String getImageName() {
-		return imageName;
+		return this.imageName;
 	}
 
 	public void setImageName(String imageName) {
@@ -141,7 +118,7 @@ public class InterfaceButton extends JButton implements ActionListener {
 	}
 
 	public int middleY() {
-		return this.owner.getHeight() / 2 - this.getHeight() / 2;
+		return this.Owner.getHeight() / 2 - this.getHeight() / 2;
 	}
 
 }

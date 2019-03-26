@@ -4,69 +4,115 @@ import java.awt.Color;
 
 import javax.swing.JLabel;
 
-public class ConfigPanel extends MainPanel {
+public class ConfigPanel extends AbstractPanel {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private InterfaceButton IB;
+
+	private MainPanelButton IB;
+	private MainPanelButton tmp;
+
+	private ConfigPanelButton goBack;
 	private MainPanel mainP;
 
 	private FileSelectorButton chooseAudio, chooseImage;
 	private JLabel drag;
-	
-//page: 1 button: 3 name: angry audio: angry.wav image: angry.jpg action: play audio 
-	
-	public ConfigPanel(InterfaceButton b, MainPanel P, Configurator C) {
-		super(C, false);
-		this.IB = new InterfaceButton(b, this);
-		this.mainP = P;
-		C.add(this);
-		this.setLayout(null);
-		this.setVisible(true);
-		this.setBackground(Color.white);
-		this.setSize(Configurator.DEFAULT_SCREEN_SIZE);
-		this.setSize(mainP.getSize());
-		IB.setBounds(this.getWidth() / 2 - b.getWidth() / 2, b.middleY() / 2, mainP.standardButtonSize(),
-				mainP.standardButtonSize() + 30);
-		initComponents();
-		resize();
 
+	private String AudioName, ImageName, Name;
+
+//page: 1 button: 3 name: angry audio: angry.wav image: angry.jpg action: play audio 
+
+	public ConfigPanel(MainPanelButton b, MainPanel P, Configurator C) {
+		super(C);
+		this.mainP = P;
+		IB = new MainPanelButton(b, this);
+		resize();
 	}
 
 	public void resize() {
+		super.resize();
+
 		chooseAudio.setBounds(this.getWidth() / 4 - chooseAudio.getWidth() / 2,
-				this.getHeight() * 3 / 4 - chooseAudio.getHeight() / 2, mainP.standardButtonSize(), 30);
+				this.getHeight() * 3 / 4 - chooseAudio.getHeight() / 2, super.standardButtonSize(), 30);
+
 		chooseImage.setBounds(this.getWidth() / 2 - chooseImage.getWidth() / 2,
-				this.getHeight() * 3 / 4 - chooseAudio.getHeight() / 2, mainP.standardButtonSize(), 30);
+				this.getHeight() * 3 / 4 - chooseAudio.getHeight() / 2, super.standardButtonSize(), 30);
+
 		drag.setBounds(this.getWidth() * 3 / 4 - drag.getWidth() / 2, this.getHeight() * 3 / 4 - drag.getHeight() / 2,
-				mainP.standardButtonSize(), mainP.standardButtonSize());
-		IB.setBounds(this.getWidth() / 2 - IB.getWidth() / 2, IB.middleY() / 2, mainP.standardButtonSize(),
-				mainP.standardButtonSize() + 30);
+				super.standardButtonSize(), super.standardButtonSize());
+
+		IB.setBounds(this.getWidth() / 2 - IB.getWidth() / 2, this.middleY() / 2, super.standardButtonSize(),
+				super.standardButtonSize() + 30);
+
+		goBack.setBounds(0, 0, super.standardButtonSize(), super.standardButtonSize());
+
 	}
 
-	private void initComponents() {
-		chooseAudio = new FileSelectorButton("Select Audio", "Audio");
-		chooseImage = new FileSelectorButton("Select Image", "Image");
+	public void closeConfig() {
+		mainP.closeConfig();
+	}
+
+	public void acceptChange() {
+
+	}
+
+	private void resetChange() {
+
+	}
+
+	protected void initComponents() {
+		chooseAudio = new FileSelectorButton(this, "Select Audio", "Audio");
+		chooseImage = new FileSelectorButton(this, "Select Image", "Image");
+		goBack = new ConfigPanelButton(this, "Go Back");
 		drag = new JLabel("Drag File Here");
 
-		chooseAudio.setBounds(200, 200, mainP.standardButtonSize(), 30);
-		chooseImage.setBounds(500, 200, mainP.standardButtonSize(), 30);
-		drag.setBounds(650, 200, mainP.standardButtonSize(), mainP.standardButtonSize());
+		chooseAudio.setBounds(200, 200, this.standardButtonSize(), 30);
+		chooseImage.setBounds(500, 200, this.standardButtonSize(), 30);
+		goBack.setBounds(0, 0, this.standardButtonSize(), this.standardButtonSize());
+		drag.setBounds(650, 200, this.standardButtonSize(), this.standardButtonSize());
 
 		this.add(chooseAudio);
 		this.add(chooseImage);
 		this.add(drag);
+		this.add(goBack);
 
 		drag.setBackground(Color.gray);
 		drag.setOpaque(true);
 		drag.setHorizontalAlignment(JLabel.CENTER);
 		drag.setVerticalAlignment(JLabel.CENTER);
 
+		goBack.setBackground(Color.WHITE);
+		goBack.setOpaque(true);
+		goBack.setHorizontalAlignment(JLabel.CENTER);
+		goBack.setVerticalAlignment(JLabel.CENTER);
+
 		chooseAudio.setVisible(true);
 		chooseImage.setVisible(true);
 		drag.setVisible(true);
+		goBack.setVisible(true);
 		this.repaint();
+
+	}
+
+	public void playAudio(int index) {
+		mainP.playAudio(index);
+	}
+
+	public String getAudioName() {
+		return AudioName;
+	}
+
+	public void setAudioName(String audioName) {
+		AudioName = audioName;
+	}
+
+	public String getImageName() {
+		return ImageName;
+	}
+
+	public void setImageName(String imageName) {
+		ImageName = imageName;
 	}
 
 }

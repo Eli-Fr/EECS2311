@@ -1,9 +1,8 @@
 package Config;
 
 import java.util.ArrayList;
-import javax.swing.JPanel;
 
-public class MainPanel extends JPanel {
+public class MainPanel extends AbstractPanel {
 	/**
 	 * AUTO-GENERATED
 	 */
@@ -11,36 +10,15 @@ public class MainPanel extends JPanel {
 
 	private int currentPage = 0;
 	protected int totalNumberOfButtons = 0;
-	private Configurator cfg;
 
-	private InterfaceButton leftButton, rightButton;
+	private MainPanelButton leftButton, rightButton;
 	private ConfigPanel cPan;
 
-	protected ArrayList<ButtonSet> buttonList = new ArrayList<ButtonSet>();
-	protected ArrayList<AudioSet> AudioList = new ArrayList<AudioSet>();
+	protected ArrayList<ButtonSet> buttonList;
+	protected ArrayList<AudioSet> audioList;
 
-	public MainPanel(Configurator cfg, boolean runSetup) {
-		this.cfg = cfg;
-		if (runSetup) {
-			setup();
-		}
-		this.setLayout(null);
-		this.setVisible(true);
-		this.setSize(Configurator.DEFAULT_SCREEN_SIZE);
-	}
-
-	private void setup() {
-		/**
-		 * TODO change true condition when serialization is implemented
-		 */
-		if (true) {
-			setupDefaultButtons();
-		}
-		leftButton = new InterfaceButton(-1, this, "LEFT", null);
-		rightButton = new InterfaceButton(-1, this, "RIGHT", null);
-
-		drawSwitchingButtons();
-
+	public MainPanel(Configurator cfg) {
+		super(cfg);
 	}
 
 	private void drawSwitchingButtons() {
@@ -67,9 +45,13 @@ public class MainPanel extends JPanel {
 
 	}
 
-	public void openConfig(InterfaceButton b) {
+	public void playAudio(int n) {
+
+	}
+
+	public void openConfig(MainPanelButton b) {
 		this.setVisible(false);
-		cPan = new ConfigPanel(b, this, cfg);
+		cPan = new ConfigPanel(b, this, this.getCFG());
 		cPan.setVisible(true);
 	}
 
@@ -91,18 +73,20 @@ public class MainPanel extends JPanel {
 	}
 
 	public void resize() {
-		this.setSize(cfg.getCurrentDimension());
+		super.resize();
+
 		int numOfButtons = buttonList.get(currentPage).size();
-		int spacing = (cfg.getWidth() - numOfButtons * cfg.getWidth() / (cfg.maxNumberOfButtons + 2)) / 2;
+		int spacing = (this.getCFG().getWidth()
+				- numOfButtons * this.getCFG().getWidth() / (this.getCFG().maxNumberOfButtons + 2)) / 2;
 		for (int i = 0; i < numOfButtons; i++) {
-			InterfaceButton alias = buttonList.get(currentPage).getButton(i);
+			MainPanelButton alias = buttonList.get(currentPage).getButton(i);
 			alias.resizeButton(standardButtonSize(), standardButtonSize());
 			alias.setPosition(spacing + alias.getWidth() * i, alias.middleY());
 		}
 		leftButton.setSize(standardButtonSize(), standardButtonSize());
 		rightButton.setSize(standardButtonSize(), standardButtonSize());
 		leftButton.setLocation(0, leftButton.middleY());
-		rightButton.setLocation(cfg.getWidth() - rightButton.getWidth(), rightButton.middleY());
+		rightButton.setLocation(this.getCFG().getWidth() - rightButton.getWidth(), rightButton.middleY());
 		try {
 			cPan.resize();
 		} catch (Exception e) {
@@ -128,10 +112,6 @@ public class MainPanel extends JPanel {
 
 	}
 
-	public int standardButtonSize() {
-		return cfg.getWidth() / (cfg.maxNumberOfButtons + 2);
-	}
-
 	private void setButton(int pageNumber, int index, String name, String imageFile) {
 		ButtonSet alias = null;
 		try {
@@ -141,7 +121,7 @@ public class MainPanel extends JPanel {
 		}
 
 		alias = buttonList.get(pageNumber);
-		alias.setButton(index, new InterfaceButton(index, this, name, imageFile));
+		alias.setButton(index, new MainPanelButton(this, index, name, imageFile));
 		if (pageNumber != getCurrentPage()) {
 			alias.getButton(index).setVisible(false);
 		}
@@ -151,12 +131,23 @@ public class MainPanel extends JPanel {
 		return this.currentPage;
 	}
 
-	public int getHeight() {
-		return cfg.getCurrentHeight();
-	}
+	@Override
+	protected void initComponents() {
+		buttonList = new ArrayList<ButtonSet>();
+		audioList = new ArrayList<AudioSet>();
+		/**
+		 * TODO change true condition when serialization is implemented
+		 */
+		if (getCFG().configFound()) {
 
-	public int getWidth() {
-		return cfg.getCurrentWidth();
+		} else {
+			setupDefaultButtons();
+		}
+		leftButton = new MainPanelButton(this, -1, "LEFT", null);
+		rightButton = new MainPanelButton(this, -1, "RIGHT", null);
+
+		drawSwitchingButtons();
+
 	}
 
 }

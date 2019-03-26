@@ -2,38 +2,47 @@ package Config;
 
 import java.awt.FileDialog;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.JButton;
 import javax.swing.JFrame;
 
-public class FileSelectorButton extends JButton implements ActionListener {
-
+public class FileSelectorButton extends AbstractButton {
 	/**
 	 * 
 	 */
-
-	private String name;
 	private static final long serialVersionUID = 1L;
 
-	public FileSelectorButton(String text, String name) {
-		super(text);
-		this.name = name;
+	private String fileName;
+
+	public FileSelectorButton(ConfigPanel owner, String text, String name) {
+		super(owner, name);
+		this.addActionListener(this);
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if (e.getSource() == FileSelectorButton.class) {
-			FileSelectorButton FB = (FileSelectorButton) e.getSource();
-			if (FB.getName().equals("Audio")) {
-				FileDialog fd = new FileDialog(new JFrame());
+		FileSelectorButton FB = (FileSelectorButton) e.getSource();
+		if (FB.getName().equals("Audio")) {
+			FileDialog fd = new FileDialog(new JFrame());
+			fd.setVisible(true);
+			fileName = fd.getFile();
+			if (fileName.endsWith(".wav")) {
+				ConfigPanel owner = (ConfigPanel) this.getOwner();
+				owner.setAudioName(fileName);
 			}
+			System.out.println(fileName);
+		} else if (FB.getName().equals("Image")) {
+			FileDialog fd = new FileDialog(new JFrame());
+			fd.setVisible(true);
+			fileName = fd.getFile();
 		}
 
 	}
 
-	public String getName() {
-		return this.name;
+	public String getFileName() throws NullPointerException {
+		if (fileName == null) {
+			throw new NullPointerException();
+		} else {
+			return this.fileName;
+		}
 	}
 
 }
