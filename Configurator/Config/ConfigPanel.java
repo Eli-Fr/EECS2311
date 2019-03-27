@@ -2,8 +2,10 @@ package Config;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 
 import javax.swing.JLabel;
+import javax.swing.JTextArea;
 import javax.swing.plaf.basic.BasicOptionPaneUI.ButtonActionListener;
 
 public class ConfigPanel extends AbstractPanel {
@@ -19,6 +21,7 @@ public class ConfigPanel extends AbstractPanel {
 
 	private FileSelectorButton chooseAudio, chooseImage;
 	private JLabel drag;
+	private JLabel information;
 
 	private String AudioName, ImageName, Name;
 
@@ -55,15 +58,19 @@ public class ConfigPanel extends AbstractPanel {
 				this.getHeight() * 3 / 4 - chooseAudio.getHeight() / 2, standardButtonSize(), 30);
 
 		drag.setBounds(this.getWidth() * 3 / 4 - drag.getWidth() / 2, this.getHeight() * 3 / 4 - drag.getHeight() / 2,
-				standardButtonSize(), standardButtonSize());
+				standardButtonSize() * 3 / 2, standardButtonSize() * 3 / 2);
 
 		IB.setBounds(this.getWidth() / 2 - standardButtonSize() / 2, middleY() / 2, standardButtonSize(),
 				standardButtonSize() + 30);
+		IB.resizeButton(standardButtonSize(), standardButtonSize());
 
 		goBack.setBounds(0, 0, standardButtonSize(), standardButtonSize());
 
 		Record.setBounds(this.getWidth() * 3 / 4 - Record.getWidth() / 2, middleY() / 2, standardButtonSize(),
 				standardButtonSize());
+
+		information.setBounds(this.getWidth() / 2 - information.getWidth() / 2, middleY() / 4, 4 * standardButtonSize(),
+				30);
 	}
 
 	public void closeConfig() {
@@ -84,18 +91,22 @@ public class ConfigPanel extends AbstractPanel {
 		goBack = new ConfigPanelButton(this, "Go Back");
 		drag = new JLabel("Drag File Here");
 		Record = new ConfigPanelButton(this, "Record");
+		information = new JLabel(
+				"<html><center>Choose image and Audio files and watch the Button Change</center></html>");
 
 		chooseAudio.setSize(new Dimension(standardButtonSize(), 30));
 		chooseImage.setSize(new Dimension(standardButtonSize(), 30));
 		goBack.setSize(new Dimension(standardButtonSize(), standardButtonSize()));
-		drag.setSize(new Dimension(standardButtonSize(), standardButtonSize()));
+		drag.setSize(new Dimension(standardButtonSize() * 3 / 2, standardButtonSize() * 3 / 2));
 		Record.setSize(new Dimension(standardButtonSize(), standardButtonSize()));
+		information.setSize(new Dimension(standardButtonSize() * 4, 30));
 
 		this.add(chooseAudio);
 		this.add(chooseImage);
 		this.add(drag);
 		this.add(goBack);
 		this.add(Record);
+		this.add(information);
 
 		drag.setBackground(Color.gray);
 		drag.setOpaque(true);
@@ -107,10 +118,18 @@ public class ConfigPanel extends AbstractPanel {
 		goBack.setHorizontalAlignment(JLabel.CENTER);
 		goBack.setVerticalAlignment(JLabel.CENTER);
 
+		information.setBackground(Color.WHITE);
+		information.setOpaque(true);
+		information.setFocusable(false);
+		information.setHorizontalAlignment(JLabel.CENTER);
+		information.setFont(new Font("Arial", Font.PLAIN, 18));
+
 		chooseAudio.setVisible(true);
 		chooseImage.setVisible(true);
 		drag.setVisible(true);
 		goBack.setVisible(true);
+		information.setVisible(true);
+
 		this.repaint();
 
 	}

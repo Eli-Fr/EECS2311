@@ -10,4 +10,10 @@ TODO: Change From Absolute Paths to Relative Paths
 TODO: Add Record Function
 TODO: Add Drag-n-Drop
 TODO: Add Tester
-TODO: 
+TODO:
+Add load buttons
+Add save button
+Improve user interface
+Disambiguate the interface
+Buttons should be moving on the simulator
+Introduce a button switching feature between current pages and between different sets 
