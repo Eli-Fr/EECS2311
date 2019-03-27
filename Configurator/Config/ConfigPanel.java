@@ -1,8 +1,10 @@
 package Config;
 
 import java.awt.Color;
+import java.awt.Dimension;
 
 import javax.swing.JLabel;
+import javax.swing.plaf.basic.BasicOptionPaneUI.ButtonActionListener;
 
 public class ConfigPanel extends AbstractPanel {
 	/**
@@ -11,15 +13,16 @@ public class ConfigPanel extends AbstractPanel {
 	private static final long serialVersionUID = 1L;
 
 	private MainPanelButton IB;
-	private MainPanelButton tmp;
 
-	private ConfigPanelButton goBack;
+	private ConfigPanelButton goBack, Record;
 	private MainPanel mainP;
 
 	private FileSelectorButton chooseAudio, chooseImage;
 	private JLabel drag;
 
 	private String AudioName, ImageName, Name;
+
+	private AudioObject audObj;
 
 //page: 1 button: 3 name: angry audio: angry.wav image: angry.jpg action: play audio 
 
@@ -28,6 +31,18 @@ public class ConfigPanel extends AbstractPanel {
 		this.mainP = P;
 		IB = new MainPanelButton(b, this);
 		resize();
+
+		Name = IB.getName();
+		try {
+			AudioName = mainP.getAudio(IB.getID()).getName();
+		} catch (NullPointerException e) {
+			// add button handling
+		}
+		ImageName = IB.getImageName();
+
+		System.out.println(Name + " " + AudioName + " " + ImageName);
+
+		audObj = mainP.getAudio(b.getID());
 	}
 
 	public void resize() {
@@ -37,16 +52,18 @@ public class ConfigPanel extends AbstractPanel {
 				this.getHeight() * 3 / 4 - chooseAudio.getHeight() / 2, super.standardButtonSize(), 30);
 
 		chooseImage.setBounds(this.getWidth() / 2 - chooseImage.getWidth() / 2,
-				this.getHeight() * 3 / 4 - chooseAudio.getHeight() / 2, super.standardButtonSize(), 30);
+				this.getHeight() * 3 / 4 - chooseAudio.getHeight() / 2, standardButtonSize(), 30);
 
 		drag.setBounds(this.getWidth() * 3 / 4 - drag.getWidth() / 2, this.getHeight() * 3 / 4 - drag.getHeight() / 2,
-				super.standardButtonSize(), super.standardButtonSize());
+				standardButtonSize(), standardButtonSize());
 
-		IB.setBounds(this.getWidth() / 2 - IB.getWidth() / 2, this.middleY() / 2, super.standardButtonSize(),
-				super.standardButtonSize() + 30);
+		IB.setBounds(this.getWidth() / 2 - standardButtonSize() / 2, middleY() / 2, standardButtonSize(),
+				standardButtonSize() + 30);
 
-		goBack.setBounds(0, 0, super.standardButtonSize(), super.standardButtonSize());
+		goBack.setBounds(0, 0, standardButtonSize(), standardButtonSize());
 
+		Record.setBounds(this.getWidth() * 3 / 4 - Record.getWidth() / 2, middleY() / 2, standardButtonSize(),
+				standardButtonSize());
 	}
 
 	public void closeConfig() {
@@ -66,16 +83,19 @@ public class ConfigPanel extends AbstractPanel {
 		chooseImage = new FileSelectorButton(this, "Select Image", "Image");
 		goBack = new ConfigPanelButton(this, "Go Back");
 		drag = new JLabel("Drag File Here");
+		Record = new ConfigPanelButton(this, "Record");
 
-		chooseAudio.setBounds(200, 200, this.standardButtonSize(), 30);
-		chooseImage.setBounds(500, 200, this.standardButtonSize(), 30);
-		goBack.setBounds(0, 0, this.standardButtonSize(), this.standardButtonSize());
-		drag.setBounds(650, 200, this.standardButtonSize(), this.standardButtonSize());
+		chooseAudio.setSize(new Dimension(standardButtonSize(), 30));
+		chooseImage.setSize(new Dimension(standardButtonSize(), 30));
+		goBack.setSize(new Dimension(standardButtonSize(), standardButtonSize()));
+		drag.setSize(new Dimension(standardButtonSize(), standardButtonSize()));
+		Record.setSize(new Dimension(standardButtonSize(), standardButtonSize()));
 
 		this.add(chooseAudio);
 		this.add(chooseImage);
 		this.add(drag);
 		this.add(goBack);
+		this.add(Record);
 
 		drag.setBackground(Color.gray);
 		drag.setOpaque(true);
@@ -95,8 +115,24 @@ public class ConfigPanel extends AbstractPanel {
 
 	}
 
+	public void UpdateImage(String imageName) {
+		this.ImageName = imageName;
+		IB.setImage(ImageName);
+
+	}
+
+	public void UpdateAudio(String AudioName) {
+		this.AudioName = AudioName;
+		audObj = new AudioObject(AudioName);
+	}
+
+	public void updateButton() {
+		System.out.println(ImageName + " " + AudioName + " " + IB.getID());
+		mainP.updateButton(IB.getID(), ImageName, AudioName, Name);
+	}
+
 	public void playAudio(int index) {
-		mainP.playAudio(index);
+		audObj.playSound();
 	}
 
 	public String getAudioName() {

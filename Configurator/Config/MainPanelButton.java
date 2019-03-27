@@ -35,6 +35,7 @@ public class MainPanelButton extends AbstractButton {
 
 		this.setImageName(imageName);
 		this.setImage(imageName);
+
 		this.setBackground(Color.white);
 	}
 
@@ -42,7 +43,9 @@ public class MainPanelButton extends AbstractButton {
 		super(p, other.getName());
 		this.setName(other.getName());
 		p.add(this);
+		this.listPos = other.listPos;
 		this.setImage(other.getImageName());
+		this.setImageName(other.getImageName());
 	}
 
 	public void resizeButton(int width, int height) {

@@ -19,6 +19,7 @@ public class ConfigPanelButton extends AbstractButton {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (this.getName().equals("Go Back")) {
+			owner.updateButton();
 			owner.closeConfig();
 		}
 

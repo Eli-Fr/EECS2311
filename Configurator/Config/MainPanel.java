@@ -19,6 +19,7 @@ public class MainPanel extends AbstractPanel {
 
 	public MainPanel(Configurator cfg) {
 		super(cfg);
+		setupDefaultAudio();
 	}
 
 	private void drawSwitchingButtons() {
@@ -49,6 +50,10 @@ public class MainPanel extends AbstractPanel {
 
 	}
 
+	public void UpdateAudio(int n) {
+
+	}
+
 	public void openConfig(MainPanelButton b) {
 		this.setVisible(false);
 		cPan = new ConfigPanel(b, this, this.getCFG());
@@ -58,6 +63,7 @@ public class MainPanel extends AbstractPanel {
 	public void closeConfig() {
 		cPan.setVisible(false);
 		this.setVisible(true);
+		resize();
 	}
 
 	public void LoadSet(int n) {
@@ -68,8 +74,9 @@ public class MainPanel extends AbstractPanel {
 		for (int i = 0; i < buttonList.get(currentPage).size(); i++) {
 			buttonList.get(currentPage).getButton(i).setVisible(true);
 		}
-		resize();
+		addAddButton();
 		drawSwitchingButtons();
+		resize();
 	}
 
 	public void resize() {
@@ -110,6 +117,8 @@ public class MainPanel extends AbstractPanel {
 		setButton(1, ++listPos, "Sleep", "Sleep.jpg");
 		setButton(1, ++listPos, "WashRoom", "Wash Room.jpg");
 
+		addAddButton();
+
 	}
 
 	private void setButton(int pageNumber, int index, String name, String imageFile) {
@@ -131,6 +140,15 @@ public class MainPanel extends AbstractPanel {
 		return this.currentPage;
 	}
 
+	private void addAddButton() {
+		ButtonSet alias = buttonList.get(currentPage);
+		if (alias.size() < 8) {
+			if (!alias.getButton(alias.size() - 1).getName().equals("add")) {
+				setButton(currentPage, alias.size(), "add", "add.jpg");
+			}
+		}
+	}
+
 	@Override
 	protected void initComponents() {
 		buttonList = new ArrayList<ButtonSet>();
@@ -148,6 +166,57 @@ public class MainPanel extends AbstractPanel {
 
 		drawSwitchingButtons();
 
+	}
+
+	/**
+	 * This sets the audio of a page randomly assigned
+	 * 
+	 * @param page
+	 * @param index
+	 * @param audioName
+	 */
+	private void setAudio(int page, int index, String audioName) {
+		@SuppressWarnings("unused")
+		AudioSet alias = null;
+		try {
+			alias = audioList.get(page);
+		} catch (Exception e) {
+			audioList.add(new AudioSet());
+		}
+		audioList.get(page).setAudio(index, new AudioObject(audioName));
+	}
+
+	/**
+	 * Sets up the default audio when the program is first executed, should not be
+	 * run unless the .tbc file is missing
+	 */
+	private void setupDefaultAudio() {
+		audioList.add(new AudioSet());
+		int listPos = 0;
+		// page 0
+		setAudio(0, listPos, "Angry.wav");
+		setAudio(0, ++listPos, "Happy.wav");
+		setAudio(0, ++listPos, "Sad.wav");
+		setAudio(0, ++listPos, "Tired.wav");
+		setAudio(0, ++listPos, "Hungry.wav");
+
+		// page 1
+		listPos = 0;
+		setAudio(1, listPos, "Hello.wav");
+		setAudio(1, ++listPos, "Goodbye.wav");
+		setAudio(1, ++listPos, "Sleep.wav");
+		setAudio(1, ++listPos, "Wash Room.wav");
+
+	}
+
+	public AudioObject getAudio(int n) {
+		return audioList.get(currentPage).getAudio(n);
+	}
+
+	public void updateButton(int listPos, String ImageName, String AudioName, String Name) {
+		this.remove(buttonList.get(currentPage).getButton(listPos));
+		setAudio(currentPage, listPos, AudioName);
+		setButton(currentPage, listPos, Name, ImageName);
 	}
 
 }
