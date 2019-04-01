@@ -7,12 +7,11 @@ TODO: Comment Code
 TODO: Add file selection in Configurator
 TODO: Add Serialization
 TODO: Change From Absolute Paths to Relative Paths
+TODO: create shortcut...
 TODO: Add Record Function
 TODO: Add Drag-n-Drop
 TODO: Add Tester
-TODO:
-Add load buttons
-Add save button
+TODO: Add load interface 
 Improve user interface
 Disambiguate the interface
 Buttons should be moving on the simulator
