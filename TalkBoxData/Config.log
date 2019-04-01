@@ -1,73 +1,19 @@
-2019-03-24 23:56:57,537 INFO [logfile2] - Start simulator
-2019-03-24 23:57:00,538 INFO [logfile2] - Click Audio button.
-2019-03-24 23:57:01,313 INFO [logfile2] - Click Audio button.
-2019-03-24 23:57:01,339 INFO [logfile2] - Click Audio button.
-2019-03-24 23:57:01,517 INFO [logfile2] - Click Audio button.
-2019-03-24 23:57:45,443 INFO [logfile1] - Start Configurator
-2019-03-24 23:57:48,002 INFO [logfile1] - Edit Audio button.
-2019-03-24 23:57:48,299 INFO [logfile1] - Edit Audio button.
-2019-03-24 23:57:49,072 INFO [logfile1] - Cancel change
-2019-03-24 23:57:49,107 INFO [logfile1] - Add/Edit your button windows closed
-2019-03-24 23:57:49,662 INFO [logfile1] - Edit Audio button.
-2019-03-24 23:57:50,817 INFO [logfile1] - Cancel change
-2019-03-24 23:57:50,847 INFO [logfile1] - Add/Edit your button windows closed
-2019-03-24 23:57:54,997 INFO [logfile1] - Closed Configurator App
-2019-03-24 23:59:24,064 INFO [logfile1] - Start Configurator
-2019-03-24 23:59:26,623 INFO [logfile1] - Edit Audio button.
-2019-03-24 23:59:28,188 INFO [logfile1] - Cancel change
-2019-03-24 23:59:28,226 INFO [logfile1] - Add/Edit your button windows closed
-2019-03-24 23:59:32,154 INFO [logfile1] - Closed Configurator App
-2019-03-25 11:41:45,186 INFO [logfile2] - Start simulator
-2019-03-25 11:41:50,848 INFO [logfile2] - Click Audio button.
-2019-03-25 11:42:01,232 INFO [logfile2] - Click Audio button.
-2019-03-25 11:42:23,493 INFO [logfile2] - Change audio set
-2019-03-25 11:42:26,396 INFO [logfile2] - Change audio set
-2019-03-25 11:44:01,774 INFO [logfile2] - Start simulator
-2019-03-25 11:44:19,891 INFO [logfile1] - Start Configurator
-2019-03-25 11:44:22,539 INFO [logfile1] - Edit Audio button.
-2019-03-25 11:44:24,695 INFO [logfile1] - Add/Edit your button windows closed
-2019-03-25 11:44:25,481 INFO [logfile1] - Edit Audio button.
-2019-03-25 11:44:26,827 INFO [logfile1] - Add/Edit your button windows closed
-2019-03-25 11:44:30,365 INFO [logfile1] - Edit Audio button.
-2019-03-25 11:44:35,245 INFO [logfile1] - Add/Edit your button windows closed
-2019-03-25 11:44:38,890 INFO [logfile1] - Edit Audio button.
-2019-03-25 11:44:40,265 INFO [logfile1] - Image browse clicked
-2019-03-25 11:44:45,389 INFO [logfile1] - Add/Edit your button windows closed
-2019-03-25 11:48:54,292 INFO [logfile1] - Edit Audio button.
-2019-03-25 11:49:34,602 INFO [logfile1] - Add/Edit your button windows closed
-2019-03-25 11:49:38,411 INFO [logfile1] - Closed Configurator App
-2019-03-25 11:56:49,441 INFO [logfile2] - Start simulator
-2019-03-25 11:56:58,226 INFO [logfile2] - Click Audio button.
-2019-03-25 11:57:05,144 INFO [logfile2] - Change audio set
-2019-03-25 11:57:10,086 INFO [logfile2] - Change audio set
-2019-03-25 11:57:11,573 INFO [logfile2] - Click Audio button.
-2019-03-25 11:57:12,598 INFO [logfile2] - Click Audio button.
-2019-03-25 11:57:14,088 INFO [logfile2] - Click Audio button.
-2019-03-25 11:57:14,195 INFO [logfile2] - Click Audio button.
-2019-03-25 11:57:15,040 INFO [logfile2] - Click Audio button.
-2019-03-25 12:40:07,143 INFO [logfile2] - Start simulator
-2019-03-31 23:55:55,630 INFO [logfile1] - Start Configurator
-2019-04-01 00:03:37,703 INFO [logfile1] - Start Configurator
-2019-04-01 00:05:14,645 INFO [logfile1] - Start Configurator
-2019-04-01 00:09:41,698 INFO [logfile1] - Start Configurator
-2019-04-01 00:10:18,367 INFO [logfile1] - Start Configurator
-2019-04-01 00:10:51,671 INFO [logfile1] - Start Configurator
-2019-04-01 00:11:07,946 INFO [logfile1] - Start Configurator
-2019-04-01 00:11:15,518 INFO [logfile1] - Closed Configurator App
-2019-04-01 00:11:18,033 INFO [logfile1] - Closed Configurator App
-2019-04-01 00:11:21,812 INFO [logfile1] - Closed Configurator App
-2019-04-01 00:11:25,005 INFO [logfile1] - Closed Configurator App
-2019-04-01 00:11:29,138 INFO [logfile1] - Closed Configurator App
-2019-04-01 00:11:42,959 INFO [logfile1] - Start Configurator
-2019-04-01 00:11:54,860 INFO [logfile1] - Closed Configurator App
-2019-04-01 00:12:04,802 INFO [logfile1] - Start Configurator
-2019-04-01 00:13:28,160 INFO [logfile1] - Closed Configurator App
-2019-04-01 00:16:31,422 INFO [logfile1] - Start Configurator
-2019-04-01 00:16:50,684 INFO [logfile1] - Edit Audio button.
-2019-04-01 00:16:52,599 INFO [logfile1] - Add/Edit your button windows closed
-2019-04-01 00:16:57,378 INFO [logfile1] - Closed Configurator App
-2019-04-01 11:31:10,658 INFO [logfile1] - Start Configurator
-2019-04-01 11:31:21,735 INFO [logfile1] - Closed Configurator App
-2019-04-01 11:31:35,682 INFO [logfile2] - Start simulator
-2019-04-01 11:42:38,057 INFO [logfile2] - Start simulator
-2019-04-01 11:42:41,756 ERROR [logfile2] - TalkBoxData\Config.tbc (The system cannot find the file specified)
+2019-04-01 13:39:49  [ main:0 ] - [ INFO ]  Start Configurator
+2019-04-01 13:39:55  [ AWT-EventQueue-0:5755 ] - [ INFO ]  Edit Audio button.
+2019-04-01 13:39:56  [ AWT-EventQueue-0:7254 ] - [ INFO ]  Cancel change
+2019-04-01 13:39:56  [ AWT-EventQueue-0:7326 ] - [ INFO ]  Add/Edit your button windows closed
+2019-04-01 13:39:57  [ AWT-EventQueue-0:8326 ] - [ INFO ]  Edit Audio button.
+2019-04-01 13:39:59  [ AWT-EventQueue-0:9780 ] - [ INFO ]  Cancel change
+2019-04-01 13:39:59  [ AWT-EventQueue-0:9844 ] - [ INFO ]  Add/Edit your button windows closed
+2019-04-01 13:40:02  [ AWT-EventQueue-0:12985 ] - [ INFO ]  Closed Configurator App
+2019-04-01 13:41:09  [ main:0 ] - [ INFO ]  Start simulator
+2019-04-01 13:41:12  [ AWT-EventQueue-0:3266 ] - [ INFO ]  Click Audio button.
+2019-04-01 13:41:13  [ AWT-EventQueue-0:4427 ] - [ INFO ]  Click Audio button.
+2019-04-01 13:41:14  [ AWT-EventQueue-0:4861 ] - [ INFO ]  Click Audio button.
+2019-04-01 13:41:14  [ AWT-EventQueue-0:5806 ] - [ INFO ]  Click Audio button.
+2019-04-01 13:41:15  [ AWT-EventQueue-0:6736 ] - [ INFO ]  Click Audio button.
+2019-04-01 13:41:16  [ AWT-EventQueue-0:7720 ] - [ INFO ]  Click Audio button.
+2019-04-01 13:42:19  [ main:0 ] - [ INFO ]  Start simulator
+2019-04-01 13:42:22  [ AWT-EventQueue-0:3096 ] - [ INFO ]  Click Audio button.
+2019-04-01 13:42:23  [ AWT-EventQueue-0:3689 ] - [ INFO ]  Click Audio button.
+2019-04-01 13:42:23  [ AWT-EventQueue-0:3889 ] - [ INFO ]  Click Audio button.
