@@ -1,11 +1,12 @@
 package Interface_Config;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+
+import Interface.Configurator;
+
 import javax.imageio.*;
 import javax.sound.sampled.*;
 import javax.swing.*;
-
-import Interface.Configurator;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

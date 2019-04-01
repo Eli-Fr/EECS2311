@@ -1,6 +1,5 @@
 package Interface_Config;
 
-import Interface.Configurator;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -11,6 +10,8 @@ import sun.audio.AudioPlayer;
 import sun.audio.AudioStream;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+
+import Interface.Configurator;
 
 public class PanelAudioSet extends JPanel implements ActionListener{
 

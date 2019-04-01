@@ -11,12 +11,9 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 import Helper_Methods.ShowError;
-
-
+import Interface.Configurator;
 
 import javax.swing.*;
-
-import Interface.Configurator;
 
 public class VisualFrame extends JFrame {
 

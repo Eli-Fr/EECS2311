@@ -6,10 +6,13 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import Interface.Configurator;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+
 import Helper_Methods.ShowError;
+import Interface.Configurator;
+
 import javax.swing.*;
 
 public class VisualFrame extends JFrame {

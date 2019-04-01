@@ -2,22 +2,24 @@ package Interface;
 
 
 import javax.swing.*;
-
-
-
 import java.awt.*;
 
-public class PanelHeading extends JPanel{
+public class HeadingPanel extends JPanel{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public JLabel title, subTitle;
 	
-	public PanelHeading(VisualFrame owner) {
+	public HeadingPanel(TalkBoxUI owner) {
 		super();
+		owner.add(this);
 		
 		this.setLayout(new BorderLayout());
-		this.setMaximumSize(new Dimension(owner.getWidth() - (500*owner.getConfig().getRatio()), 50 * owner.getConfig().getRatio()));
+		this.setMaximumSize(new Dimension(owner.getWidth() - 50, 50 * owner.getConfig().getRatio()));
 		
-		title = new JLabel("TalkBox", SwingConstants.CENTER);
+		title = new JLabel("TalkBot", SwingConstants.CENTER);
 		subTitle = new JLabel("Your friendly Bot that helps you talk ;)", SwingConstants.CENTER);
 		
 		this.setBackground(new Color(0, 12, 25));
@@ -27,8 +29,7 @@ public class PanelHeading extends JPanel{
 		formatText(owner);
 	}
 	
-	public void formatText(VisualFrame owner) {
-		
+	public void formatText(TalkBoxUI owner) {
 		title.setFont(new Font(Font.SANS_SERIF, Font.BOLD,24 * owner.getConfig().getRatio()));
 		title.setForeground(Color.WHITE);
 		subTitle.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 16 * owner.getConfig().getRatio()));

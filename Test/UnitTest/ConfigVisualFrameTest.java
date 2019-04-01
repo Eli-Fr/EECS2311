@@ -9,8 +9,8 @@ import java.io.ObjectInputStream;
 
 import org.junit.jupiter.api.Test;
 
-import Interface.Configurator;
 import Interface_Config.VisualFrame;
+import Interface.Configurator;
 import Interface.PanelBody;
 
 

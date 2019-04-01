@@ -4,14 +4,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import Interface.CustomBtn;
+import Interface.AudioButton;
 
 class TalkBoxCustomBtnTest {
-	CustomBtn c;
+	AudioButton c;
 
 	@Test
 	void testCustomBtn() throws Exception {
-		c = new CustomBtn("Name", "imgFileName", 1);
+		c = new AudioButton("Name", "imgFileName", 1);
 		assertEquals(1, c.getId());
 	}
 }

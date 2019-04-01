@@ -13,10 +13,10 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import Helper_Methods.ShowError;
+import Interface.Configurator;
 
 import javax.swing.*;
 
-import Interface.Configurator;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
