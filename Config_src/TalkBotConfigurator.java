@@ -7,7 +7,7 @@ public class TalkBotConfigurator {
 	
 	public static void main(String[] args) throws Exception{
 		log.info("Start Configurator");
-		VisualFrame simulator = new VisualFrame("TalkBotConfigurator");
+		VisualFrame Configurator = new VisualFrame("TalkBotConfigurator");
 	}
 
 }
