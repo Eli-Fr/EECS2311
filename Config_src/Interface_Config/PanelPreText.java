@@ -10,17 +10,28 @@ import org.apache.commons.logging.LogFactory;
 
 public class PanelPreText extends JPanel {
 
-	JTextArea buildLog;
-	JScrollPane buildScroll;
-	BufferedReader br;
+	JPanel sysRes;
 	int ratio;
+	public PanelAudioSet audSet;
 	public static Log log  = LogFactory.getLog("logfile1");
+	public VisualFrame owner;
+	
 	public PanelPreText(VisualFrame owner) {
+		
 		super();
-		this.setMinimumSize(new Dimension(owner.getWidth() - 25, 150 * owner.getConfig().getRatio()));
-		this.setMaximumSize(new Dimension(owner.getWidth() - 25, 150 * owner.getConfig().getRatio()));
 		this.setBackground(new Color(0, 12, 25));
-		this.setLayout(new GridLayout(4, 4));
+		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+		sysRes = new JPanel(new FlowLayout());
+		this.owner = owner;
+		this.audSet = new PanelAudioSet(owner);
+		
+		cmbSetUp();
+		this.add(sysRes);
+		this.add(audSet.setScroll);
+				
+	}
+	
+	public void cmbSetUp() {
 		
 		String[] resChoices = {"1280 x 720", "2560 x 1440", "3840 x 2160"};
 		
@@ -33,6 +44,7 @@ public class PanelPreText extends JPanel {
 				ratio = cmbRes.getSelectedIndex() + 1;
 				System.out.println(ratio);
 				log.info("Change ratio clicked");
+				
 			}
 		});
 		
@@ -41,11 +53,11 @@ public class PanelPreText extends JPanel {
 		res.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 14 * owner.getConfig().getRatio()));
 		res.setForeground(new Color(54, 146, 251));
 				
-		this.add(res);
-		this.add(cmbRes);
+		sysRes.add(res);
+		sysRes.add(cmbRes);
 		
 		this.ratio = cmbRes.getSelectedIndex()+1;
-				
+		
 	}
 	
 	public int getRatio() {

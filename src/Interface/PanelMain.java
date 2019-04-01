@@ -6,7 +6,8 @@ import java.awt.*;
 
 public class PanelMain extends JPanel{
 	
-	public JPanel headingPane, preTextPane, bodyPane;
+	public JPanel headingPane, preTextPane;
+	public PanelBody bodyPane;
 	public JScrollPane bodyPaneScroll;
 	
 	public PanelMain(VisualFrame owner) {
@@ -23,13 +24,11 @@ public class PanelMain extends JPanel{
 		bodyPaneScroll = new JScrollPane(bodyPane);
 		bodyPaneScroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		bodyPaneScroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-		bodyPaneScroll.setMaximumSize(new Dimension(owner.getWidth()+15, 175 * owner.getConfig().getRatio()));
-		bodyPaneScroll.setMinimumSize(new Dimension(owner.getWidth()+15, 175 * owner.getConfig().getRatio()));
 		
 		this.add(headingPane);
-		this.add(Box.createRigidArea(new Dimension(0,15 * owner.getConfig().getRatio())));
+		this.add(Box.createRigidArea(new Dimension(0,50 * owner.getConfig().getRatio())));
 		this.add(preTextPane);
-		this.add(Box.createRigidArea(new Dimension(0,15 * owner.getConfig().getRatio())));
+		this.add(Box.createRigidArea(new Dimension(0,50 * owner.getConfig().getRatio())));
 		this.add(bodyPaneScroll);
 		
 	}

@@ -14,7 +14,7 @@ public class PanelHeading extends JPanel{
 		this.setLayout(new BorderLayout());
 		this.setMaximumSize(new Dimension(owner.getWidth() - 50, 50 * owner.getConfig().getRatio()));
 		
-		title = new JLabel("TalkBotConfigurator", SwingConstants.CENTER);
+		title = new JLabel("TalkBoxConfigurator", SwingConstants.CENTER);
 		subTitle = new JLabel("Configure your Talk Bot here, and see the changes there.", SwingConstants.CENTER);
 		
 		this.setBackground(new Color(0, 12, 25));

@@ -18,7 +18,7 @@ import javax.swing.*;
 
 public class VisualFrame extends JFrame {
 
-	private JPanel mainPanel;
+	public PanelMain mainPanel;
 	private ObjectInputStream ois;
 	private FileInputStream fis;
 	private Configurator config;
@@ -38,20 +38,22 @@ public class VisualFrame extends JFrame {
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
+			
 			JOptionPane.showMessageDialog(null, "Cannot find TalkBoxData folder", "Confirm Exit", JOptionPane.ERROR_MESSAGE);
 			log.error(e.getMessage());
-	        System.exit(0);
+	        
 		} catch (IOException e) {
 			e.printStackTrace();
+			
 			JOptionPane.showMessageDialog(null, "Cannot read Config.tbc", "Confirm Exit", JOptionPane.ERROR_MESSAGE);
 			log.error(e.getMessage());
-	        System.exit(0);
+	        
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
+			
 			JOptionPane.showMessageDialog(null, "File type is *.tbc", "Confirm Exit", JOptionPane.ERROR_MESSAGE);
 			log.error(e.getMessage());
-	        System.exit(0);
+	        
 		}
 
 		this.setResizable(false);
@@ -67,72 +69,4 @@ public class VisualFrame extends JFrame {
 		return this.config;
 	}
 
-
-
-	/**
-	 * checks if system path exits
-	 * 
-	 * @return if the initial system path exists
-	 */
-	private boolean checkPath() {
-		File Dir = new File("C:\\TalkBox");
-		return Dir.isDirectory();
-	}
-
-	/**
-	 * 
-	 * Creates a new system path for the dependencies (specifically audio and
-	 * image files)
-	 *
-	 */
-	private void createPath() {
-		try {
-			Files.createDirectory(Paths.get("C:\\TalkBox"));
-			Files.createDirectory(Paths.get("C:\\TalkBox\\TalkBoxData"));
-			Files.createDirectory(Paths.get("C:\\TalkBox\\TalkBoxData\\Audio"));
-			Files.createDirectory(Paths.get("C:\\TalkBox\\TalkBoxData\\Icon"));
-			copyDir(Paths.get("TalkBoxData\\Icon").toFile(), new File("C:\\TalkBox\\TalkBoxData\\Icon"));
-			copyDir(Paths.get("TalkBoxData\\Audio").toFile(), new File("C:\\TalkBox\\TalkBoxData\\Audio"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-
-	/**
-	 * @pre source directory contains no sub directories
-	 * @post destination directory is populated with sub directory files
-	 * @param source
-	 *            directory
-	 * @param destination
-	 *            directory
-	 * @throws IOException
-	 */
-	private static void copyDir(File source, File destination) throws IOException {
-		System.out.println(source.listFiles().toString());
-		for (File file : source.listFiles()) {
-			File fileD = Paths.get(destination.getAbsolutePath() + "\\" + file.getName()).toFile();
-			System.out.println(fileD.getAbsolutePath());
-			Files.createFile(fileD.toPath());
-			FileChannel src = null;
-			FileChannel dest = null;
-			src = new FileInputStream(file).getChannel();
-			dest = new FileOutputStream(fileD).getChannel();
-			dest.transferFrom(src, 0, src.size());
-			src.close();
-			dest.close();
-		}
-	}
-
-	/**
-	 * This method only does something on the first execution of the talkbox on
-	 * a new system
-	 * 
-	 * @pre fundamental system path does not exist
-	 * @post fundamental system path is created
-	 */
-	private void setup() {
-		if (!checkPath()) {
-			createPath();
-		}
-	}
 }

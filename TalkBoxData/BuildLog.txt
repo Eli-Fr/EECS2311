@@ -7,23 +7,3 @@
           4. Find the Expression/Emotion.
           5. Tap the Expression/Emotion Button.
           6. Done!
-
-
- Update Info
-
-      Version1.2
-          - Working Prototype
-          - Programmable Buttons
-          - Working text to speech
-	
-      Version 1.1
-          - Added Visuals.
-          - Added Log on the Main Screen.
-          - Instructions Added.
-
-      Version 1.0
-          - Enabled support for configurable buttons through text file.
-          - Added voice to speech support.
-          - Original 9 buttons initialized.
-          - Scroll Bar added for future long list support. 
-          - Initializes in the main Screen.
