@@ -10,6 +10,7 @@ import sun.audio.AudioPlayer;
 import sun.audio.AudioStream;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import Helper_Methods.ShowError;
 
 
 public class PanelBody extends JPanel implements ActionListener{
@@ -60,7 +61,7 @@ public class PanelBody extends JPanel implements ActionListener{
 			    log.info("Click Audio button.");
 			
 			} catch (IOException e1) {
-				JOptionPane.showMessageDialog(null, "No Audio File Found for Button: " +btn.getText(), "Okay", JOptionPane.ERROR_MESSAGE);
+				ShowError.errorMessageOK("No Audio File Found for Button: " +btn.getText());
 				log.error(e1.getMessage());
 			}
 		}

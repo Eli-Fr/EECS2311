@@ -6,6 +6,7 @@ import javax.swing.*;
 import java.io.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import Helper_Methods.ShowError;
 
 public class CustomBtn extends JButton{
 
@@ -30,7 +31,7 @@ public class CustomBtn extends JButton{
 		try {
 			this.img = new ImageIcon(ImageIO.read(new File(imgFileName)));
 		} catch (IOException e) {
-			JOptionPane.showMessageDialog(null, "No Image File Found for Button: " +this.getText(), "Okay", JOptionPane.ERROR_MESSAGE);
+			ShowError.errorMessageOK("No Image File Found for Button: " +this.getText());
 			log.error(e.getMessage());
 		}
 		

@@ -3,7 +3,7 @@ package TBC_Interface;
 import javax.swing.*;
 import java.awt.*;
 import java.io.*;
-
+import Helper_Methods.ShowError;
 
 
 
@@ -12,7 +12,6 @@ public class PanelPreText extends JPanel {
 	JTextArea buildLog;
 	JScrollPane buildScroll;
 	BufferedReader br;
-	private ShowError se;
 	
 	public PanelPreText(VisualFrame owner) {
 		super();
@@ -30,7 +29,7 @@ public class PanelPreText extends JPanel {
 	}
 	
 	public void updateLog(VisualFrame owner) {
-		se = new ShowError();
+
 		
 		buildLog = new JTextArea();
 		
@@ -53,13 +52,11 @@ public class PanelPreText extends JPanel {
 			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-			//JOptionPane.showMessageDialog(null, "Cannot find BuildLog.txt", "Confirm Exit", JOptionPane.ERROR_MESSAGE);
-			se.errorMessage("Cannot find BuildLog.txt");
+			ShowError.errorMessage("Cannot find BuildLog.txt");
 	        System.exit(0);
 		} catch (IOException e) {
 			e.printStackTrace();
-			//JOptionPane.showMessageDialog(null, "Cannot read BuildLog.txt", "Confirm Exit", JOptionPane.ERROR_MESSAGE);
-			se.errorMessage("Cannot find BuildLog.txt");
+			ShowError.errorMessage("Cannot find BuildLog.txt");
 	        System.exit(0);
 		}
 		

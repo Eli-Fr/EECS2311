@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import Helper_Methods.ShowError;
 
 import javax.swing.*;
 
@@ -179,7 +180,7 @@ public class EditBtn extends JFrame implements ActionListener{
 				this.imgChanged = true;
 			}
 			else {
-				JOptionPane.showMessageDialog(null, "Wrong image file format. Correct is .jpg or .png extension.", "Confirm Exit", JOptionPane.ERROR_MESSAGE);
+				ShowError.errorMessage("Wrong image file format. Correct is .jpg or .png extension.");
 				log.error("Wrong image file format.");
 			}
 			this.imgPath.setText(fd.getFiles()[0].getAbsolutePath());
@@ -195,7 +196,7 @@ public class EditBtn extends JFrame implements ActionListener{
 				this.audChanged = true;
 			}
 			else {
-				JOptionPane.showMessageDialog(null, "Wrong audio file format. Correct is .wav extension.", "Confirm Exit", JOptionPane.ERROR_MESSAGE);
+				ShowError.errorMessage("Wrong audio file format. Correct is .wav extension.");
 				log.error("Wrong audio file format.");
 			}
 			System.out.println(tempAud);

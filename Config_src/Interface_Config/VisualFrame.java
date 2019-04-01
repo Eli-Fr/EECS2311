@@ -9,7 +9,7 @@ import java.io.ObjectInputStream;
 import Interface.Configurator;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
+import Helper_Methods.ShowError;
 import javax.swing.*;
 
 public class VisualFrame extends JFrame {
@@ -48,8 +48,7 @@ public class VisualFrame extends JFrame {
 
 			e.printStackTrace();
 
-			JOptionPane.showMessageDialog(null, "Cannot find TalkBoxData folder", "Confirm Exit",
-					JOptionPane.ERROR_MESSAGE);
+			ShowError.errorMessage("Cannot find TalkBoxData folder");
 
 		} catch (IOException e) {
 
@@ -57,7 +56,7 @@ public class VisualFrame extends JFrame {
 
 			e.printStackTrace();
 
-			JOptionPane.showMessageDialog(null, "Cannot read Config.tbc", "Confirm Exit", JOptionPane.ERROR_MESSAGE);
+			ShowError.errorMessage("Cannot read Config.tbc");
 
 		} catch (ClassNotFoundException e) {
 			
@@ -65,7 +64,7 @@ public class VisualFrame extends JFrame {
 			
 			e.printStackTrace();
 			
-			JOptionPane.showMessageDialog(null, "File type is *.tbc", "Confirm Exit", JOptionPane.ERROR_MESSAGE);
+			ShowError.errorMessage("File type is *.tbc");
 		
 		}
 

@@ -12,6 +12,7 @@ import java.io.ObjectOutputStream;
 import Interface.Configurator;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import Helper_Methods.ShowError;
 
 public class PanelMain extends JPanel{
 	
@@ -53,7 +54,7 @@ public class PanelMain extends JPanel{
 					
 					e1.printStackTrace();
 					
-					JOptionPane.showMessageDialog(null, "Cannot find Config.tbc", "Confirm Exit", JOptionPane.ERROR_MESSAGE);
+					ShowError.errorMessage("Cannot find Config.tbc");
 			        System.exit(0);
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
@@ -61,7 +62,7 @@ public class PanelMain extends JPanel{
 					
 					e1.printStackTrace();
 					
-					JOptionPane.showMessageDialog(null, "Cannot read Config.tbc", "Confirm Exit", JOptionPane.ERROR_MESSAGE);
+					ShowError.errorMessage("Cannot read Config.tbc");
 			        System.exit(0);
 				}
 				

@@ -5,7 +5,7 @@ import java.awt.*;
 import java.io.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
+import Helper_Methods.ShowError;
 
 
 public class PanelPreText extends JPanel {
@@ -63,13 +63,13 @@ public class PanelPreText extends JPanel {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 			
-			JOptionPane.showMessageDialog(null, "Cannot find BuildLog.txt", "Confirm Exit", JOptionPane.ERROR_MESSAGE);
+			ShowError.errorMessage("Cannot find BuildLog.txt");
 			log.error(e.getMessage());
 			
 		} catch (IOException e) {
 			e.printStackTrace();
 			
-			JOptionPane.showMessageDialog(null, "Cannot read BuildLog.txt", "Confirm Exit", JOptionPane.ERROR_MESSAGE);
+			ShowError.errorMessage("Cannot find BuildLog.txt");
 			log.error(e.getMessage());
 			
 		}

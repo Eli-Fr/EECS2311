@@ -10,6 +10,8 @@ import java.nio.channels.FileChannel;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+import Helper_Methods.ShowError;
+
 
 
 import javax.swing.*;
@@ -22,14 +24,12 @@ public class VisualFrame extends JFrame {
 	private ObjectInputStream ois;
 	private FileInputStream fis;
 	private Configurator config;
-	private ShowError se;
 	
 	public VisualFrame(String title) {
 
 		super(title);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		try {
-			se = new ShowError();
 			fis = new FileInputStream("TalkBoxData/Config.tbc");
 			ois = new ObjectInputStream(fis);
 
@@ -37,19 +37,16 @@ public class VisualFrame extends JFrame {
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-			//JOptionPane.showMessageDialog(null, "Cannot find TalkBoxData folder", "Confirm Exit", JOptionPane.ERROR_MESSAGE);
-			se.errorMessage("Cannot find TalkBoxData folder");
+			ShowError.errorMessage("Cannot find TalkBoxData folder");
 	        System.exit(0);
 		} catch (IOException e) {
 			e.printStackTrace();
-			//JOptionPane.showMessageDialog(null, "Cannot read Config.tbc", "Confirm Exit", JOptionPane.ERROR_MESSAGE);
-			se.errorMessage("Cannot read Config.tbc");
+			ShowError.errorMessage("Cannot read Config.tbc");
 	        System.exit(0);
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			//JOptionPane.showMessageDialog(null, "File type is *.tbc", "Confirm Exit", JOptionPane.ERROR_MESSAGE);
-			se.errorMessage("File type is *.tbc");
+			ShowError.errorMessage("File type is *.tbc");
 	        System.exit(0);
 		}
 		this.setResizable(false);
