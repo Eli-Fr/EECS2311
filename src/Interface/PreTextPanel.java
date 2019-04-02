@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.*;
 
-public class PreTextPanel extends JPanel {
+public class PreTextPanel extends AbstractPanel {
 
 	/**
 	 * 
@@ -15,7 +15,7 @@ public class PreTextPanel extends JPanel {
 	BufferedReader br;
 
 	public PreTextPanel(TalkBoxUI owner) {
-		super();
+		super(owner);
 		this.setMinimumSize(new Dimension(owner.getWidth() - 25, 150 * owner.getConfig().getRatio()));
 		this.setMaximumSize(new Dimension(owner.getWidth() - 25, 150 * owner.getConfig().getRatio()));
 		this.setBackground(new Color(5, 19, 54));

@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 import java.util.Arrays;
 
 import javax.swing.JButton;
-import javax.swing.JPanel;
 
 public class SetSelectorButton extends JButton implements ActionListener {
 
@@ -25,7 +24,7 @@ public class SetSelectorButton extends JButton implements ActionListener {
 
 		own.getConfig().setSetNum(Arrays.asList(own.getConfig().getSetBtn()).indexOf(name));
 
-		for (int i = own.getConfig().getNumberOfAudioButtons(); i >0; i--) {
+		for (int i = own.getConfig().getNumberOfAudioButtons(); i > 0; i--) {
 			own.remove(i);
 		}
 
