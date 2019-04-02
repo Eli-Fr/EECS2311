@@ -12,10 +12,12 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
-import Helper_Methods.ShowError;
-import Interface.Configurator;
 
 import javax.swing.*;
+
+import Interface.Configurator;
+import sun.audio.AudioPlayer;
+import sun.audio.AudioStream;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -29,6 +31,8 @@ public class EditBtn extends JFrame implements ActionListener{
 	JTextField nameText;
 	boolean imgChanged, audChanged;
 	public static Log log  = LogFactory.getLog("logfile1");
+	CustomBtn previewBtn;
+	
 	public EditBtn(String name, String imgPath, String audPath) {
 		
 		super("Add/Edit your Button");
@@ -48,15 +52,37 @@ public class EditBtn extends JFrame implements ActionListener{
 		this.imgChanged = false;
 		this.audChanged = false;
 		
-		this.setSize(600, 275);
+		this.setSize(600, 375);
 		this.setContentPane(main);
 		this.setVisible(true);
+		
+		previewBtn = new CustomBtn(this.nameBtn, this.imgFile +"/" +name +".jpg", 0, this.audFile +"/" +name +".wav");
+		previewBtn.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				try {
+					System.out.println(previewBtn.wavFileName);
+					AudioPlayer.player.start(new AudioStream(new FileInputStream(previewBtn.getWavFileName())));
+				    log.info("Click Audio button.");
+				
+				} catch (IOException e1) {
+					JOptionPane.showMessageDialog(null, "No Audio File Found for Button: " +name, "Okay", JOptionPane.ERROR_MESSAGE);
+					log.error(e1.getMessage());
+				}
+				
+			}
+		});
+		main.add(previewBtn, SwingConstants.CENTER);
 		
 	}
 	
 	public void initMain() {
 		main = new JPanel();
 		main.setLayout(new BoxLayout(main, BoxLayout.Y_AXIS));
+		
+		System.out.println("The file name is" +this.imgFile +name +".jpg");
 		
 		this.initName();
 		this.initImage();
@@ -178,12 +204,13 @@ public class EditBtn extends JFrame implements ActionListener{
 			tempImg = fd.getFile();
 			if(tempImg.endsWith(".jpg")||tempImg.endsWith(".png")) {
 				this.imgChanged = true;
+				this.imgPath.setText(fd.getFiles()[0].getAbsolutePath());
+				this.previewBtn.setImg(this.imgPath.getText());
 			}
 			else {
-				ShowError.errorMessage("Wrong image file format. Correct is .jpg or .png extension.");
+				JOptionPane.showMessageDialog(null, "Wrong image file format. Correct is .jpg or .png extension.", "Confirm Exit", JOptionPane.ERROR_MESSAGE);
 				log.error("Wrong image file format.");
 			}
-			this.imgPath.setText(fd.getFiles()[0].getAbsolutePath());
 			fd.dispose();
 			
 		}
@@ -194,13 +221,14 @@ public class EditBtn extends JFrame implements ActionListener{
 			tempAud = fd.getFile();
 			if(tempAud.endsWith(".wav")) {
 				this.audChanged = true;
+				this.audPath.setText(fd.getFiles()[0].getAbsolutePath());
+				this.previewBtn.wavFileName = this.audPath.getText();
 			}
 			else {
-				ShowError.errorMessage("Wrong audio file format. Correct is .wav extension.");
+				JOptionPane.showMessageDialog(null, "Wrong audio file format. Correct is .wav extension.", "Confirm Exit", JOptionPane.ERROR_MESSAGE);
 				log.error("Wrong audio file format.");
 			}
 			System.out.println(tempAud);
-			this.audPath.setText(fd.getFiles()[0].getAbsolutePath());
 			fd.dispose();
 			
 		}

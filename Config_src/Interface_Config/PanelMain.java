@@ -45,7 +45,7 @@ public class PanelMain extends JPanel{
 				config.setRatio(((PanelPreText) preTextPane).getRatio());
 				try {
 					
-					ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(new File("TalkBoxData/Config.tbc")));
+					ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(new File("TalkBoxData/Default.tbc")));
 					oos.writeObject(config);
 					
 					log.info("Change saved");

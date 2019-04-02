@@ -40,7 +40,7 @@ public class VisualFrame extends JFrame {
 		
 		try {
 
-			fis = new FileInputStream("TalkBoxData/Config.tbc");
+			fis = new FileInputStream("TalkBoxData/Default.tbc");
 			ois = new ObjectInputStream(fis);
 
 			config = (Configurator) ois.readObject();

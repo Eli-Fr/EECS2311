@@ -17,3 +17,121 @@
 2019-04-01 13:42:22  [ AWT-EventQueue-0:3096 ] - [ INFO ]  Click Audio button.
 2019-04-01 13:42:23  [ AWT-EventQueue-0:3689 ] - [ INFO ]  Click Audio button.
 2019-04-01 13:42:23  [ AWT-EventQueue-0:3889 ] - [ INFO ]  Click Audio button.
+2019-04-01 22:26:54  [ main:0 ] - [ INFO ]  Start Configurator
+2019-04-01 22:26:54  [ main:325 ] - [ ERROR ]  TalkBoxData/Config.tbc (No such file or directory)
+2019-04-01 22:27:43  [ main:0 ] - [ INFO ]  Start Configurator
+2019-04-01 22:27:49  [ AWT-EventQueue-0:5876 ] - [ INFO ]  Edit Audio button.
+2019-04-01 22:27:54  [ AWT-EventQueue-0:11090 ] - [ INFO ]  Click Audio button.
+2019-04-01 22:27:55  [ AWT-EventQueue-0:11913 ] - [ INFO ]  Click Audio button.
+2019-04-01 22:27:55  [ AWT-EventQueue-0:12737 ] - [ INFO ]  Click Audio button.
+2019-04-01 22:27:56  [ AWT-EventQueue-0:13625 ] - [ INFO ]  Click Audio button.
+2019-04-01 22:27:57  [ AWT-EventQueue-0:14422 ] - [ INFO ]  Click Audio button.
+2019-04-01 22:27:58  [ AWT-EventQueue-0:15196 ] - [ INFO ]  Click Audio button.
+2019-04-01 22:27:59  [ AWT-EventQueue-0:16139 ] - [ INFO ]  Click Audio button.
+2019-04-01 22:28:00  [ AWT-EventQueue-0:17058 ] - [ INFO ]  Click Audio button.
+2019-04-01 22:28:07  [ AWT-EventQueue-0:24029 ] - [ INFO ]  Image browse clicked
+2019-04-01 22:28:22  [ AWT-EventQueue-0:39775 ] - [ ERROR ]  Wrong image file format.
+2019-04-01 22:28:25  [ AWT-EventQueue-0:42660 ] - [ INFO ]  Add/Edit your button windows closed
+2019-04-01 22:28:32  [ AWT-EventQueue-0:48871 ] - [ INFO ]  Change saved
+2019-04-01 22:28:35  [ AWT-EventQueue-0:52454 ] - [ INFO ]  Closed Configurator App
+2019-04-01 22:29:20  [ main:0 ] - [ INFO ]  Start Configurator
+2019-04-01 22:29:23  [ AWT-EventQueue-0:3612 ] - [ INFO ]  Edit Audio button.
+2019-04-01 22:29:27  [ AWT-EventQueue-0:6942 ] - [ INFO ]  Image browse clicked
+2019-04-01 22:29:50  [ AWT-EventQueue-0:30660 ] - [ INFO ]  Click Audio button.
+2019-04-01 22:29:51  [ AWT-EventQueue-0:31107 ] - [ INFO ]  Click Audio button.
+2019-04-01 22:29:52  [ AWT-EventQueue-0:32067 ] - [ INFO ]  Cancel change
+2019-04-01 22:29:52  [ AWT-EventQueue-0:32091 ] - [ INFO ]  Add/Edit your button windows closed
+2019-04-01 22:29:53  [ AWT-EventQueue-0:33288 ] - [ INFO ]  Change saved
+2019-04-01 22:29:56  [ AWT-EventQueue-0:36440 ] - [ INFO ]  Closed Configurator App
+2019-04-01 22:30:27  [ main:0 ] - [ INFO ]  Start Configurator
+2019-04-01 22:30:37  [ AWT-EventQueue-0:9871 ] - [ INFO ]  Add Audio button.
+2019-04-01 22:30:48  [ AWT-EventQueue-0:21678 ] - [ INFO ]  Add Audio button.
+2019-04-01 22:30:50  [ AWT-EventQueue-0:23670 ] - [ INFO ]  Add Audio button.
+2019-04-01 22:30:52  [ AWT-EventQueue-0:25758 ] - [ INFO ]  Add Audio button.
+2019-04-01 22:30:56  [ AWT-EventQueue-0:28898 ] - [ INFO ]  Edit Audio button.
+2019-04-01 22:30:57  [ AWT-EventQueue-0:30700 ] - [ INFO ]  Image browse clicked
+2019-04-01 22:31:08  [ AWT-EventQueue-0:41780 ] - [ INFO ]  Audio browse clicked
+2019-04-01 22:31:24  [ AWT-EventQueue-0:56897 ] - [ INFO ]  Changed image
+2019-04-01 22:31:24  [ AWT-EventQueue-0:56898 ] - [ INFO ]  Changed audio
+2019-04-01 22:31:24  [ AWT-EventQueue-0:56929 ] - [ INFO ]  Add/Edit your button windows closed
+2019-04-01 22:31:25  [ AWT-EventQueue-0:58043 ] - [ INFO ]  Edit Audio button.
+2019-04-01 22:31:28  [ AWT-EventQueue-0:60964 ] - [ INFO ]  Image browse clicked
+2019-04-01 22:31:31  [ AWT-EventQueue-0:64565 ] - [ INFO ]  Audio browse clicked
+2019-04-01 22:31:38  [ AWT-EventQueue-0:71078 ] - [ INFO ]  Image browse clicked
+2019-04-01 22:31:51  [ AWT-EventQueue-0:84652 ] - [ INFO ]  Click Audio button.
+2019-04-01 22:31:53  [ AWT-EventQueue-0:85958 ] - [ INFO ]  Changed image
+2019-04-01 22:31:53  [ AWT-EventQueue-0:85959 ] - [ INFO ]  Changed audio
+2019-04-01 22:31:53  [ AWT-EventQueue-0:85983 ] - [ INFO ]  Add/Edit your button windows closed
+2019-04-01 22:31:54  [ AWT-EventQueue-0:87087 ] - [ INFO ]  Edit Audio button.
+2019-04-01 22:31:59  [ AWT-EventQueue-0:92181 ] - [ INFO ]  Image browse clicked
+2019-04-01 22:32:03  [ AWT-EventQueue-0:96452 ] - [ INFO ]  Audio browse clicked
+2019-04-01 22:32:14  [ AWT-EventQueue-0:107821 ] - [ INFO ]  Changed image
+2019-04-01 22:32:14  [ AWT-EventQueue-0:107821 ] - [ INFO ]  Changed audio
+2019-04-01 22:32:14  [ AWT-EventQueue-0:107844 ] - [ INFO ]  Add/Edit your button windows closed
+2019-04-01 22:32:17  [ AWT-EventQueue-0:110817 ] - [ INFO ]  Edit Audio button.
+2019-04-01 22:32:18  [ AWT-EventQueue-0:111804 ] - [ INFO ]  Audio browse clicked
+2019-04-01 22:32:22  [ AWT-EventQueue-0:115419 ] - [ INFO ]  Click Audio button.
+2019-04-01 22:32:24  [ AWT-EventQueue-0:117125 ] - [ INFO ]  Cancel change
+2019-04-01 22:32:24  [ AWT-EventQueue-0:117147 ] - [ INFO ]  Add/Edit your button windows closed
+2019-04-01 22:32:25  [ AWT-EventQueue-0:117898 ] - [ INFO ]  Edit Audio button.
+2019-04-01 22:32:30  [ AWT-EventQueue-0:123597 ] - [ INFO ]  Image browse clicked
+2019-04-01 22:32:34  [ AWT-EventQueue-0:127485 ] - [ INFO ]  Audio browse clicked
+2019-04-01 22:32:37  [ AWT-EventQueue-0:130565 ] - [ INFO ]  Image browse clicked
+2019-04-01 22:32:49  [ AWT-EventQueue-0:142812 ] - [ INFO ]  Changed image
+2019-04-01 22:32:49  [ AWT-EventQueue-0:142812 ] - [ INFO ]  Changed audio
+2019-04-01 22:32:49  [ AWT-EventQueue-0:142835 ] - [ INFO ]  Add/Edit your button windows closed
+2019-04-01 22:32:53  [ AWT-EventQueue-0:146807 ] - [ INFO ]  Change audio set
+2019-04-01 22:32:54  [ AWT-EventQueue-0:147499 ] - [ INFO ]  Change audio set
+2019-04-01 22:32:58  [ AWT-EventQueue-0:151295 ] - [ INFO ]  Change saved
+2019-04-01 22:32:59  [ AWT-EventQueue-0:152173 ] - [ INFO ]  Change saved
+2019-04-01 22:33:02  [ AWT-EventQueue-0:154966 ] - [ INFO ]  Closed Configurator App
+2019-04-01 22:33:05  [ main:0 ] - [ INFO ]  Start Configurator
+2019-04-01 22:33:14  [ AWT-EventQueue-0:9036 ] - [ INFO ]  Change audio set
+2019-04-01 22:33:15  [ AWT-EventQueue-0:9757 ] - [ INFO ]  Change audio set
+2019-04-01 22:33:20  [ AWT-EventQueue-0:14331 ] - [ INFO ]  Closed Configurator App
+2019-04-01 22:33:41  [ main:0 ] - [ INFO ]  Start Configurator
+2019-04-01 22:33:44  [ AWT-EventQueue-0:2844 ] - [ INFO ]  Edit Audio button.
+2019-04-01 22:33:47  [ AWT-EventQueue-0:5748 ] - [ INFO ]  Image browse clicked
+2019-04-01 22:33:51  [ AWT-EventQueue-0:9940 ] - [ INFO ]  Audio browse clicked
+2019-04-01 22:33:59  [ AWT-EventQueue-0:17425 ] - [ INFO ]  Changed image
+2019-04-01 22:33:59  [ AWT-EventQueue-0:17425 ] - [ INFO ]  Changed audio
+2019-04-01 22:33:59  [ AWT-EventQueue-0:17456 ] - [ INFO ]  Add/Edit your button windows closed
+2019-04-01 22:34:00  [ AWT-EventQueue-0:18663 ] - [ INFO ]  Change saved
+2019-04-01 22:34:00  [ AWT-EventQueue-0:19038 ] - [ INFO ]  Change saved
+2019-04-01 22:34:00  [ AWT-EventQueue-0:19229 ] - [ INFO ]  Change saved
+2019-04-01 22:34:01  [ AWT-EventQueue-0:19405 ] - [ INFO ]  Change saved
+2019-04-01 22:34:04  [ AWT-EventQueue-0:23021 ] - [ INFO ]  Closed Configurator App
+2019-04-01 22:36:33  [ main:0 ] - [ INFO ]  Start Configurator
+2019-04-01 22:36:42  [ AWT-EventQueue-0:9135 ] - [ INFO ]  Add Audio button.
+2019-04-01 22:36:44  [ AWT-EventQueue-0:10926 ] - [ INFO ]  Add Audio button.
+2019-04-01 22:36:46  [ AWT-EventQueue-0:13118 ] - [ INFO ]  Add Audio button.
+2019-04-01 22:36:58  [ AWT-EventQueue-0:24646 ] - [ INFO ]  Add Audio button.
+2019-04-01 22:36:59  [ AWT-EventQueue-0:25569 ] - [ INFO ]  Edit Audio button.
+2019-04-01 22:36:59  [ AWT-EventQueue-0:26436 ] - [ INFO ]  Image browse clicked
+2019-04-01 22:37:12  [ AWT-EventQueue-0:39220 ] - [ INFO ]  Audio browse clicked
+2019-04-01 22:37:25  [ AWT-EventQueue-0:52313 ] - [ INFO ]  Changed image
+2019-04-01 22:37:25  [ AWT-EventQueue-0:52313 ] - [ INFO ]  Changed audio
+2019-04-01 22:37:25  [ AWT-EventQueue-0:52346 ] - [ INFO ]  Add/Edit your button windows closed
+2019-04-01 22:37:26  [ AWT-EventQueue-0:53194 ] - [ INFO ]  Edit Audio button.
+2019-04-01 22:37:32  [ AWT-EventQueue-0:58828 ] - [ INFO ]  Image browse clicked
+2019-04-01 22:37:35  [ AWT-EventQueue-0:61708 ] - [ INFO ]  Audio browse clicked
+2019-04-01 22:37:38  [ AWT-EventQueue-0:65356 ] - [ INFO ]  Image browse clicked
+2019-04-01 22:37:46  [ AWT-EventQueue-0:73380 ] - [ INFO ]  Changed image
+2019-04-01 22:37:46  [ AWT-EventQueue-0:73381 ] - [ INFO ]  Changed audio
+2019-04-01 22:37:46  [ AWT-EventQueue-0:73406 ] - [ INFO ]  Add/Edit your button windows closed
+2019-04-01 22:37:49  [ AWT-EventQueue-0:75522 ] - [ INFO ]  Edit Audio button.
+2019-04-01 22:38:01  [ AWT-EventQueue-0:87988 ] - [ INFO ]  Image browse clicked
+2019-04-01 22:38:05  [ AWT-EventQueue-0:91596 ] - [ INFO ]  Audio browse clicked
+2019-04-01 22:38:13  [ AWT-EventQueue-0:100188 ] - [ INFO ]  Changed image
+2019-04-01 22:38:13  [ AWT-EventQueue-0:100188 ] - [ INFO ]  Changed audio
+2019-04-01 22:38:13  [ AWT-EventQueue-0:100210 ] - [ INFO ]  Add/Edit your button windows closed
+2019-04-01 22:38:17  [ AWT-EventQueue-0:103633 ] - [ INFO ]  Edit Audio button.
+2019-04-01 22:38:25  [ AWT-EventQueue-0:111524 ] - [ INFO ]  Image browse clicked
+2019-04-01 22:38:28  [ AWT-EventQueue-0:115468 ] - [ INFO ]  Audio browse clicked
+2019-04-01 22:38:32  [ AWT-EventQueue-0:118940 ] - [ INFO ]  Image browse clicked
+2019-04-01 22:38:42  [ AWT-EventQueue-0:129060 ] - [ INFO ]  Changed image
+2019-04-01 22:38:42  [ AWT-EventQueue-0:129061 ] - [ INFO ]  Changed audio
+2019-04-01 22:38:42  [ AWT-EventQueue-0:129082 ] - [ INFO ]  Add/Edit your button windows closed
+2019-04-01 22:38:44  [ AWT-EventQueue-0:130582 ] - [ INFO ]  Change saved
+2019-04-01 22:38:44  [ AWT-EventQueue-0:131444 ] - [ INFO ]  Change saved
+2019-04-01 22:38:47  [ AWT-EventQueue-0:134013 ] - [ INFO ]  Closed Configurator App
