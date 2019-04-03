@@ -20,7 +20,6 @@ public class SetSelectorButton extends JButton implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		System.out.println("yeets");
 
 		own.getConfig().setSetNum(Arrays.asList(own.getConfig().getSetBtn()).indexOf(name));
 
