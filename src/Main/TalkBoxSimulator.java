@@ -1,5 +1,10 @@
 package Main;
 
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
 import Device.ButtonInterface;
 import Device.Device;
 import Device.FileManager;
@@ -24,6 +29,13 @@ public class TalkBoxSimulator {
 
 		// TODO: Add a prompt for the user to select between a default TB or use a cfg
 
+		JFrame choser = new JFrame("Choose");
+		choser.setLayout(new FlowLayout(FlowLayout.CENTER));
+		
+		JButton choose = new JButton();
+		JButton def = new JButton();
+		
+		
 		// TODO: change null to config file name
 		FM = new FileManager(null);
 
