@@ -4,6 +4,7 @@ package Device;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+import javax.sound.sampled.AudioInputStream;
 import javax.swing.JOptionPane;
 
 import sun.audio.AudioPlayer;
@@ -19,6 +20,7 @@ import sun.audio.AudioStream;
 public class AudioObject {
 
 	private String fileName;
+	private static AudioStream previousFN;
 	private FileManager FM;
 
 	/**
@@ -33,10 +35,15 @@ public class AudioObject {
 
 	public void playSound() {
 		System.out.println(FM.getConfig().getRelativePathToAudioFiles() + this.getName());
-		AudioPlayer.player.stop();
+		
 		try {
+			
+			if(AudioObject.previousFN != null)	AudioPlayer.player.stop(AudioObject.previousFN);
+			
+			AudioStream as = new AudioStream(new FileInputStream(FM.getConfig().getRelativePathToAudioFiles()+ this.getName()));
 			AudioPlayer.player
-					.start(new AudioStream(new FileInputStream(FM.getConfig().getRelativePathToAudioFiles()+ this.getName())));
+					.start(as);
+			AudioObject.previousFN = as;
 
 		} catch (IOException e1) {
 			JOptionPane.showMessageDialog(null, "No Audio File Found for Button: " + getName(), "Okay",
@@ -47,6 +54,10 @@ public class AudioObject {
 
 	public String getName() {
 		return this.fileName;
+	}
+	
+	public static AudioStream getPrevious() {
+		return AudioObject.previousFN;
 	}
 
 }

@@ -90,7 +90,7 @@ public class PanelBody extends JPanel implements ActionListener{
 				log.info("Add Audio button.");
 			}
 			else {
-				EditBtn edit = new EditBtn(btn.getText(), config.getRelativePathToImageFiles().toString(), this.config.getRelativePathToAudioFiles().toString());
+				EditBtn edit = new EditBtn(btn.getText(), this);
 				log.info("Edit Audio button.");
 				edit.addWindowListener(new WindowAdapter() {
 				

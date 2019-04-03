@@ -161,3 +161,27 @@
 2019-04-03 02:08:45  [ AWT-EventQueue-0:19152 ] - [ INFO ]  Add/Edit your button windows closed
 2019-04-03 02:08:50  [ AWT-EventQueue-0:24215 ] - [ INFO ]  Closed Configurator App
 2019-04-03 02:10:45  [ AWT-EventQueue-0:771974 ] - [ INFO ]  Closed Configurator App
+2019-04-03 03:07:18  [ main:0 ] - [ INFO ]  Start Configurator
+2019-04-03 03:07:39  [ AWT-EventQueue-0:21587 ] - [ INFO ]  Closed Configurator App
+2019-04-03 03:07:54  [ main:0 ] - [ INFO ]  Start Configurator
+2019-04-03 03:07:57  [ AWT-EventQueue-0:2599 ] - [ INFO ]  Edit Audio button.
+2019-04-03 03:07:59  [ AWT-EventQueue-0:4724 ] - [ INFO ]  Add/Edit your button windows closed
+2019-04-03 03:08:09  [ AWT-EventQueue-0:14839 ] - [ INFO ]  Edit Audio button.
+2019-04-03 03:08:12  [ AWT-EventQueue-0:17434 ] - [ INFO ]  Add/Edit your button windows closed
+2019-04-03 03:08:58  [ AWT-EventQueue-0:63988 ] - [ INFO ]  Closed Configurator App
+2019-04-03 03:12:15  [ main:0 ] - [ INFO ]  Start Configurator
+2019-04-03 03:12:21  [ AWT-EventQueue-0:5777 ] - [ INFO ]  Edit Audio button.
+2019-04-03 03:12:22  [ AWT-EventQueue-0:7179 ] - [ INFO ]  Add/Edit your button windows closed
+2019-04-03 03:12:23  [ AWT-EventQueue-0:8304 ] - [ INFO ]  Edit Audio button.
+2019-04-03 03:12:25  [ AWT-EventQueue-0:9900 ] - [ INFO ]  Add/Edit your button windows closed
+2019-04-03 03:12:26  [ AWT-EventQueue-0:11143 ] - [ INFO ]  Edit Audio button.
+2019-04-03 03:12:28  [ AWT-EventQueue-0:12870 ] - [ INFO ]  Click Audio button.
+2019-04-03 03:12:35  [ AWT-EventQueue-0:20410 ] - [ INFO ]  Add/Edit your button windows closed
+2019-04-03 03:12:55  [ AWT-EventQueue-0:40155 ] - [ INFO ]  Closed Configurator App
+2019-04-03 03:13:33  [ main:0 ] - [ INFO ]  Start Configurator
+2019-04-03 03:13:36  [ AWT-EventQueue-0:3902 ] - [ INFO ]  Edit Audio button.
+2019-04-03 03:13:38  [ AWT-EventQueue-0:5548 ] - [ INFO ]  Audio browse clicked
+2019-04-03 03:15:01  [ AWT-EventQueue-0:88428 ] - [ INFO ]  Changed audio
+2019-04-03 03:15:01  [ AWT-EventQueue-0:88455 ] - [ INFO ]  Add/Edit your button windows closed
+2019-04-03 03:15:05  [ AWT-EventQueue-0:92357 ] - [ INFO ]  Change saved
+2019-04-03 03:15:08  [ AWT-EventQueue-0:95077 ] - [ INFO ]  Closed Configurator App

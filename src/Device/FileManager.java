@@ -23,9 +23,6 @@ import Interface.TalkBoxConfiguration;
  */
 public class FileManager {
 
-//	public static final String WINDOWS_FILE_PATH = "C:\\TalkBox";
-//	public static final String MACOS_FILE_PATH = "C:\\TalkBox";
-//	public static final String LINUX_FILE_PATH = "C:\\TalkBox";
 
 	private Configurator C;
 	private ObjectInputStream ois;

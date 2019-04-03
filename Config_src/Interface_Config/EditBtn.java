@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.Arrays;
 
 import javax.swing.*;
 
@@ -33,6 +34,7 @@ public class EditBtn extends JFrame implements ActionListener{
 	JButton imgBtn, audBtn, cancel, submit, delete;
 	JButton record;
 	RecorderFrame recFrame;
+	PanelBody pb;
 	
 	JLabel imgPath, audPath, dragNdrop;	
 	JTextField nameText;
@@ -43,21 +45,22 @@ public class EditBtn extends JFrame implements ActionListener{
 	public static Log log  = LogFactory.getLog("logfile1");
 
 	
-	public EditBtn(String name, String imgPath, String audPath) {
+	public EditBtn(String name, PanelBody pb) {
 		
 		super("Add/Edit your Button");
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		this.pb = pb;
 		
 		this.setResizable(false);
 		
 		this.initMain();
 		this.nameText.setText(name);
-		this.imgPath.setText(imgPath);
-		this.audPath.setText(audPath);
+		this.imgPath.setText(pb.getConfig().getRelativePathToImageFiles().toString());
+		this.audPath.setText(pb.getConfig().getRelativePathToAudioFiles().toString());
 		
 		this.nameBtn = name;
-		this.imgFile = imgPath;
-		this.audFile = audPath;
+		this.imgFile = imgPath.getText();
+		this.audFile = audPath.getText();
 		
 		this.imgChanged = false;
 		this.audChanged = false;
@@ -66,7 +69,9 @@ public class EditBtn extends JFrame implements ActionListener{
 		this.setContentPane(main);
 		this.setVisible(true);
 		
-		previewBtn = new CustomBtn(this.nameBtn, this.imgFile +"/" +name +".jpg", 0, this.audFile +"/" +name +".wav");
+		int index = (Arrays.asList((pb.getConfig().getBtnName()[pb.getConfig().getSetNum()])).indexOf(this.nameBtn));
+		
+		previewBtn = new CustomBtn(this.nameBtn, pb.getConfig().getRelativePathToImageFiles().toString() + pb.getConfig().getImageFileNames()[pb.getConfig().getSetNum()][index], 0, pb.getConfig().getRelativePathToAudioFiles().toString() + pb.getConfig().getAudioFileNames()[pb.getConfig().getSetNum()][index]);
 		previewBtn.addActionListener(new ActionListener() {
 			
 			@Override
