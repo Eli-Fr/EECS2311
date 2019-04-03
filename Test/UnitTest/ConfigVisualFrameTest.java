@@ -2,6 +2,7 @@ package UnitTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -20,7 +21,7 @@ class ConfigVisualFrameTest {
 	VisualFrame v;
 	@Test
 	void testVisualFrame() throws IOException, ClassNotFoundException {
-		v = new VisualFrame("test");
+		v = new VisualFrame("test", new File("TalkBoxData/Default.tbc"));
 		FileInputStream fis = new FileInputStream("TalkBoxData/Default.tbc");
 		ObjectInputStream ois = new ObjectInputStream(fis);
 		Configurator config = (Configurator) ois.readObject();
@@ -47,7 +48,7 @@ class ConfigVisualFrameTest {
 	void testFileNotFoundException() {
 		assertThrows(
  			 FileNotFoundException.class,
-				() -> {v = new VisualFrame("test");
+				() -> {v = new VisualFrame("test", new File("TalkBoxData/Default.tbc"));
 					FileInputStream fis = new FileInputStream("TalkBoxData/Config");}
 				);
 	}
@@ -56,7 +57,7 @@ class ConfigVisualFrameTest {
 	void testIOException() {
 		assertThrows(
  			 FileNotFoundException.class,
-				() -> {v = new VisualFrame("test");
+				() -> {v = new VisualFrame("test", new File("TalkBoxData/Default.tbc"));
 				FileInputStream fis = new FileInputStream("TalkBoxData/Config");
 				ObjectInputStream ois = new ObjectInputStream(fis);}
 				);
@@ -66,7 +67,7 @@ class ConfigVisualFrameTest {
 	void testClassNotFoundException() {
 		assertThrows(
  			 FileNotFoundException.class,
-				() -> {v = new VisualFrame("test");
+				() -> {v = new VisualFrame("test", new File("TalkBoxData/Default.tbc"));
 				FileInputStream fis = new FileInputStream("TalkBoxData/Config");
 				ObjectInputStream ois = new ObjectInputStream(fis);
 				Interface_Config.PanelBody config = (Interface_Config.PanelBody) ois.readObject();}

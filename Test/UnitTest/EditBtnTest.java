@@ -2,6 +2,8 @@ package UnitTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.io.File;
+
 import javax.swing.AbstractButton;
 import javax.swing.JOptionPane;
 
@@ -14,7 +16,7 @@ import Interface_Config.VisualFrame;
 class EditBtnTest {
 	
 	EditBtn e;
-	VisualFrame Configurator = new VisualFrame("TalkBotConfigurator");
+	VisualFrame Configurator = new VisualFrame("TalkBotConfigurator", new File("TalkBoxData/Default.tbc"));
 	PanelBody pb = new PanelBody(Configurator);
 	@Test
 	void testEditBtn() {

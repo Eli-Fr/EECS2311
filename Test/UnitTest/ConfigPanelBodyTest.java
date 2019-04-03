@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.awt.AWTException;
 import java.awt.Robot;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -26,7 +27,7 @@ class ConfigPanelBodyTest {
 	
 	@Test
 	void testActionPerformed() {
-		v = new VisualFrame("test");
+		v = new VisualFrame("test", new File("TalkBoxData/Default.tbc"));
 		p = new PanelBody(v);
 		CustomBtn btn1 = new CustomBtn("Add", (p.getConfig().getRelativePathToImageFiles() +"/Add.jpg"), p.getConfig().getNumberOfAudioButtons(), "Nothing");
 		btn1.addActionListener(p);		
@@ -40,7 +41,7 @@ class ConfigPanelBodyTest {
 
 	@Test
 	void testGetConfig() throws IOException, ClassNotFoundException {
-		v = new VisualFrame("test");
+		v = new VisualFrame("test", new File("TalkBoxData/Default.tbc"));
 		p = new PanelBody(v);
 		FileInputStream fis = new FileInputStream("TalkBoxData/Default.tbc");
 		ObjectInputStream ois = new ObjectInputStream(fis);

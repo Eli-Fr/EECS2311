@@ -373,3 +373,31 @@
 2019-04-03 12:55:38  [ AWT-EventQueue-0:29857 ] - [ INFO ]  Change saved
 2019-04-03 12:55:39  [ AWT-EventQueue-0:30552 ] - [ INFO ]  Change saved
 2019-04-03 12:55:41  [ AWT-EventQueue-0:33107 ] - [ INFO ]  Closed Configurator App
+2019-04-03 13:08:18  [ AWT-EventQueue-0:0 ] - [ INFO ]  Start Configurator
+2019-04-03 13:08:24  [ AWT-EventQueue-0:5880 ] - [ INFO ]  Closed Configurator App
+2019-04-03 13:12:51  [ main:0 ] - [ ERROR ]  Can't read input file!
+2019-04-03 13:12:52  [ main:1199 ] - [ INFO ]  Add Audio button.
+2019-04-03 13:12:52  [ main:1462 ] - [ INFO ]  Edit Audio button.
+2019-04-03 13:12:56  [ main:4865 ] - [ INFO ]  Cancel change
+2019-04-03 13:12:56  [ main:4936 ] - [ INFO ]  Image browse clicked
+2019-04-03 13:13:02  [ main:10637 ] - [ ERROR ]  Wrong image file format.
+2019-04-03 13:13:02  [ main:10717 ] - [ INFO ]  Audio browse clicked
+2019-04-03 13:15:13  [ main:0 ] - [ ERROR ]  Can't read input file!
+2019-04-03 13:15:14  [ main:1231 ] - [ INFO ]  Add Audio button.
+2019-04-03 13:15:14  [ main:1493 ] - [ INFO ]  Edit Audio button.
+2019-04-03 13:15:18  [ main:4937 ] - [ INFO ]  Cancel change
+2019-04-03 13:15:18  [ main:5007 ] - [ INFO ]  Image browse clicked
+2019-04-03 13:15:23  [ main:10548 ] - [ ERROR ]  Wrong image file format.
+2019-04-03 13:15:24  [ main:10629 ] - [ INFO ]  Audio browse clicked
+2019-04-03 13:22:40  [ main:0 ] - [ ERROR ]  Can't read input file!
+2019-04-03 13:22:41  [ main:1196 ] - [ INFO ]  Add Audio button.
+2019-04-03 13:22:41  [ main:1463 ] - [ INFO ]  Edit Audio button.
+2019-04-03 13:22:45  [ main:4866 ] - [ INFO ]  Cancel change
+2019-04-03 13:22:45  [ main:4937 ] - [ INFO ]  Image browse clicked
+2019-04-03 13:22:50  [ main:10682 ] - [ ERROR ]  Wrong image file format.
+2019-04-03 13:22:51  [ main:10763 ] - [ INFO ]  Audio browse clicked
+2019-04-03 15:10:01  [ AWT-EventQueue-0:0 ] - [ INFO ]  Start Configurator
+2019-04-03 15:10:08  [ AWT-EventQueue-0:7511 ] - [ INFO ]  Edit Audio button.
+2019-04-03 15:11:50  [ AWT-EventQueue-0:109125 ] - [ INFO ]  Click Audio button.
+2019-04-03 15:14:22  [ AWT-EventQueue-0:261680 ] - [ INFO ]  Add/Edit your button windows closed
+2019-04-03 15:14:30  [ AWT-EventQueue-0:269271 ] - [ INFO ]  Closed Configurator App
