@@ -185,3 +185,29 @@
 2019-04-03 03:15:01  [ AWT-EventQueue-0:88455 ] - [ INFO ]  Add/Edit your button windows closed
 2019-04-03 03:15:05  [ AWT-EventQueue-0:92357 ] - [ INFO ]  Change saved
 2019-04-03 03:15:08  [ AWT-EventQueue-0:95077 ] - [ INFO ]  Closed Configurator App
+2019-04-03 06:37:04  [ main:0 ] - [ INFO ]  Start Configurator
+2019-04-03 06:37:09  [ AWT-EventQueue-0:4250 ] - [ INFO ]  Edit Audio button.
+2019-04-03 06:37:16  [ AWT-EventQueue-0:11109 ] - [ INFO ]  Add/Edit your button windows closed
+2019-04-03 06:37:18  [ AWT-EventQueue-0:13147 ] - [ INFO ]  Edit Audio button.
+2019-04-03 06:37:19  [ AWT-EventQueue-0:14920 ] - [ INFO ]  Add/Edit your button windows closed
+2019-04-03 06:37:20  [ AWT-EventQueue-0:15587 ] - [ INFO ]  Edit Audio button.
+2019-04-03 06:37:22  [ AWT-EventQueue-0:17210 ] - [ INFO ]  Add/Edit your button windows closed
+2019-04-03 06:37:24  [ AWT-EventQueue-0:19467 ] - [ INFO ]  Closed Configurator App
+2019-04-03 06:40:03  [ main:0 ] - [ INFO ]  Start Configurator
+2019-04-03 06:40:16  [ AWT-EventQueue-0:13438 ] - [ INFO ]  Closed Configurator App
+2019-04-03 06:40:37  [ main:1 ] - [ INFO ]  Start Configurator
+2019-04-03 06:40:41  [ AWT-EventQueue-0:4074 ] - [ INFO ]  Closed Configurator App
+2019-04-03 06:44:42  [ main:0 ] - [ INFO ]  Start Configurator
+2019-04-03 06:44:49  [ AWT-EventQueue-0:7168 ] - [ INFO ]  Change audio set
+2019-04-03 06:44:51  [ AWT-EventQueue-0:8753 ] - [ INFO ]  Change audio set
+2019-04-03 06:44:53  [ AWT-EventQueue-0:10638 ] - [ INFO ]  Change audio set
+2019-04-03 06:44:55  [ AWT-EventQueue-0:13032 ] - [ INFO ]  Change audio set
+2019-04-03 06:45:00  [ AWT-EventQueue-0:17440 ] - [ INFO ]  Change audio set
+2019-04-03 06:45:01  [ AWT-EventQueue-0:18430 ] - [ INFO ]  Change audio set
+2019-04-03 06:45:05  [ AWT-EventQueue-0:22762 ] - [ INFO ]  Closed Configurator App
+2019-04-03 06:50:50  [ main:0 ] - [ INFO ]  Start Configurator
+2019-04-03 06:50:55  [ AWT-EventQueue-0:5409 ] - [ INFO ]  Closed Configurator App
+2019-04-03 06:52:02  [ main:0 ] - [ ERROR ]  Can't read input file!
+2019-04-03 06:54:47  [ main:0 ] - [ ERROR ]  Can't read input file!
+2019-04-03 08:46:55  [ main:0 ] - [ ERROR ]  Can't read input file!
+2019-04-03 09:03:11  [ main:0 ] - [ ERROR ]  Can't read input file!

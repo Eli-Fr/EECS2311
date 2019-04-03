@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 
 import Interface_Config.VisualFrame;
 import Interface.Configurator;
-import Interface.PanelBody;
+
 
 
 
@@ -21,7 +21,7 @@ class ConfigVisualFrameTest {
 	@Test
 	void testVisualFrame() throws IOException, ClassNotFoundException {
 		v = new VisualFrame("test");
-		FileInputStream fis = new FileInputStream("TalkBoxData/Config.tbc");
+		FileInputStream fis = new FileInputStream("TalkBoxData/Default.tbc");
 		ObjectInputStream ois = new ObjectInputStream(fis);
 		Configurator config = (Configurator) ois.readObject();
 		assertEquals(config.getNumberOfAudioButtons(), v.getConfig().getNumberOfAudioButtons());
@@ -29,10 +29,12 @@ class ConfigVisualFrameTest {
 		assertEquals(config.getTotalNumberOfButtons(), v.getConfig().getTotalNumberOfButtons());
 		assertEquals(config.getRelativePathToAudioFiles().toString(), v.getConfig().getRelativePathToAudioFiles().toString());
 		assertEquals(config.getRelativePathToImageFiles().toString(), v.getConfig().getRelativePathToImageFiles().toString());
-		for(int i = 0; i < config.getNumberOfAudioButtons(); i++) {
-			assertEquals(config.getAudioFileNames()[0][i], v.getConfig().getAudioFileNames()[0][i]);
-			assertEquals(config.getImageFileNames()[0][i], v.getConfig().getImageFileNames()[0][i]);
-			assertEquals(config.getBtnName()[0][i], v.getConfig().getBtnName()[0][i]);
+		for (int i = 0; i < config.getNumberOfAudioSets(); i++) {
+			for (int j = 0; j < config.getNumberOfAudioButtons(); j++) {
+				assertEquals(config.getAudioFileNames()[i][j], v.getConfig().getAudioFileNames()[i][j]);
+				assertEquals(config.getImageFileNames()[i][j], v.getConfig().getImageFileNames()[i][j]);
+				assertEquals(config.getBtnName()[i][j], v.getConfig().getBtnName()[i][j]);
+			}
 		}
 		
 		for(int i = 0; i < config.getNumberOfAudioSets(); i++) {
@@ -67,7 +69,7 @@ class ConfigVisualFrameTest {
 				() -> {v = new VisualFrame("test");
 				FileInputStream fis = new FileInputStream("TalkBoxData/Config");
 				ObjectInputStream ois = new ObjectInputStream(fis);
-				PanelBody config = (PanelBody) ois.readObject();}
+				Interface_Config.PanelBody config = (Interface_Config.PanelBody) ois.readObject();}
 				);
 	}
 }

@@ -109,7 +109,7 @@ public class Device {
 	 * @param n
 	 * @throws IndexOutOfBoundsException
 	 */
-	private void turnButtonOff(int n) throws IndexOutOfBoundsException {
+	public void turnButtonOff(int n) throws IndexOutOfBoundsException {
 		if (n < 0 || n >= buttonInterface.size()) {
 			throw new IndexOutOfBoundsException();
 		}

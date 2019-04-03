@@ -41,7 +41,7 @@ class ConfigPanelBodyTest {
 	void testGetConfig() throws IOException, ClassNotFoundException {
 		v = new VisualFrame("test");
 		p = new PanelBody(v);
-		FileInputStream fis = new FileInputStream("TalkBoxData/Config.tbc");
+		FileInputStream fis = new FileInputStream("TalkBoxData/Default.tbc");
 		ObjectInputStream ois = new ObjectInputStream(fis);
 		Configurator config = (Configurator) ois.readObject();
 		assertEquals(config.getNumberOfAudioButtons(), p.getConfig().getNumberOfAudioButtons());
@@ -49,10 +49,12 @@ class ConfigPanelBodyTest {
 		assertEquals(config.getTotalNumberOfButtons(), p.getConfig().getTotalNumberOfButtons());
 		assertEquals(config.getRelativePathToAudioFiles().toString(), p.getConfig().getRelativePathToAudioFiles().toString());
 		assertEquals(config.getRelativePathToImageFiles().toString(), p.getConfig().getRelativePathToImageFiles().toString());
-		for(int i = 0; i < config.getNumberOfAudioButtons(); i++) {
-			assertEquals(config.getAudioFileNames()[0][i], p.getConfig().getAudioFileNames()[0][i]);
-			assertEquals(config.getImageFileNames()[0][i], p.getConfig().getImageFileNames()[0][i]);
-			assertEquals(config.getBtnName()[0][i], p.getConfig().getBtnName()[0][i]);
+		for (int i = 0; i < config.getNumberOfAudioSets(); i++) {
+			for (int j = 0; j < config.getNumberOfAudioButtons(); j++) {
+				assertEquals(config.getAudioFileNames()[i][j], p.getConfig().getAudioFileNames()[i][j]);
+				assertEquals(config.getImageFileNames()[i][j], p.getConfig().getImageFileNames()[i][j]);
+				assertEquals(config.getBtnName()[i][j], p.getConfig().getBtnName()[i][j]);
+			}
 		}
 		for(int i = 0; i < config.getNumberOfAudioSets(); i++) {
 			assertEquals(config.getSetBtn()[i], p.getConfig().getSetBtn()[i]);
