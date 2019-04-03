@@ -19,12 +19,13 @@ public class RecorderFrame extends JFrame implements ActionListener{
 	}
 
 	private JPanel paneRecord, panePreview, paneExit;
-	private JButton btnOK, btnCancel, btnPreview, btnRecord, btnStop;
+	public JButton btnOK, btnCancel, btnPreview, btnRecord, btnStop;
 	private JLabel AudioName;
 	public JLabel recStatus;
 	private JavaRecorder record;
 	private Boolean stopRec = false;
 	private Thread stopper;
+	public int check = 0;
 	
 	
 	public RecorderFrame() {
@@ -109,6 +110,7 @@ public class RecorderFrame extends JFrame implements ActionListener{
 		
 		JButton btn = (JButton)e.getSource();
 		if(btn.equals(btnRecord)) {
+			check = 1;
 			this.recStatus.setText("Recorder Configuring");
 			new SwingWorker() {
 
@@ -123,6 +125,7 @@ public class RecorderFrame extends JFrame implements ActionListener{
 		}
 		
 		if(btn.equals(btnStop)) {
+			check = 2;
 			record.finish();
 			this.recStatus.setText("Recording Finished");
 			if(btnPreview.getParent()!=paneRecord)		panePreview.add(btnPreview);
@@ -131,14 +134,14 @@ public class RecorderFrame extends JFrame implements ActionListener{
 		}
 		
 		if(btn.equals(btnOK)) {
-			
+			check = 3;
 			this.useRec = true;
 			JOptionPane.showMessageDialog(this, "The recording will be used for the button.");
 			this.dispose();			
 		}
 		
 		if(btn.equals(btnCancel)) {
-			
+			check = 4;
 			JOptionPane.showMessageDialog(this, "The recording will NOT be used for the button.");
 			this.dispose();
 						
@@ -147,6 +150,7 @@ public class RecorderFrame extends JFrame implements ActionListener{
 		
 		
 		if(btn.equals(btnPreview)) {
+			check = 5;
 			try {
 				AudioPlayer.player.start(new AudioStream(new FileInputStream(this.fName)));
 			} catch (IOException e1) {
@@ -155,9 +159,7 @@ public class RecorderFrame extends JFrame implements ActionListener{
 			}
 		}
 		
-		if(btn.equals(btnOK)) {
-			
-		}
+
 		
 	}
 		

@@ -15,27 +15,28 @@ import javax.swing.JFrame;
 import org.junit.jupiter.api.Test;
 
 import Interface.Configurator;
+import Interface_Config.CustomBtn;
+import Interface_Config.EditBtn;
 import Interface_Config.PanelBody;
 import Interface_Config.VisualFrame;
 
 class ConfigPanelBodyTest {
 	VisualFrame v;
 	PanelBody p;
-//	@Test
-//	void testPanelBody() {
-//		fail("Not yet implemented");
-//	}
-//
-//	@Test
-//	void testInitBtn() {
-//		fail("Not yet  implemented");
-//	}
-//
-//	@Test
-//	void testInitSet() {
-//		fail("Not yet implemented");
-//	}
-//
+	
+	@Test
+	void testActionPerformed() {
+		v = new VisualFrame("test");
+		p = new PanelBody(v);
+		CustomBtn btn1 = new CustomBtn("Add", (p.getConfig().getRelativePathToImageFiles() +"/Add.jpg"), p.getConfig().getNumberOfAudioButtons(), "Nothing");
+		btn1.addActionListener(p);		
+		btn1.doClick();
+		assertEquals(1, p.check);
+		CustomBtn btn2 = new CustomBtn(p.getConfig().getBtnName()[p.getConfig().getSetNum()][1], (p.getConfig().getRelativePathToImageFiles() +"/Edit.jpg"), 1, p.getConfig().getRelativePathToAudioFiles() + p.getConfig().getAudioFileNames()[p.getConfig().getSetNum()][1]);
+		btn2.addActionListener(p);
+		btn2.doClick();
+		assertEquals(2, p.check);
+	}
 
 	@Test
 	void testGetConfig() throws IOException, ClassNotFoundException {

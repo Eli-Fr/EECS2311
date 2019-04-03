@@ -31,8 +31,7 @@ import org.apache.commons.logging.LogFactory;
 public class EditBtn extends JFrame implements ActionListener{
 	
 	JPanel main, name, image, audio, confirm, recDND;
-	JButton imgBtn, audBtn, cancel, submit, delete;
-	JButton record;
+	public JButton imgBtn, audBtn, cancel, submit, delete, record;
 	RecorderFrame recFrame;
 	PanelBody pb;
 	
@@ -41,9 +40,9 @@ public class EditBtn extends JFrame implements ActionListener{
 	CustomBtn previewBtn;	
 
 	String imgFile, audFile, nameBtn, tempImg, tempAud;
-	boolean imgChanged, audChanged, isDeleted;
+	public boolean imgChanged, audChanged, isDeleted;
 	public static Log log  = LogFactory.getLog("logfile1");
-
+	public int check = 0;
 	
 	public EditBtn(String name, PanelBody pb) {
 		
@@ -219,19 +218,19 @@ public class EditBtn extends JFrame implements ActionListener{
 		
 		
 		if(e.getSource() == this.submit) {
-			
+			check = 1;
 			this.submit();
 			
 		}
 		
 		else if(e.getSource() == this.cancel) {
-			
+			check = 2;
 			this.dispose();
 			log.info("Cancel change");
 		}
 		
 		else if(e.getSource() == this.imgBtn) {
-			
+			check = 3;
 			log.info("Image browse clicked");
 			FileDialog fd = new FileDialog(new JFrame());
 			fd.setVisible(true);
@@ -243,7 +242,7 @@ public class EditBtn extends JFrame implements ActionListener{
 			
 		}
 		else if(e.getSource() == this.audBtn) {
-			
+			check = 4;
 			log.info("Audio browse clicked");
 			FileDialog fd = new FileDialog(new JFrame());
 			fd.setVisible(true);
@@ -256,13 +255,13 @@ public class EditBtn extends JFrame implements ActionListener{
 		}
 		
 		else if(e.getSource() == this.delete) {
-			
+			check = 5;
 			this.deletePrompt();
 			
 		}
 		
 		else if(e.getSource() == this.record) {
-			
+			check = 6;
 			recFrame = new RecorderFrame();
 			recFrame.addWindowListener(new WindowAdapter() {
 				
@@ -298,6 +297,7 @@ public class EditBtn extends JFrame implements ActionListener{
 				Files.copy(Paths.get(this.imgPath.getText()), Paths.get(this.imgFile, "/" ,this.tempImg), StandardCopyOption.REPLACE_EXISTING);
 				this.imgFile = tempImg;
 				log.info("Changed image");
+				check = 7;
 			}
 			
 			if(this.audChanged) {
@@ -305,6 +305,7 @@ public class EditBtn extends JFrame implements ActionListener{
 				this.audFile = tempAud;
 				System.out.println("The audio file is " +this.audFile);
 				log.info("Changed audio");
+				check = 8;
 			}
 			
 		} catch (FileNotFoundException e1) {
@@ -335,7 +336,7 @@ public class EditBtn extends JFrame implements ActionListener{
 	}
 	
 	public void audBtn(String path) {
-		
+		System.out.println(path.toString());
 		
 		if(tempAud.endsWith(".wav")) {
 			this.audChanged = true;

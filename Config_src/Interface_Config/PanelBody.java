@@ -27,7 +27,7 @@ public class PanelBody extends JPanel implements ActionListener{
 	public String[][] imgArr;
 	public String[][] audArr;
 	public static Log log  = LogFactory.getLog("logfile1");
-
+	public int check = 0;
 	public PanelBody(VisualFrame owner){
 		super();
 		
@@ -80,7 +80,7 @@ public class PanelBody extends JPanel implements ActionListener{
 			CustomBtn btn = (CustomBtn)e.getSource();
 	
 			if(btn.getId() == config.getNumberOfAudioButtons()) {
-				
+				check = 1;
 				config.setNumberOfAudioButtons(config.getNumberOfAudioButtons()+1);
 				btnName.add("Edit");
 				imgPath.add("/Edit.jpg");
@@ -90,6 +90,7 @@ public class PanelBody extends JPanel implements ActionListener{
 				log.info("Add Audio button.");
 			}
 			else {
+				check = 2;
 				EditBtn edit = new EditBtn(btn.getText(), this);
 				log.info("Edit Audio button.");
 				edit.addWindowListener(new WindowAdapter() {

@@ -211,3 +211,136 @@
 2019-04-03 06:54:47  [ main:0 ] - [ ERROR ]  Can't read input file!
 2019-04-03 08:46:55  [ main:0 ] - [ ERROR ]  Can't read input file!
 2019-04-03 09:03:11  [ main:0 ] - [ ERROR ]  Can't read input file!
+2019-04-03 09:32:40  [ main:0 ] - [ ERROR ]  Can't read input file!
+2019-04-03 09:54:59  [ main:0 ] - [ INFO ]  Start Configurator
+2019-04-03 09:55:06  [ AWT-EventQueue-0:6266 ] - [ INFO ]  Edit Audio button.
+2019-04-03 09:55:10  [ AWT-EventQueue-0:10114 ] - [ INFO ]  Image browse clicked
+2019-04-03 09:55:41  [ AWT-EventQueue-0:41527 ] - [ INFO ]  Changed image
+2019-04-03 09:55:41  [ AWT-EventQueue-0:41609 ] - [ INFO ]  Add/Edit your button windows closed
+2019-04-03 09:55:55  [ AWT-EventQueue-0:55364 ] - [ INFO ]  Edit Audio button.
+2019-04-03 09:55:56  [ AWT-EventQueue-0:56217 ] - [ INFO ]  Audio browse clicked
+2019-04-03 10:17:26  [ main:0 ] - [ INFO ]  Image browse clicked
+2019-04-03 10:18:02  [ main:0 ] - [ INFO ]  Image browse clicked
+2019-04-03 10:18:12  [ main:10114 ] - [ ERROR ]  Wrong image file format.
+2019-04-03 10:22:27  [ main:0 ] - [ INFO ]  Cancel change
+2019-04-03 10:22:27  [ main:81 ] - [ INFO ]  Image browse clicked
+2019-04-03 10:22:32  [ main:5070 ] - [ ERROR ]  Wrong image file format.
+2019-04-03 10:22:32  [ main:5155 ] - [ INFO ]  Audio browse clicked
+2019-04-03 10:24:29  [ main:0 ] - [ INFO ]  Cancel change
+2019-04-03 10:24:29  [ main:85 ] - [ INFO ]  Image browse clicked
+2019-04-03 10:24:34  [ main:4622 ] - [ ERROR ]  Wrong image file format.
+2019-04-03 10:24:34  [ main:4708 ] - [ INFO ]  Audio browse clicked
+2019-04-03 10:25:13  [ main:0 ] - [ ERROR ]  Can't read input file!
+2019-04-03 10:25:16  [ main:2479 ] - [ INFO ]  Cancel change
+2019-04-03 10:25:16  [ main:2551 ] - [ INFO ]  Image browse clicked
+2019-04-03 10:25:20  [ main:7079 ] - [ ERROR ]  Wrong image file format.
+2019-04-03 10:25:20  [ main:7169 ] - [ INFO ]  Audio browse clicked
+2019-04-03 10:36:03  [ AWT-EventQueue-0:2463198 ] - [ INFO ]  Add/Edit your button windows closed
+2019-04-03 10:36:08  [ AWT-EventQueue-0:2468694 ] - [ INFO ]  Closed Configurator App
+2019-04-03 10:42:29  [ main:0 ] - [ INFO ]  Edit Audio button.
+2019-04-03 10:44:41  [ main:0 ] - [ INFO ]  Edit Audio button.
+2019-04-03 10:44:41  [ main:102 ] - [ INFO ]  Add Audio button.
+2019-04-03 10:46:33  [ main:0 ] - [ INFO ]  Edit Audio button.
+2019-04-03 10:46:53  [ main:0 ] - [ INFO ]  Edit Audio button.
+2019-04-03 10:46:53  [ main:117 ] - [ INFO ]  Add Audio button.
+2019-04-03 10:47:32  [ main:0 ] - [ ERROR ]  Can't read input file!
+2019-04-03 10:47:33  [ main:1140 ] - [ INFO ]  Edit Audio button.
+2019-04-03 10:47:33  [ main:1245 ] - [ INFO ]  Add Audio button.
+2019-04-03 10:47:35  [ main:3095 ] - [ INFO ]  Cancel change
+2019-04-03 10:47:35  [ main:3166 ] - [ INFO ]  Image browse clicked
+2019-04-03 10:47:39  [ main:7690 ] - [ ERROR ]  Wrong image file format.
+2019-04-03 10:47:40  [ main:7781 ] - [ INFO ]  Audio browse clicked
+2019-04-03 10:49:13  [ main:0 ] - [ ERROR ]  Can't read input file!
+2019-04-03 10:49:14  [ main:1097 ] - [ INFO ]  Edit Audio button.
+2019-04-03 10:49:15  [ main:1201 ] - [ INFO ]  Add Audio button.
+2019-04-03 10:49:16  [ main:3083 ] - [ INFO ]  Cancel change
+2019-04-03 10:49:17  [ main:3154 ] - [ INFO ]  Image browse clicked
+2019-04-03 10:49:21  [ main:7889 ] - [ ERROR ]  Wrong image file format.
+2019-04-03 10:49:21  [ main:7971 ] - [ INFO ]  Audio browse clicked
+2019-04-03 10:50:42  [ main:0 ] - [ INFO ]  Add Audio button.
+2019-04-03 10:50:43  [ main:290 ] - [ INFO ]  Edit Audio button.
+2019-04-03 10:56:23  [ main:0 ] - [ INFO ]  Add Audio button.
+2019-04-03 10:56:23  [ main:303 ] - [ INFO ]  Edit Audio button.
+2019-04-03 10:56:24  [ main:547 ] - [ INFO ]  Cancel change
+2019-04-03 10:56:48  [ main:0 ] - [ ERROR ]  Can't read input file!
+2019-04-03 10:56:49  [ main:948 ] - [ INFO ]  Add Audio button.
+2019-04-03 10:56:50  [ main:1207 ] - [ INFO ]  Edit Audio button.
+2019-04-03 10:56:50  [ main:1457 ] - [ INFO ]  Cancel change
+2019-04-03 10:56:52  [ main:3328 ] - [ INFO ]  Cancel change
+2019-04-03 10:56:52  [ main:3400 ] - [ INFO ]  Image browse clicked
+2019-04-03 10:56:56  [ main:7877 ] - [ ERROR ]  Wrong image file format.
+2019-04-03 10:56:56  [ main:7961 ] - [ INFO ]  Audio browse clicked
+2019-04-03 10:57:51  [ main:0 ] - [ INFO ]  Start Configurator
+2019-04-03 10:57:56  [ AWT-EventQueue-0:5089 ] - [ INFO ]  Edit Audio button.
+2019-04-03 10:58:00  [ AWT-EventQueue-0:8786 ] - [ INFO ]  Cancel change
+2019-04-03 10:58:00  [ AWT-EventQueue-0:8824 ] - [ INFO ]  Add/Edit your button windows closed
+2019-04-03 10:58:02  [ AWT-EventQueue-0:11271 ] - [ INFO ]  Edit Audio button.
+2019-04-03 10:58:07  [ AWT-EventQueue-0:16437 ] - [ INFO ]  Add/Edit your button windows closed
+2019-04-03 10:58:12  [ AWT-EventQueue-0:21674 ] - [ INFO ]  Closed Configurator App
+2019-04-03 11:01:05  [ main:0 ] - [ INFO ]  Start Configurator
+2019-04-03 11:01:09  [ AWT-EventQueue-0:3968 ] - [ INFO ]  Closed Configurator App
+2019-04-03 11:01:48  [ main:0 ] - [ ERROR ]  Can't read input file!
+2019-04-03 11:01:49  [ main:904 ] - [ INFO ]  Add Audio button.
+2019-04-03 11:01:49  [ main:1185 ] - [ INFO ]  Edit Audio button.
+2019-04-03 11:01:51  [ main:3049 ] - [ INFO ]  Cancel change
+2019-04-03 11:01:51  [ main:3121 ] - [ INFO ]  Image browse clicked
+2019-04-03 11:02:01  [ main:13397 ] - [ INFO ]  Audio browse clicked
+2019-04-03 11:02:02  [ AWT-EventQueue-0:14547 ] - [ ERROR ]  Can't read input file!
+2019-04-03 11:02:02  [ AWT-EventQueue-0:14559 ] - [ INFO ]  Edit Audio button.
+2019-04-03 11:02:56  [ main:0 ] - [ ERROR ]  Can't read input file!
+2019-04-03 11:02:57  [ main:885 ] - [ INFO ]  Add Audio button.
+2019-04-03 11:02:57  [ main:1153 ] - [ INFO ]  Edit Audio button.
+2019-04-03 11:02:59  [ main:3022 ] - [ INFO ]  Cancel change
+2019-04-03 11:02:59  [ main:3094 ] - [ INFO ]  Image browse clicked
+2019-04-03 11:03:02  [ main:5660 ] - [ INFO ]  Audio browse clicked
+2019-04-03 11:03:05  [ main:9098 ] - [ ERROR ]  Wrong audio file format.
+2019-04-03 11:03:44  [ main:0 ] - [ INFO ]  Cancel change
+2019-04-03 11:03:44  [ main:80 ] - [ INFO ]  Image browse clicked
+2019-04-03 11:03:49  [ main:4765 ] - [ INFO ]  Audio browse clicked
+2019-04-03 11:04:54  [ main:0 ] - [ ERROR ]  Can't read input file!
+2019-04-03 11:04:55  [ main:949 ] - [ INFO ]  Add Audio button.
+2019-04-03 11:04:55  [ main:1209 ] - [ INFO ]  Edit Audio button.
+2019-04-03 11:04:57  [ main:2907 ] - [ INFO ]  Cancel change
+2019-04-03 11:04:57  [ main:2978 ] - [ INFO ]  Image browse clicked
+2019-04-03 11:05:01  [ main:7729 ] - [ ERROR ]  Wrong image file format.
+2019-04-03 11:05:01  [ main:7818 ] - [ INFO ]  Audio browse clicked
+2019-04-03 11:09:45  [ main:0 ] - [ ERROR ]  Can't read input file!
+2019-04-03 11:09:46  [ main:944 ] - [ INFO ]  Add Audio button.
+2019-04-03 11:09:46  [ main:1199 ] - [ INFO ]  Edit Audio button.
+2019-04-03 11:09:48  [ main:2925 ] - [ INFO ]  Cancel change
+2019-04-03 11:09:48  [ main:2997 ] - [ INFO ]  Image browse clicked
+2019-04-03 11:09:53  [ main:7669 ] - [ ERROR ]  Wrong image file format.
+2019-04-03 11:09:53  [ main:7751 ] - [ INFO ]  Audio browse clicked
+2019-04-03 11:11:53  [ main:0 ] - [ INFO ]  Cancel change
+2019-04-03 11:11:53  [ main:78 ] - [ INFO ]  Image browse clicked
+2019-04-03 11:11:57  [ main:4383 ] - [ ERROR ]  Wrong image file format.
+2019-04-03 11:11:57  [ main:4474 ] - [ INFO ]  Audio browse clicked
+2019-04-03 11:12:31  [ main:0 ] - [ INFO ]  Cancel change
+2019-04-03 11:12:31  [ main:78 ] - [ INFO ]  Image browse clicked
+2019-04-03 11:12:35  [ main:4252 ] - [ ERROR ]  Wrong image file format.
+2019-04-03 11:12:35  [ main:4337 ] - [ INFO ]  Audio browse clicked
+2019-04-03 11:13:27  [ main:0 ] - [ INFO ]  Cancel change
+2019-04-03 11:13:28  [ main:78 ] - [ INFO ]  Image browse clicked
+2019-04-03 11:13:32  [ main:4257 ] - [ ERROR ]  Wrong image file format.
+2019-04-03 11:13:32  [ main:4345 ] - [ INFO ]  Audio browse clicked
+2019-04-03 11:23:56  [ main:0 ] - [ ERROR ]  Can't read input file!
+2019-04-03 11:23:57  [ main:979 ] - [ INFO ]  Add Audio button.
+2019-04-03 11:23:58  [ main:1253 ] - [ INFO ]  Edit Audio button.
+2019-04-03 11:24:00  [ main:3209 ] - [ INFO ]  Cancel change
+2019-04-03 11:24:00  [ main:3284 ] - [ INFO ]  Image browse clicked
+2019-04-03 11:24:05  [ main:8403 ] - [ ERROR ]  Wrong image file format.
+2019-04-03 11:24:05  [ main:8488 ] - [ INFO ]  Audio browse clicked
+2019-04-03 11:37:45  [ main:0 ] - [ ERROR ]  Can't read input file!
+2019-04-03 11:37:46  [ main:930 ] - [ INFO ]  Add Audio button.
+2019-04-03 11:37:46  [ main:1210 ] - [ INFO ]  Edit Audio button.
+2019-04-03 11:37:48  [ main:3145 ] - [ INFO ]  Cancel change
+2019-04-03 11:37:48  [ main:3217 ] - [ INFO ]  Image browse clicked
+2019-04-03 11:37:52  [ main:7440 ] - [ ERROR ]  Wrong image file format.
+2019-04-03 11:37:52  [ main:7523 ] - [ INFO ]  Audio browse clicked
+2019-04-03 11:48:02  [ main:0 ] - [ ERROR ]  Can't read input file!
+2019-04-03 11:48:03  [ main:988 ] - [ INFO ]  Add Audio button.
+2019-04-03 11:48:03  [ main:1268 ] - [ INFO ]  Edit Audio button.
+2019-04-03 11:48:05  [ main:3184 ] - [ INFO ]  Cancel change
+2019-04-03 11:48:05  [ main:3256 ] - [ INFO ]  Image browse clicked
+2019-04-03 11:48:09  [ main:7468 ] - [ ERROR ]  Wrong image file format.
+2019-04-03 11:48:09  [ main:7555 ] - [ INFO ]  Audio browse clicked
