@@ -344,3 +344,32 @@
 2019-04-03 11:48:05  [ main:3256 ] - [ INFO ]  Image browse clicked
 2019-04-03 11:48:09  [ main:7468 ] - [ ERROR ]  Wrong image file format.
 2019-04-03 11:48:09  [ main:7555 ] - [ INFO ]  Audio browse clicked
+2019-04-03 12:52:21  [ AWT-EventQueue-0:0 ] - [ INFO ]  Start Configurator
+2019-04-03 12:52:30  [ AWT-EventQueue-0:9090 ] - [ INFO ]  Change audio set
+2019-04-03 12:52:33  [ AWT-EventQueue-0:12223 ] - [ INFO ]  Change audio set
+2019-04-03 12:52:36  [ AWT-EventQueue-0:15088 ] - [ INFO ]  Closed Configurator App
+2019-04-03 12:53:49  [ AWT-EventQueue-0:2 ] - [ INFO ]  Start Configurator
+2019-04-03 12:53:54  [ AWT-EventQueue-0:5095 ] - [ INFO ]  Change audio set
+2019-04-03 12:53:57  [ AWT-EventQueue-0:7685 ] - [ INFO ]  Change audio set
+2019-04-03 12:53:58  [ AWT-EventQueue-0:8567 ] - [ INFO ]  Add Audio button.
+2019-04-03 12:53:59  [ AWT-EventQueue-0:9585 ] - [ INFO ]  Edit Audio button.
+2019-04-03 12:54:04  [ AWT-EventQueue-0:14597 ] - [ INFO ]  Image browse clicked
+2019-04-03 12:54:29  [ AWT-EventQueue-0:39344 ] - [ INFO ]  Click Audio button.
+2019-04-03 12:54:36  [ AWT-EventQueue-0:46406 ] - [ INFO ]  Click Audio button.
+2019-04-03 12:54:40  [ AWT-EventQueue-0:50345 ] - [ INFO ]  Changed image
+2019-04-03 12:54:40  [ AWT-EventQueue-0:50345 ] - [ INFO ]  Changed audio
+2019-04-03 12:54:40  [ AWT-EventQueue-0:50367 ] - [ INFO ]  Add/Edit your button windows closed
+2019-04-03 12:54:42  [ AWT-EventQueue-0:52787 ] - [ INFO ]  Change saved
+2019-04-03 12:54:43  [ AWT-EventQueue-0:53277 ] - [ INFO ]  Change saved
+2019-04-03 12:54:45  [ AWT-EventQueue-0:55638 ] - [ INFO ]  Closed Configurator App
+2019-04-03 12:54:52  [ AWT-EventQueue-0:0 ] - [ INFO ]  Start Configurator
+2019-04-03 12:54:56  [ AWT-EventQueue-0:4010 ] - [ INFO ]  Closed Configurator App
+2019-04-03 12:55:08  [ AWT-EventQueue-0:0 ] - [ INFO ]  Start Configurator
+2019-04-03 12:55:10  [ AWT-EventQueue-0:1507 ] - [ INFO ]  Add Audio button.
+2019-04-03 12:55:11  [ AWT-EventQueue-0:2451 ] - [ INFO ]  Edit Audio button.
+2019-04-03 12:55:36  [ AWT-EventQueue-0:28283 ] - [ INFO ]  Changed image
+2019-04-03 12:55:36  [ AWT-EventQueue-0:28284 ] - [ INFO ]  Changed audio
+2019-04-03 12:55:37  [ AWT-EventQueue-0:28418 ] - [ INFO ]  Add/Edit your button windows closed
+2019-04-03 12:55:38  [ AWT-EventQueue-0:29857 ] - [ INFO ]  Change saved
+2019-04-03 12:55:39  [ AWT-EventQueue-0:30552 ] - [ INFO ]  Change saved
+2019-04-03 12:55:41  [ AWT-EventQueue-0:33107 ] - [ INFO ]  Closed Configurator App
