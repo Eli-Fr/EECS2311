@@ -1,9 +1,14 @@
 package Main;
 
+
+import java.awt.FileDialog;
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 import Device.ButtonInterface;
 import Device.Device;
@@ -32,17 +37,58 @@ public class TalkBoxSimulator {
 		JFrame choser = new JFrame("Choose");
 		choser.setLayout(new FlowLayout(FlowLayout.CENTER));
 		
-		JButton choose = new JButton();
-		JButton def = new JButton();
+		JButton choose = new JButton("Load a File");
+		JButton def = new JButton("Default File");
 		
+		choser.add(choose);
+		choser.add(def);
 		
-		// TODO: change null to config file name
-		FM = new FileManager(null);
+		choose.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				FileDialog fd = new FileDialog(new JFrame());
+				fd.setVisible(true);
+				String file = fd.getFile().toString();
+				
+				if(file.endsWith(".tbc")) {
+					fd.dispose();
+					init(file);
+					
+					choser.dispose();
+					return;
+				}
+				
+				JOptionPane.showMessageDialog(choser, "Choose a file with extension *.tbc");
+				
+			}
+		});
+		
+		def.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				init(null);
+				choser.dispose();
+			}
+		});
+		
+		choser.pack();
+		choser.setVisible(true);
 
-		BI = new ButtonInterface();
-		simulator = new TalkBoxUI("TalkBotSimulator", FM.getConfig(), BI);
-		D = new Device(BI, FM);
+	}
+	
+	public static void init(String s) {
+		
+	// TODO: change null to config file name
+			FM = new FileManager(s);
 
+			BI = new ButtonInterface();
+			simulator = new TalkBoxUI("TalkBotSimulator", FM.getConfig(), BI);
+			D = new Device(BI, FM);
+		
 	}
 
 }

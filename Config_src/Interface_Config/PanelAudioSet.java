@@ -1,5 +1,6 @@
 package Interface_Config;
 
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -27,6 +28,9 @@ public class PanelAudioSet extends JPanel implements ActionListener{
 		setScroll = new JScrollPane(this);
 		setScroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		setScroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_NEVER);
+		setScroll.setMinimumSize(new Dimension(owner.getWidth(), 50 * owner.getConfig().getRatio()));
+		setScroll.setMaximumSize(new Dimension(owner.getWidth(), 50 * owner.getConfig().getRatio()));
+		
 		
 		this.initSet();
 		

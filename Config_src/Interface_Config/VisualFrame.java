@@ -1,7 +1,9 @@
 package Interface_Config;
 
+
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -21,11 +23,17 @@ public class VisualFrame extends JFrame {
 	private ObjectInputStream ois;
 	private FileInputStream fis;
 	private Configurator config;
+	private File configFile;
+	public File getConfigFile() {
+		return configFile;
+	}
+
 	public static Log log = LogFactory.getLog("logfile1");
 
-	public VisualFrame(String title) {
+	public VisualFrame(String title, File configFile) {
 
 		super(title);
+		this.configFile = configFile;
 		
 		addWindowListener(new WindowAdapter() {
 			
@@ -40,7 +48,7 @@ public class VisualFrame extends JFrame {
 		
 		try {
 
-			fis = new FileInputStream("TalkBoxData/Default.tbc");
+			fis = new FileInputStream(this.configFile.getAbsoluteFile());
 			ois = new ObjectInputStream(fis);
 
 			config = (Configurator) ois.readObject();
@@ -59,7 +67,7 @@ public class VisualFrame extends JFrame {
 
 			e.printStackTrace();
 
-			ShowError.errorMessage("Cannot read Config.tbc");
+			ShowError.errorMessage("Cannot read " +this.configFile.toString());
 
 		} catch (ClassNotFoundException e) {
 			
@@ -72,7 +80,7 @@ public class VisualFrame extends JFrame {
 		}
 
 		this.setResizable(false);
-		this.setSize(720 * config.getRatio(), 480 * config.getRatio());
+		this.setSize(960 * config.getRatio(), 540 * config.getRatio());
 
 		mainPanel = new PanelMain(this);
 

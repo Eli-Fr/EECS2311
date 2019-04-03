@@ -1,5 +1,6 @@
 package Interface_Config;
 
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -45,7 +46,7 @@ public class PanelMain extends JPanel{
 				config.setRatio(((PanelPreText) preTextPane).getRatio());
 				try {
 					
-					ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(new File("TalkBoxData/Default.tbc")));
+					ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(owner.getConfigFile()));
 					oos.writeObject(config);
 					
 					log.info("Change saved");
@@ -76,13 +77,18 @@ public class PanelMain extends JPanel{
 		bodyPaneScroll = new JScrollPane(bodyPane);
 		bodyPaneScroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		bodyPaneScroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+		bodyPaneScroll.setMinimumSize(new Dimension(owner.getWidth(), 200 * owner.getConfig().getRatio()));
+		bodyPaneScroll.setMaximumSize(new Dimension(owner.getWidth(), 200 * owner.getConfig().getRatio()));
+		
 		
 		this.add(headingPane);
 		this.add(Box.createRigidArea(new Dimension(0,15 * owner.getConfig().getRatio())));
 		this.add(preTextPane);
 		this.add(Box.createRigidArea(new Dimension(0,15 * owner.getConfig().getRatio())));
 		this.add(bodyPaneScroll);
+		this.add(Box.createRigidArea(new Dimension(0, 10 * owner.getConfig().getRatio())));
 		this.add(save);
+		this.add(Box.createVerticalGlue());
 		
 	}
 
