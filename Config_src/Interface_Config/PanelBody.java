@@ -61,20 +61,7 @@ public class PanelBody extends JPanel implements ActionListener{
 		
 			CustomBtn btn = new CustomBtn(config.getBtnName()[config.getSetNum()][i], (config.getRelativePathToImageFiles() +"/Edit.jpg"), i, this.config.getRelativePathToAudioFiles() + this.config.getAudioFileNames()[config.getSetNum()][i]);
 				btn.addActionListener(this);
-				btn.addMouseListener(new MouseAdapter() {
-		            @Override
-		            public void mouseClicked(MouseEvent e) {
-		                if (SwingUtilities.isRightMouseButton(e)) {
-		                    btnName.remove(btn.getId());
-		                    imgPath.remove(btn.getId());
-		                    audPath.remove(btn.getId());
-		                    
-		                    config.setNumberOfAudioButtons(config.getNumberOfAudioButtons()-1);
-		                    
-		                    ChangeBtn(2);
-		                }
-		            }
-		        });
+				
 				this.add(btn);
 				this.revalidate();
 				this.repaint();
@@ -109,6 +96,21 @@ public class PanelBody extends JPanel implements ActionListener{
 				
 					@Override
 					public void windowClosed(WindowEvent e) {
+						
+						if(edit.isDeleted) {
+							
+		                    btnName.remove(btn.getId());
+		                    imgPath.remove(btn.getId());
+		                    audPath.remove(btn.getId());
+		                    
+		                    config.setNumberOfAudioButtons(config.getNumberOfAudioButtons()-1);
+		                    
+		                    ChangeBtn(2);
+		                    
+		                    return;
+							
+						}
+						
 						btnName.set(btn.getId(), edit.getName());
 						if(edit.getImgChange())		imgPath.set(btn.getId(), edit.getImgFile());
 						if(edit.getAudChange())		audPath.set(btn.getId(), edit.getAudFile());
