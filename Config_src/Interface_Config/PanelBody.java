@@ -107,7 +107,7 @@ public class PanelBody extends JPanel implements ActionListener{
 		                    config.setNumberOfAudioButtons(config.getNumberOfAudioButtons()-1);
 		                    
 		                    ChangeBtn(2);
-		                    
+		                    log.info("Deleted Audio button.");
 		                    return;
 							
 						}

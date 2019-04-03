@@ -37,13 +37,14 @@ public class TalkBotConfigurator {
 				File file = fd.getFiles()[0];
 				
 				if(file.toString().endsWith(".tbc")) {
+					log.info("Loading selected *.tbc");
 					fd.dispose();
 					init(file);
 					
 					choser.dispose();
 					return;
 				}
-				
+				log.error("Choose a file with extension *.tbc");
 				JOptionPane.showMessageDialog(choser, "Choose a file with extension *.tbc");
 				
 			}
@@ -53,6 +54,7 @@ public class TalkBotConfigurator {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				log.info("Loading Default.tbc");
 				// TODO Auto-generated method stub
 				init(new File("TalkBoxData/Default.tbc"));
 				choser.dispose();

@@ -14,7 +14,8 @@ import Device.ButtonInterface;
 import Device.Device;
 import Device.FileManager;
 import Interface.*;
-
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 public class TalkBoxSimulator {
 
 	/**
@@ -29,7 +30,7 @@ public class TalkBoxSimulator {
 	public static Device D;
 	public static FileManager FM;
 	public static ButtonInterface BI;
-
+	public static Log log  = LogFactory.getLog("logfile2");
 	public static void main(String[] args) {
 
 		// TODO: Add a prompt for the user to select between a default TB or use a cfg
@@ -53,6 +54,7 @@ public class TalkBoxSimulator {
 				String file = fd.getFile().toString();
 				
 				if(file.endsWith(".tbc")) {
+					log.info("Loading selected *.tbc");
 					fd.dispose();
 					init(file);
 					
@@ -61,7 +63,7 @@ public class TalkBoxSimulator {
 				}
 				
 				JOptionPane.showMessageDialog(choser, "Choose a file with extension *.tbc");
-				
+				log.error("Choose a file with extension *.tbc");
 			}
 		});
 		
@@ -70,6 +72,7 @@ public class TalkBoxSimulator {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
+				log.info("Loading Default.tbc");
 				init(null);
 				choser.dispose();
 			}
@@ -84,7 +87,7 @@ public class TalkBoxSimulator {
 		
 	// TODO: change null to config file name
 			FM = new FileManager(s);
-
+			log.info("Simulator starting");
 			BI = new ButtonInterface();
 			simulator = new TalkBoxUI("TalkBotSimulator", FM.getConfig(), BI);
 			D = new Device(BI, FM);

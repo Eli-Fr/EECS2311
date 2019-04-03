@@ -401,3 +401,135 @@
 2019-04-03 15:11:50  [ AWT-EventQueue-0:109125 ] - [ INFO ]  Click Audio button.
 2019-04-03 15:14:22  [ AWT-EventQueue-0:261680 ] - [ INFO ]  Add/Edit your button windows closed
 2019-04-03 15:14:30  [ AWT-EventQueue-0:269271 ] - [ INFO ]  Closed Configurator App
+2019-04-03 15:37:13  [ AWT-EventQueue-0:0 ] - [ INFO ]  Start Configurator
+2019-04-03 15:38:03  [ AWT-EventQueue-0:0 ] - [ INFO ]  Start Configurator
+2019-04-03 15:38:13  [ AWT-EventQueue-0:9356 ] - [ INFO ]  Closed Configurator App
+2019-04-03 15:43:20  [ AWT-EventQueue-0:0 ] - [ INFO ]  a
+2019-04-03 15:43:20  [ AWT-EventQueue-0:13 ] - [ INFO ]  Start Configurator
+2019-04-03 15:43:25  [ AWT-EventQueue-0:4946 ] - [ INFO ]  Closed Configurator App
+2019-04-03 15:44:57  [ AWT-EventQueue-0:0 ] - [ INFO ]  Loading selected Default.tbc
+2019-04-03 15:44:57  [ AWT-EventQueue-0:12 ] - [ INFO ]  Start Configurator
+2019-04-03 15:45:04  [ AWT-EventQueue-0:7159 ] - [ INFO ]  Closed Configurator App
+2019-04-03 15:45:21  [ AWT-EventQueue-0:0 ] - [ ERROR ]  Choose a file with extension *.tbc
+2019-04-03 15:45:28  [ AWT-EventQueue-0:6304 ] - [ INFO ]  Loading selected *.tbc
+2019-04-03 15:45:28  [ AWT-EventQueue-0:6311 ] - [ INFO ]  Start Configurator
+2019-04-03 15:45:36  [ AWT-EventQueue-0:14966 ] - [ INFO ]  Closed Configurator App
+2019-04-03 15:45:50  [ AWT-EventQueue-0:0 ] - [ INFO ]  Loading Default.tbc
+2019-04-03 15:45:50  [ AWT-EventQueue-0:18 ] - [ INFO ]  Start Configurator
+2019-04-03 15:45:54  [ AWT-EventQueue-0:3888 ] - [ INFO ]  Closed Configurator App
+2019-04-03 15:46:31  [ AWT-EventQueue-0:0 ] - [ INFO ]  Loading Default.tbc
+2019-04-03 15:46:31  [ AWT-EventQueue-0:16 ] - [ INFO ]  Start Configurator
+2019-04-03 15:46:35  [ AWT-EventQueue-0:3698 ] - [ INFO ]  Change audio set
+2019-04-03 15:46:36  [ AWT-EventQueue-0:4768 ] - [ INFO ]  Change audio set
+2019-04-03 15:46:38  [ AWT-EventQueue-0:6333 ] - [ INFO ]  Change ratio clicked
+2019-04-03 15:46:40  [ AWT-EventQueue-0:8941 ] - [ INFO ]  Change ratio clicked
+2019-04-03 15:46:51  [ AWT-EventQueue-0:19855 ] - [ INFO ]  Change saved
+2019-04-03 15:46:56  [ AWT-EventQueue-0:24700 ] - [ INFO ]  Closed Configurator App
+2019-04-03 15:47:03  [ AWT-EventQueue-0:0 ] - [ INFO ]  Loading Default.tbc
+2019-04-03 15:47:03  [ AWT-EventQueue-0:12 ] - [ INFO ]  Start Configurator
+2019-04-03 15:47:07  [ AWT-EventQueue-0:4259 ] - [ INFO ]  Change ratio clicked
+2019-04-03 15:48:04  [ AWT-EventQueue-0:61176 ] - [ INFO ]  Change ratio clicked
+2019-04-03 15:48:05  [ AWT-EventQueue-0:62241 ] - [ INFO ]  Change ratio clicked
+2019-04-03 15:48:10  [ AWT-EventQueue-0:66982 ] - [ INFO ]  Closed Configurator App
+2019-04-03 15:50:17  [ AWT-EventQueue-0:0 ] - [ INFO ]  Loading Default.tbc
+2019-04-03 15:50:17  [ AWT-EventQueue-0:12 ] - [ INFO ]  Start Configurator
+2019-04-03 15:50:17  [ AWT-EventQueue-0:50 ] - [ ERROR ]  invalid stream header: 0A0A0A0A
+2019-04-03 15:50:26  [ AWT-EventQueue-0:8638 ] - [ INFO ]  Loading Default.tbc
+2019-04-03 15:50:26  [ AWT-EventQueue-0:8639 ] - [ INFO ]  Start Configurator
+2019-04-03 15:50:26  [ AWT-EventQueue-0:8642 ] - [ ERROR ]  invalid stream header: 0A0A0A0A
+2019-04-03 15:53:18  [ AWT-EventQueue-0:0 ] - [ INFO ]  Loading Default.tbc
+2019-04-03 15:53:18  [ AWT-EventQueue-0:13 ] - [ INFO ]  Start Configurator
+2019-04-03 15:53:24  [ AWT-EventQueue-0:5892 ] - [ INFO ]  Closed Configurator App
+2019-04-03 15:56:10  [ AWT-EventQueue-0:0 ] - [ INFO ]  Loading Default.tbc
+2019-04-03 15:56:10  [ AWT-EventQueue-0:13 ] - [ INFO ]  Start Configurator
+2019-04-03 15:56:13  [ AWT-EventQueue-0:2582 ] - [ INFO ]  Edit Audio button.
+2019-04-03 15:56:19  [ AWT-EventQueue-0:8908 ] - [ INFO ]  Deleted Audio button.
+2019-04-03 15:56:25  [ AWT-EventQueue-0:14818 ] - [ INFO ]  Add Audio button.
+2019-04-03 15:56:31  [ AWT-EventQueue-0:20706 ] - [ INFO ]  Closed Configurator App
+2019-04-03 15:57:38  [ AWT-EventQueue-0:0 ] - [ INFO ]  Loading Default.tbc
+2019-04-03 15:57:38  [ AWT-EventQueue-0:12 ] - [ INFO ]  Start Configurator
+2019-04-03 15:57:40  [ AWT-EventQueue-0:2248 ] - [ INFO ]  Edit Audio button.
+2019-04-03 15:57:42  [ AWT-EventQueue-0:3804 ] - [ INFO ]  Click Audio button.
+2019-04-03 15:57:45  [ AWT-EventQueue-0:7576 ] - [ INFO ]  Click Audio button.
+2019-04-03 15:57:51  [ AWT-EventQueue-0:13161 ] - [ INFO ]  Image browse clicked
+2019-04-03 15:57:56  [ AWT-EventQueue-0:17735 ] - [ INFO ]  Audio browse clicked
+2019-04-03 15:58:06  [ AWT-EventQueue-0:28591 ] - [ INFO ]  Cancel change
+2019-04-03 15:58:06  [ AWT-EventQueue-0:28638 ] - [ INFO ]  Add/Edit your button windows closed
+2019-04-03 15:58:10  [ AWT-EventQueue-0:32460 ] - [ INFO ]  Closed Configurator App
+2019-04-03 15:58:34  [ AWT-EventQueue-0:0 ] - [ INFO ]  Loading Default.tbc
+2019-04-03 15:58:34  [ AWT-EventQueue-0:12 ] - [ INFO ]  Start Configurator
+2019-04-03 15:58:37  [ AWT-EventQueue-0:2372 ] - [ INFO ]  Edit Audio button.
+2019-04-03 15:58:38  [ AWT-EventQueue-0:4156 ] - [ INFO ]  Add/Edit your button windows closed
+2019-04-03 15:58:40  [ AWT-EventQueue-0:6150 ] - [ INFO ]  Change audio set
+2019-04-03 15:58:41  [ AWT-EventQueue-0:6779 ] - [ INFO ]  Change audio set
+2019-04-03 15:58:45  [ AWT-EventQueue-0:11118 ] - [ INFO ]  Closed Configurator App
+2019-04-03 16:00:54  [ AWT-EventQueue-0:0 ] - [ INFO ]  Loading Default.tbc
+2019-04-03 16:00:54  [ AWT-EventQueue-0:13 ] - [ INFO ]  Start Configurator
+2019-04-03 16:00:57  [ AWT-EventQueue-0:2618 ] - [ INFO ]  Edit Audio button.
+2019-04-03 16:01:00  [ AWT-EventQueue-0:5638 ] - [ INFO ]  Click Record Button
+2019-04-03 16:01:04  [ AWT-EventQueue-0:9665 ] - [ INFO ]  Click Sumbit Button
+2019-04-03 16:01:04  [ AWT-EventQueue-0:9790 ] - [ INFO ]  Add/Edit your button windows closed
+2019-04-03 16:01:17  [ AWT-EventQueue-0:23156 ] - [ INFO ]  Closed Configurator App
+2019-04-03 16:04:31  [ AWT-EventQueue-0:0 ] - [ INFO ]  Loading Default.tbc
+2019-04-03 16:04:31  [ AWT-EventQueue-0:12 ] - [ INFO ]  Start Configurator
+2019-04-03 16:04:38  [ AWT-EventQueue-0:7084 ] - [ INFO ]  Edit Audio button.
+2019-04-03 16:04:41  [ AWT-EventQueue-0:9737 ] - [ INFO ]  Drag And Drop an image
+2019-04-03 16:05:30  [ AWT-EventQueue-0:58795 ] - [ INFO ]  Drag And Drop an audio
+2019-04-03 16:05:45  [ AWT-EventQueue-0:74253 ] - [ INFO ]  Click Audio button.
+2019-04-03 16:06:12  [ AWT-EventQueue-0:100911 ] - [ ERROR ]  Wrong format
+2019-04-03 16:06:15  [ AWT-EventQueue-0:103669 ] - [ INFO ]  Click Record Button
+2019-04-03 16:06:18  [ AWT-EventQueue-0:106971 ] - [ INFO ]  Add/Edit your button windows closed
+2019-04-03 16:06:21  [ AWT-EventQueue-0:109435 ] - [ INFO ]  Closed Configurator App
+2019-04-03 16:10:43  [ AWT-EventQueue-0:0 ] - [ INFO ]  Loading Default.tbc
+2019-04-03 16:10:43  [ AWT-EventQueue-0:14 ] - [ INFO ]  Start Configurator
+2019-04-03 16:10:46  [ AWT-EventQueue-0:2595 ] - [ INFO ]  Edit Audio button.
+2019-04-03 16:10:47  [ AWT-EventQueue-0:3538 ] - [ INFO ]  Click Record Button
+2019-04-03 16:10:52  [ AWT-EventQueue-0:8850 ] - [ INFO ]  Recorder Configuring
+2019-04-03 16:10:55  [ AWT-EventQueue-0:12228 ] - [ INFO ]  Recording Finished
+2019-04-03 16:10:58  [ AWT-EventQueue-0:14878 ] - [ INFO ]  Preview the record audio
+2019-04-03 16:11:05  [ AWT-EventQueue-0:22183 ] - [ INFO ]  Cancel button click
+2019-04-03 16:11:10  [ AWT-EventQueue-0:26968 ] - [ INFO ]  Click Record Button
+2019-04-03 16:11:12  [ AWT-EventQueue-0:28768 ] - [ INFO ]  OK button click
+2019-04-03 16:11:15  [ AWT-EventQueue-0:32162 ] - [ INFO ]  Add/Edit your button windows closed
+2019-04-03 16:16:14  [ AWT-EventQueue-0:0 ] - [ INFO ]  Loading Default.tbc
+2019-04-03 16:16:14  [ AWT-EventQueue-0:80 ] - [ INFO ]  Simulator starting
+2019-04-03 16:16:29  [ AWT-EventQueue-0:0 ] - [ INFO ]  Loading selected *.tbc
+2019-04-03 16:16:29  [ AWT-EventQueue-0:125 ] - [ INFO ]  Simulator starting
+2019-04-03 16:23:52  [ AWT-EventQueue-0:0 ] - [ INFO ]  Loading Default.tbc
+2019-04-03 16:23:52  [ AWT-EventQueue-0:72 ] - [ INFO ]  Simulator starting
+2019-04-03 16:23:53  [ AWT-EventQueue-0:1658 ] - [ INFO ]  Playing audio
+2019-04-03 16:23:55  [ AWT-EventQueue-0:3692 ] - [ INFO ]  Playing audio
+2019-04-03 16:23:56  [ AWT-EventQueue-0:4807 ] - [ INFO ]  Playing audio
+2019-04-03 16:23:57  [ AWT-EventQueue-0:5315 ] - [ INFO ]  Playing audio
+2019-04-03 16:23:59  [ AWT-EventQueue-0:7237 ] - [ INFO ]  Playing audio
+2019-04-03 16:23:59  [ AWT-EventQueue-0:7438 ] - [ INFO ]  Playing audio
+2019-04-03 16:24:00  [ AWT-EventQueue-0:8861 ] - [ INFO ]  Playing audio
+2019-04-03 16:24:01  [ AWT-EventQueue-0:9062 ] - [ INFO ]  Playing audio
+2019-04-03 16:24:02  [ AWT-EventQueue-0:10277 ] - [ INFO ]  Playing audio
+2019-04-03 16:24:02  [ AWT-EventQueue-0:10481 ] - [ INFO ]  Playing audio
+2019-04-03 16:24:03  [ AWT-EventQueue-0:11696 ] - [ INFO ]  Playing audio
+2019-04-03 16:24:04  [ AWT-EventQueue-0:12102 ] - [ INFO ]  Playing audio
+2019-04-03 16:24:04  [ AWT-EventQueue-0:12810 ] - [ INFO ]  Playing audio
+2019-04-03 16:24:36  [ AWT-EventQueue-0:0 ] - [ INFO ]  Loading Default.tbc
+2019-04-03 16:24:36  [ AWT-EventQueue-0:87 ] - [ INFO ]  Simulator starting
+2019-04-03 16:24:38  [ AWT-EventQueue-0:1957 ] - [ INFO ]  Playing audio/Hello.wav
+2019-04-03 16:25:44  [ AWT-EventQueue-0:0 ] - [ INFO ]  Loading Default.tbc
+2019-04-03 16:25:45  [ AWT-EventQueue-0:78 ] - [ INFO ]  Simulator starting
+2019-04-03 16:25:47  [ AWT-EventQueue-0:2064 ] - [ INFO ]  Playing audio/Wash Room.wav
+2019-04-03 16:25:48  [ AWT-EventQueue-0:3384 ] - [ INFO ]  Stop playing audiosun.audio.AudioStream@5f4f3175
+2019-04-03 16:25:48  [ AWT-EventQueue-0:3385 ] - [ INFO ]  Playing audio/Hello.wav
+2019-04-03 16:27:20  [ AWT-EventQueue-0:0 ] - [ INFO ]  Loading Default.tbc
+2019-04-03 16:27:20  [ AWT-EventQueue-0:92 ] - [ INFO ]  Simulator starting
+2019-04-03 16:27:23  [ AWT-EventQueue-0:3383 ] - [ INFO ]  Playing audio/Wash Room.wav
+2019-04-03 16:27:24  [ AWT-EventQueue-0:4297 ] - [ INFO ]  Stop playing audio/Hello.wav
+2019-04-03 16:27:24  [ AWT-EventQueue-0:4298 ] - [ INFO ]  Playing audio/Hello.wav
+2019-04-03 16:27:29  [ AWT-EventQueue-0:9363 ] - [ INFO ]  Stop playing audio/Wash Room.wav
+2019-04-03 16:27:29  [ AWT-EventQueue-0:9364 ] - [ INFO ]  Playing audio/Wash Room.wav
+2019-04-03 16:27:30  [ AWT-EventQueue-0:9971 ] - [ INFO ]  Stop playing audio/Hello.wav
+2019-04-03 16:27:30  [ AWT-EventQueue-0:9972 ] - [ INFO ]  Playing audio/Hello.wav
+2019-04-03 16:30:07  [ AWT-EventQueue-0:0 ] - [ INFO ]  Loading Default.tbc
+2019-04-03 16:30:07  [ AWT-EventQueue-0:71 ] - [ INFO ]  Simulator starting
+2019-04-03 16:32:04  [ AWT-EventQueue-0:0 ] - [ INFO ]  Loading Default.tbc
+2019-04-03 16:32:04  [ AWT-EventQueue-0:74 ] - [ INFO ]  Simulator starting
+2019-04-03 16:32:07  [ AWT-EventQueue-0:2204 ] - [ INFO ]  Change audio set
+2019-04-03 16:32:09  [ AWT-EventQueue-0:4161 ] - [ INFO ]  Change audio set

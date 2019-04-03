@@ -4,6 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileInputStream;
 import java.io.IOException;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import sun.audio.*;
 
@@ -13,7 +15,7 @@ public class RecorderFrame extends JFrame implements ActionListener{
 
 	private String fName;
 	public boolean useRec;
-	
+	public static Log log = LogFactory.getLog("logfile1");
 	public String getfName() {
 		return fName;
 	}
@@ -111,6 +113,7 @@ public class RecorderFrame extends JFrame implements ActionListener{
 		JButton btn = (JButton)e.getSource();
 		if(btn.equals(btnRecord)) {
 			check = 1;
+			log.info("Recorder Configuring");
 			this.recStatus.setText("Recorder Configuring");
 			new SwingWorker() {
 
@@ -127,6 +130,7 @@ public class RecorderFrame extends JFrame implements ActionListener{
 		if(btn.equals(btnStop)) {
 			check = 2;
 			record.finish();
+			log.info("Recording Finished");
 			this.recStatus.setText("Recording Finished");
 			if(btnPreview.getParent()!=paneRecord)		panePreview.add(btnPreview);
 			this.repaint();
@@ -136,12 +140,14 @@ public class RecorderFrame extends JFrame implements ActionListener{
 		if(btn.equals(btnOK)) {
 			check = 3;
 			this.useRec = true;
+			log.info("OK button click and use record");
 			JOptionPane.showMessageDialog(this, "The recording will be used for the button.");
 			this.dispose();			
 		}
 		
 		if(btn.equals(btnCancel)) {
 			check = 4;
+			log.info("Cancel button click and not use record");
 			JOptionPane.showMessageDialog(this, "The recording will NOT be used for the button.");
 			this.dispose();
 						
@@ -152,10 +158,12 @@ public class RecorderFrame extends JFrame implements ActionListener{
 		if(btn.equals(btnPreview)) {
 			check = 5;
 			try {
+				log.info("Preview the record audio");
 				AudioPlayer.player.start(new AudioStream(new FileInputStream(this.fName)));
 			} catch (IOException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
+				log.error(e1.getMessage());
 			}
 		}
 		

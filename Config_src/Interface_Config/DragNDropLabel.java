@@ -9,13 +9,15 @@ import java.util.List;
 
 import javax.swing.*;
 import javax.swing.border.Border;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class DragNDropLabel extends JLabel{
 
 	List<File> files;
 	boolean fileChanger;
 	EditBtn edit;
-	
+	public static Log log  = LogFactory.getLog("logfile1");
 	public DragNDropLabel(EditBtn edit) {
 		
 		super("Drag And Drop Here");
@@ -45,22 +47,25 @@ public class DragNDropLabel extends JLabel{
 					files = (List<File>) t.getTransferData(DataFlavor.javaFileListFlavor);
 					for(File file : files) {
 						if(file.getName().endsWith(".jpg")||file.getName().endsWith(".png")) {
+							log.info("Drag And Drop an image");
 							edit.tempImg = file.getName();
 							edit.imgBtn(file.getAbsolutePath());
 						}
 						else if(file.getName().endsWith(".wav")) {
+							log.info("Drag And Drop an audio");
 							edit.tempAud = file.getName();
 							edit.audBtn(file.getAbsolutePath());
 						}
 						else {
 							
 							JOptionPane.showMessageDialog(edit, "Sorry, wrong file format.");
-							
+							log.error("Wrong format");
 						}
 					}
 				} catch (UnsupportedFlavorException | IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
+					log.error(e.getMessage());
 				}
 				
 				return true;

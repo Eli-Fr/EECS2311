@@ -95,7 +95,7 @@ public class PanelPreText extends JPanel {
 		String line;
 
 		try {
-			BufferedReader br = new BufferedReader(new FileReader("TalkBoxData/BuildLog.txt"));
+			BufferedReader br = new BufferedReader(new FileReader("TalkBoxData/Simulator.log"));
 
 			while ((line = br.readLine()) != null) {
 
@@ -106,11 +106,13 @@ public class PanelPreText extends JPanel {
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-			JOptionPane.showMessageDialog(null, "Cannot find BuildLog.txt", "Confirm Exit", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(null, "Cannot find Simulator.log", "Confirm Exit", JOptionPane.ERROR_MESSAGE);
+			log.error(e.getMessage());
 			System.exit(0);
 		} catch (IOException e) {
 			e.printStackTrace();
-			JOptionPane.showMessageDialog(null, "Cannot read BuildLog.txt", "Confirm Exit", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(null, "Cannot read Simulator.log", "Confirm Exit", JOptionPane.ERROR_MESSAGE);
+			log.error(e.getMessage());
 			System.exit(0);
 		}
 

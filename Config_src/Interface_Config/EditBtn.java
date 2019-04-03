@@ -261,6 +261,7 @@ public class EditBtn extends JFrame implements ActionListener{
 		}
 		
 		else if(e.getSource() == this.record) {
+			log.info("Click Record Button");
 			check = 6;
 			recFrame = new RecorderFrame();
 			recFrame.addWindowListener(new WindowAdapter() {
@@ -290,7 +291,7 @@ public class EditBtn extends JFrame implements ActionListener{
 	public void submit() {
 		
 		this.nameBtn = this.nameText.getText();
-		
+		log.info("Click Sumbit Button");
 		try {
 		
 			if(this.imgChanged) {

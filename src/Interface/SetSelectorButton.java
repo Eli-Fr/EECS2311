@@ -5,9 +5,10 @@ import java.awt.event.ActionListener;
 import java.util.Arrays;
 
 import javax.swing.JButton;
-
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 public class SetSelectorButton extends JButton implements ActionListener {
-
+	public static Log log  = LogFactory.getLog("logfile2");
 	private BodyPanel own;
 	private String name;
 
@@ -20,7 +21,7 @@ public class SetSelectorButton extends JButton implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-
+		log.info("Change audio set");
 		own.getConfig().setSetNum(Arrays.asList(own.getConfig().getSetBtn()).indexOf(name));
 
 		for (int i = own.getConfig().getNumberOfAudioButtons(); i > 0; i--) {

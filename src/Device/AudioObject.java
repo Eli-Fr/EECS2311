@@ -3,7 +3,8 @@ package Device;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import javax.sound.sampled.AudioInputStream;
 import javax.swing.JOptionPane;
 
@@ -18,7 +19,7 @@ import sun.audio.AudioStream;
  * @author Eli Frungorts, Yash Desai, Kai Xu
  */
 public class AudioObject {
-
+	public static Log log  = LogFactory.getLog("logfile2");
 	private String fileName;
 	private static AudioStream previousFN;
 	private FileManager FM;
@@ -37,7 +38,7 @@ public class AudioObject {
 		System.out.println(FM.getConfig().getRelativePathToAudioFiles() + this.getName());
 		
 		try {
-			
+			log.info("Playing audio" + getName());
 			if(AudioObject.previousFN != null)	AudioPlayer.player.stop(AudioObject.previousFN);
 			
 			AudioStream as = new AudioStream(new FileInputStream(FM.getConfig().getRelativePathToAudioFiles()+ this.getName()));
