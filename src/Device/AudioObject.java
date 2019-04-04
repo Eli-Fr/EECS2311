@@ -49,6 +49,7 @@ public class AudioObject {
 		} catch (IOException e1) {
 			JOptionPane.showMessageDialog(null, "No Audio File Found for Button: " + getName(), "Okay",
 					JOptionPane.ERROR_MESSAGE);
+			log.error(e1.getMessage());
 		}
 
 	}

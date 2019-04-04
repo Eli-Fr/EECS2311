@@ -15,7 +15,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.*;
-
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 public class AudioButton extends JButton implements ActionListener {
 
 	/**
@@ -28,7 +29,7 @@ public class AudioButton extends JButton implements ActionListener {
 
 	private BodyPanel owner;
 	private ButtonInterface BI;
-
+	public static Log log  = LogFactory.getLog("logfile2");
 	public AudioButton(ButtonInterface BI, BodyPanel owner, String name, String imgFileName, int id) {
 		super(name);
 
@@ -72,6 +73,7 @@ public class AudioButton extends JButton implements ActionListener {
 						ImageIO.read(new File(imgFileName)));
 			} catch (IOException e) {
 				System.out.println("no image found");
+				log.error(e.getMessage());
 			}
 			scaleImage(image, 100, 100);
 			this.setIcon(image);
