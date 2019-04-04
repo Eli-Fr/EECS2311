@@ -31,6 +31,7 @@ public class TalkBoxSimulator {
 	public static FileManager FM;
 	public static ButtonInterface BI;
 	public static Log log  = LogFactory.getLog("logfile2");
+	
 	public static void main(String[] args) {
 
 		// TODO: Add a prompt for the user to select between a default TB or use a cfg
